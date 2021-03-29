@@ -1,0 +1,68 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>(9)浏览器缓存机制</title><meta name="description" content="Front-end artist"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/avatar.jpg"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="12.注意：该知识点属于性能优化领域，并且整一章节都是一个面试题。
+缓存是性能优化中简单高效的一种方式，可以显著减少网络传输所带来的损耗
+对于数据请求来说，可以分为发起网络请求、后端处理、浏览器响应三个步骤浏览器缓存帮助我们在第一和第三步骤中优化性能
+比如说直接使用缓存而不发起请求，或者发起了请求但后端存储的数据和前端一致，那么就没有必要再将数据回传回来，这样就减少了响应数据。
+缓存位置从缓存位置来说分为四种，并且有优先级，当依次查找缓存且都没有命中的时候才请求网络
+Service Worker
+Memory Cache
+Disk Cache
+Push Cache
+网络请求
+Service WorkerService Worker 的缓存与其他缓存机制不同，它可以自由控制缓存哪些文件、如何匹配缓存、如何读取.."><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hendry5479" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Hendry5479's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">(9)浏览器缓存机制</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#12"><span class="toc-text">12.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E4%BD%8D%E7%BD%AE"><span class="toc-text">缓存位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Service-Worker"><span class="toc-text">Service Worker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Memory-Cache"><span class="toc-text">Memory Cache</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Disk-Cache"><span class="toc-text">Disk Cache</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Push-Cache"><span class="toc-text">Push Cache</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5"><span class="toc-text">缓存策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%BA%E7%BC%93%E5%AD%98"><span class="toc-text">强缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98"><span class="toc-text">协商缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E5%9C%BA%E6%99%AF%E5%BA%94%E7%94%A8%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5"><span class="toc-text">实际场景应用缓存策略</span></a></li></ol></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93"><i class="tag post-item-tag">面试之道</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">(9)浏览器缓存机制</h1><time class="has-text-grey" datetime="2021-03-29T00:42:52.054Z">2021-03-29</time><article class="mt-2 post-content"><h3 id="12"><a href="#12" class="headerlink" title="12."></a>12.</h3><p>注意：该知识点属于性能优化领域，并且整一章节都是一个面试题。</p>
+<p>缓存是性能优化中简单高效的一种方式，可以显著减少网络传输所带来的损耗</p>
+<p>对于数据请求来说，可以分为发起网络请求、后端处理、浏览器响应三个步骤<br>浏览器缓存帮助我们在第一和第三步骤中优化性能</p>
+<p>比如说直接使用缓存而不发起请求，或者发起了请求但后端存储的数据和前端一致，那么就没有必要再将数据回传回来，这样就减少了响应数据。</p>
+<h4 id="缓存位置"><a href="#缓存位置" class="headerlink" title="缓存位置"></a>缓存位置</h4><p>从缓存位置来说分为四种，并且有优先级，当依次查找缓存且都没有命中的时候才请求网络</p>
+<p>Service Worker</p>
+<p>Memory Cache</p>
+<p>Disk Cache</p>
+<p>Push Cache</p>
+<p>网络请求</p>
+<h4 id="Service-Worker"><a href="#Service-Worker" class="headerlink" title="Service Worker"></a>Service Worker</h4><p>Service Worker 的缓存与其他缓存机制不同，它可以自由控制缓存哪些文件、如何匹配缓存、如何读取缓存，并且缓存是持续性的。</p>
+<p>Service Worker 没有命中缓存的时候，调用 fetch 函数获取数据</p>
+<p>如果没有在 Service Worker 命中缓存的话，会根据缓存查找优先级去查找数据</p>
+<p>但是不管从 Memory Cache 还是从网络请求中获取数据，浏览器都显示从 Service Worker 中获取的内容</p>
+<h4 id="Memory-Cache"><a href="#Memory-Cache" class="headerlink" title="Memory Cache"></a>Memory Cache</h4><p>读取内存中的数据比磁盘快，可是持续性短，会随着进程的释放而释放。 一旦关闭 Tab 页面，内存的缓存也就被释放了。</p>
+<h4 id="Disk-Cache"><a href="#Disk-Cache" class="headerlink" title="Disk Cache"></a>Disk Cache</h4><p>读取速度慢点，但是比之 Memory Cache 胜在容量和存储时效性上</p>
+<p>在所有浏览器缓存中，Disk Cache 覆盖面最大</p>
+<p>它会根据 HTTP Header 的字段判断哪些资源需要缓存，哪些资源可以不请求直接使用，哪些资源已经过期需要重新请求。并且即使在跨站点的情况下，相同地址的资源一旦被硬盘缓存下来，就不会再次去请求数据</p>
+<h4 id="Push-Cache"><a href="#Push-Cache" class="headerlink" title="Push Cache"></a>Push Cache</h4><p>Push Cache 是 HTTP/2 中的内容，当以上三种缓存都没有命中时，它才会被使用。并且缓存时间也很短暂，只在会话（Session）中存在，一旦会话结束就被释放。</p>
+<p>所有的资源都能被推送，但是 Edge 和 Safari 浏览器兼容性不好</p>
+<p>可以推送 no-cache 和 no-store 的资源</p>
+<p>一旦连接被关闭，Push Cache 就被释放</p>
+<p>多个页面可以使用相同的 HTTP/2 连接，也就是使用同样的缓存</p>
+<p>Push Cache 的缓存只能被使用一次</p>
+<p>浏览器可以拒绝接受已经存在的资源推送</p>
+<p>你可以给其他域名推送资源</p>
+<h4 id="缓存策略"><a href="#缓存策略" class="headerlink" title="缓存策略"></a>缓存策略</h4><p>通常缓存策略分为两种：强缓存和协商缓存，缓存策略通过设置 HTTP Header 实现</p>
+<h4 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h4><p>强缓存通过设置两种 HTTP Header 实现：Expires 和 Cache-Control </p>
+<p>强缓存表示在缓存期间不需要请求，state code 为 200</p>
+<p>Expires<br>Expires: Wed, 22 Oct 2018 08:41:00 GMT</p>
+<p>Expires 是 HTTP/1 的产物，表示资源会在 22 Oct 2018 08:41:00 后过期，需要再次请求。</p>
+<p>Expires 受限于本地时间，如果修改了本地时间，可能会造成缓存失效</p>
+<p>Cache-control</p>
+<p>Cache-control: max-age=30</p>
+<p>Cache-Control 出现于 HTTP/1.1，优先级高于 Expires </p>
+<p>该属性值表示资源会在 30 秒后过期，需要再次请求</p>
+<p>Cache-Control 可以在请求头或者响应头中设置，并且可以组合使用多种指令</p>
+<h4 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h4><p>如果缓存过期了，就需要发起请求验证资源是否更新</p>
+<p>协商缓存通过设置两种 HTTP Header 实现：Last-Modified 和 ETag </p>
+<p>当浏览器请求验证资源时，如果资源没改变，服务端返回 304 状态码，并更新缓存有效期</p>
+<p>Last-Modified 和 If-Modified-Since</p>
+<p>Last-Modified 表示本地文件最后修改日期，If-Modified-Since 会将 Last-Modified 的值发送给服务器，询问服务器在该日期后资源是否有更新，有更新的话就会将新的资源发送回来，否则返回 304 状态码。</p>
+<p>Last-Modified 的弊端：</p>
+<p>如果本地打开缓存文件，即使没有修改， Last-Modified还是会被修改，服务端不能命中缓存导致发送相同的资源</p>
+<p> Last-Modified 以秒计时，如果在不可感知的时间内修改文件，服务端会认为资源还是命中了，不会返回正确的资源</p>
+<p>因为以上弊端，在 HTTP / 1.1 出现了 ETag </p>
+<p>ETag 和 If-None-Match</p>
+<p>ETag 类似于文件指纹，If-None-Match 会将当前 ETag 发送给服务器，询问该资源 ETag 是否变动，有变动的话就将新的资源发送回来。并且 ETag 优先级比 Last-Modified 高。</p>
+<p>如果缓存策略没设置，浏览器会怎么处理？</p>
+<p>浏览器会采用一个启发式的算法，（响应头的 Date  -  Last-Modified 的 10% ）作为缓存时间</p>
+<h4 id="实际场景应用缓存策略"><a href="#实际场景应用缓存策略" class="headerlink" title="实际场景应用缓存策略"></a>实际场景应用缓存策略</h4><p>频繁变动的资源</p>
+<p>首先使用 Cache-Control: no-cache 使浏览器每次都请求服务器，然后配合 ETag 或者 Last-Modified 来验证资源是否有效。这样的做法虽然不能节省请求数量，但是能显著减少响应数据大小。</p>
+<p>代码文件</p>
+<p>HTML 文件一般不缓存或者缓存时间很短</p>
+<p>现在使用工具来打包代码，可以对文件名进行哈希处理，代码修改后才会生成新的文件名<br>给代码文件设置缓存有效期一年 Cache-Control: max-age=31536000<br>只有当 HTML 文件引入的文件名发生改变才会下载最新的代码文件，否则使用缓存</p>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2021/03/29/yck/(10)%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/" title="(10)浏览器渲染原理"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: (10)浏览器渲染原理</span></a><a class="button is-default" href="/2021/03/29/yck/(8)%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9F%BA%E7%A1%80/" title="(8)浏览器基础知识点及常考面试题"><span class="has-text-weight-semibold">Next: (8)浏览器基础知识点及常考面试题</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><article class="mt-6 comment-container"><script async repo="Hendry5479/Hendry5479.github.io" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Hendry5479"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Hendry5479 2021</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/post.js"></script></body></html>
