@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./heroes.component.css']
 })
 
-导入 Component 符号，并为组件类加上 @Component 装饰器，用于为该组件指定 Angular 所需的元数据里面是CLI 自动生成了三个.."><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hendry5479" type="application/atom+xml">
-
+导入 Component 符号，并为组件类加上 @Component 装饰器，用于为该组件指定 Angular 所需的元数据里面是CLI 自动生成了三个.."><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Hendry5479's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Angulat-Note</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ng%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">ng常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UppercasePipe-%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-text">UppercasePipe 格式化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A"><span class="toc-text">双向绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NgModule"><span class="toc-text">@NgModule</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E-Component"><span class="toc-text">声明 Component</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ngFor"><span class="toc-text">*ngFor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E6%A0%B7%E5%BC%8F"><span class="toc-text">组件样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#click-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-text">click 事件绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ngIf"><span class="toc-text">*ngIf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-%E7%B1%BB%E7%BB%91%E5%AE%9A%E6%9C%BA%E5%88%B6"><span class="toc-text">CSS 类绑定机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input"><span class="toc-text">@Input()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1"><span class="toc-text">创建服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%85%A5-HeroService"><span class="toc-text">注入 HeroService</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%82%E5%AF%9F%EF%BC%88Observable%EF%BC%89%E6%95%B0%E6%8D%AE"><span class="toc-text">可观察（Observable）数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-Component-%E4%B8%AD%E8%AE%A2%E9%98%85Service"><span class="toc-text">在 Component 中订阅Service</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0AppRoutingModule"><span class="toc-text">添加AppRoutingModule</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%B7%AF%E7%94%B1%E5%87%BA%E5%8F%A3-RouterOutlet"><span class="toc-text">添加路由出口 RouterOutlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%B7%AF%E7%94%B1%E9%93%BE%E6%8E%A5-routerLink"><span class="toc-text">添加路由链接 (routerLink)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E9%BB%98%E8%AE%A4%E8%B7%AF%E7%94%B1"><span class="toc-text">添加默认路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E7%A6%BBhero-detail%E7%BB%84%E4%BB%B6"><span class="toc-text">抽离hero-detail组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E8%B7%AF%E7%94%B1%E7%9A%84-HeroDetail"><span class="toc-text">支持路由的 HeroDetail</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E5%88%B0%E5%8E%9F%E8%B7%AF"><span class="toc-text">回到原路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8-HTTP-%E6%9C%8D%E5%8A%A1"><span class="toc-text">启用 HTTP 服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE%E6%9C%8D%E5%8A%A1%E5%99%A8-In-memory-Web-API"><span class="toc-text">模拟数据服务器 In-memory Web API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9FHttp%E8%AF%B7%E6%B1%82"><span class="toc-text">模拟Http请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-text">错误处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#handleError%E9%80%9A%E7%94%A8%E5%8C%96"><span class="toc-text">handleError通用化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%A5%E6%8E%A2-Observable"><span class="toc-text">窥探 Observable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87-id-%E8%8E%B7%E5%8F%96%E8%8B%B1%E9%9B%84"><span class="toc-text">通过 id 获取英雄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%8B%B1%E9%9B%84"><span class="toc-text">修改英雄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%B0%E8%8B%B1%E9%9B%84"><span class="toc-text">添加新英雄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E8%8B%B1%E9%9B%84"><span class="toc-text">删除某个英雄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E5%90%8D%E5%AD%97%E6%90%9C%E7%B4%A2"><span class="toc-text">根据名字搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#search-component"><span class="toc-text">Hero Search</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RxJS-Subject-%E7%B1%BB%E5%9E%8B%E7%9A%84-searchTerms"><span class="toc-text">RxJS Subject 类型的 searchTerms</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B2%E8%81%94-RxJS-%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">串联 RxJS 操作符</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/front"><i class="tag post-item-tag">front</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">Angulat-Note</h1><time class="has-text-grey" datetime="2021-04-05T15:47:03.509Z">2021-04-05</time><article class="mt-2 post-content"><h3 id="ng常用命令"><a href="#ng常用命令" class="headerlink" title="ng常用命令"></a>ng常用命令</h3><p>ng new project-name<br>ng serve –open 构建应用并监听文件<br>–open 标志会打开浏览器<br>–host 0.0.0.0 指定host地址<br>ng g component name</p>
+<link rel="alternate" href="/atom.xml" title="Hendry5479" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Hendry5479's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Angulat-Note</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ng%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">ng常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UppercasePipe-%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-text">UppercasePipe 格式化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A"><span class="toc-text">双向绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NgModule"><span class="toc-text">@NgModule</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E-Component"><span class="toc-text">声明 Component</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ngFor"><span class="toc-text">*ngFor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E6%A0%B7%E5%BC%8F"><span class="toc-text">组件样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#click-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-text">click 事件绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ngIf"><span class="toc-text">*ngIf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-%E7%B1%BB%E7%BB%91%E5%AE%9A%E6%9C%BA%E5%88%B6"><span class="toc-text">CSS 类绑定机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input"><span class="toc-text">@Input()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1"><span class="toc-text">创建服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%85%A5-HeroService"><span class="toc-text">注入 HeroService</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%82%E5%AF%9F%EF%BC%88Observable%EF%BC%89%E6%95%B0%E6%8D%AE"><span class="toc-text">可观察（Observable）数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-Component-%E4%B8%AD%E8%AE%A2%E9%98%85Service"><span class="toc-text">在 Component 中订阅Service</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0AppRoutingModule"><span class="toc-text">添加AppRoutingModule</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%B7%AF%E7%94%B1%E5%87%BA%E5%8F%A3-RouterOutlet"><span class="toc-text">添加路由出口 RouterOutlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%B7%AF%E7%94%B1%E9%93%BE%E6%8E%A5-routerLink"><span class="toc-text">添加路由链接 (routerLink)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E9%BB%98%E8%AE%A4%E8%B7%AF%E7%94%B1"><span class="toc-text">添加默认路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E7%A6%BBhero-detail%E7%BB%84%E4%BB%B6"><span class="toc-text">抽离hero-detail组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E8%B7%AF%E7%94%B1%E7%9A%84-HeroDetail"><span class="toc-text">支持路由的 HeroDetail</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E5%88%B0%E5%8E%9F%E8%B7%AF"><span class="toc-text">回到原路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8-HTTP-%E6%9C%8D%E5%8A%A1"><span class="toc-text">启用 HTTP 服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE%E6%9C%8D%E5%8A%A1%E5%99%A8-In-memory-Web-API"><span class="toc-text">模拟数据服务器 In-memory Web API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9FHttp%E8%AF%B7%E6%B1%82"><span class="toc-text">模拟Http请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-text">错误处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#handleError%E9%80%9A%E7%94%A8%E5%8C%96"><span class="toc-text">handleError通用化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%A5%E6%8E%A2-Observable"><span class="toc-text">窥探 Observable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87-id-%E8%8E%B7%E5%8F%96%E8%8B%B1%E9%9B%84"><span class="toc-text">通过 id 获取英雄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%8B%B1%E9%9B%84"><span class="toc-text">修改英雄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%B0%E8%8B%B1%E9%9B%84"><span class="toc-text">添加新英雄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AA%E8%8B%B1%E9%9B%84"><span class="toc-text">删除某个英雄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E5%90%8D%E5%AD%97%E6%90%9C%E7%B4%A2"><span class="toc-text">根据名字搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RxJS-Subject-%E7%B1%BB%E5%9E%8B%E7%9A%84-searchTerms"><span class="toc-text">RxJS Subject 类型的 searchTerms</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B2%E8%81%94-RxJS-%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">串联 RxJS 操作符</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/front"><i class="tag post-item-tag">front</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">Angulat-Note</h1><time class="has-text-grey" datetime="2021-04-05T15:47:03.509Z">2021-04-05</time><article class="mt-2 post-content"><h3 id="ng常用命令"><a href="#ng常用命令" class="headerlink" title="ng常用命令"></a>ng常用命令</h3><p>ng new project-name<br>ng serve –open 构建应用并监听文件<br>–open 标志会打开浏览器<br>–host 0.0.0.0 指定host地址<br>ng g component name</p>
 <pre><code class="js">import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -38,7 +38,10 @@ import { Component, OnInit } from '@angular/core';
 <h3 id="CSS-类绑定机制"><a href="#CSS-类绑定机制" class="headerlink" title="CSS 类绑定机制"></a>CSS 类绑定机制</h3><pre><code class="js">[class.classname]="some-condition" 
 eg: [class.selected]="hero === selectedHero"
 </code></pre>
-<h3 id="Input"><a href="#Input" class="headerlink" title="@Input()"></a>@Input()</h3><p>import { Component, OnInit, Input } from ‘@angular/core’;<br>@Input() hero: Hero;<br>从hero-com传入某个hero信息到hero-detail中<br>hero 必须是带有 @Input() 装饰器的输入属性，因为外部的 HeroesComponent 将会绑定到它<br>&lt;app-hero-detail [hero]=”selectedHero”&gt;<br>[hero]=”selectedHero” 是属性绑定语法，单向数据绑定，selectedHero 属性绑定到目标元素的 hero 属性</p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="@Input()"></a>@Input()</h3><pre><code class="ts">import { Component, OnInit, Input } from '@angular/core';
+@Input() hero: Hero;
+</code></pre>
+<p>从hero-com传入某个hero信息到hero-detail中<br>hero 必须是带有 @Input() 装饰器的输入属性，因为外部的 HeroesComponent 将会绑定到它<br>&lt;app-hero-detail [hero]=”selectedHero”&gt;<br>[hero]=”selectedHero” 是属性绑定语法，单向数据绑定，selectedHero 属性绑定到目标元素的 hero 属性</p>
 <h3 id="创建服务"><a href="#创建服务" class="headerlink" title="创建服务"></a>创建服务</h3><p>用Angular 的依赖注入机制将service注入组件构造函数中<br>创建 HeroService：ng generate service hero，生成如下：</p>
 <pre><code class="js">import { Injectable } from '@angular/core';
 @Injectable({
@@ -52,13 +55,17 @@ export class HeroService {
 <h3 id="注入-HeroService"><a href="#注入-HeroService" class="headerlink" title="注入 HeroService"></a>注入 HeroService</h3><p>在component中：<br>constructor(private heroService: HeroService) { }<br>在创建组件时，依赖注入系统把service设置为组件的单例对象</p>
 <h3 id="可观察（Observable）数据"><a href="#可观察（Observable）数据" class="headerlink" title="可观察（Observable）数据"></a>可观察（Observable）数据</h3><p>HeroService.getHeroes() 是异步函数，需要使用HttpClient.get获取数据，并返回Observable对象<br>Observable 是 RxJS 库中的一个关键类</p>
 <p>使用RxJS的of( )模拟服务器返回数据，hero.service中：</p>
-<pre><code>import { Observable, of } from 'rxjs';
+<pre><code class="ts">import { Observable, of } from 'rxjs';
 getHeroes(): Observable&lt;Hero[]&gt; {
   return of(HEROES);
 }
 </code></pre>
 <p>of(HEROES) 会返回一个 Observable&lt;Hero[]&gt;，它会发出单个值，这里是一个英雄数组</p>
-<h3 id="在-Component-中订阅Service"><a href="#在-Component-中订阅Service" class="headerlink" title="在 Component 中订阅Service"></a>在 Component 中订阅Service</h3><p>getHeroes(): void {<br>  this.heroService.getHeroes()<br>      .subscribe(heroes =&gt; this.heroes = heroes);<br>}</p>
+<h3 id="在-Component-中订阅Service"><a href="#在-Component-中订阅Service" class="headerlink" title="在 Component 中订阅Service"></a>在 Component 中订阅Service</h3><pre><code class="ts">getHeroes(): void {
+  this.heroService.getHeroes()
+      .subscribe(heroes =&gt; this.heroes = heroes);
+}
+</code></pre>
 <p>在模板中绑定的组件属性必须是公共属性</p>
 <h3 id="添加AppRoutingModule"><a href="#添加AppRoutingModule" class="headerlink" title="添加AppRoutingModule"></a>添加AppRoutingModule</h3><p>ng generate module app-routing –flat –module=app<br>–flat 把文件放进src/app 中，而不是单独的目录中。<br>–module=app 告诉 CLI 把它注册到 AppModule 的 imports 数组中</p>
 <p>Module代码：</p>
@@ -122,18 +129,41 @@ goBack(): void {
 </code></pre>
 <h3 id="模拟数据服务器-In-memory-Web-API"><a href="#模拟数据服务器-In-memory-Web-API" class="headerlink" title="模拟数据服务器 In-memory Web API"></a>模拟数据服务器 In-memory Web API</h3><p>npm install angular-in-memory-web-api –save</p>
 <p>在 AppModule 中导入 HttpClientInMemoryWebApiModule 和 InMemoryDataService 类</p>
-<p>将 WebApiModule 添加到 AppModule 的 imports 数组中，并以 InMemoryDataService 为参数进行配置<br>HttpClientInMemoryWebApiModule.forRoot(<br>  InMemoryDataService, { dataEncapsulation: false }<br>)<br>forRoot() 配置方法接收一个 InMemoryDataService 类来初始化内存数据库</p>
-<h3 id="模拟Http请求"><a href="#模拟Http请求" class="headerlink" title="模拟Http请求"></a>模拟Http请求</h3><p>hero.service.ts代码如下：<br>import { HttpClient, HttpHeaders } from ‘@angular/common/http’;<br>constructor(private http: HttpClient,) { }</p>
-<p>将 RxJS 的 of( ) 模拟转换成使用 HttpClient ，两者都返回Observable&lt;Hero[]&gt;<br>getHeroes(): Observable&lt;Hero[]&gt; {<br>  return of(HEROES);<br>}</p>
-<p>getHeroes(): Observable&lt;Hero[]&gt; {<br>  return this.http.get&lt;Hero[]&gt;(this.heroesUrl)<br>}</p>
+<p>将 WebApiModule 添加到 AppModule 的 imports 数组中，并以 InMemoryDataService 为参数进行配置</p>
+<pre><code class="ts">HttpClientInMemoryWebApiModule.forRoot(
+  InMemoryDataService, { dataEncapsulation: false }
+)
+</code></pre>
+<p>forRoot() 配置方法接收一个 InMemoryDataService 类来初始化内存数据库</p>
+<h3 id="模拟Http请求"><a href="#模拟Http请求" class="headerlink" title="模拟Http请求"></a>模拟Http请求</h3><p>hero.service.ts代码如下：</p>
+<pre><code class="ts">import { HttpClient, HttpHeaders } from '@angular/common/http';
+constructor(private http: HttpClient,) { }
+
+// 将 RxJS 的 of( ) 模拟转换成使用 HttpClient ，两者都返回Observable&lt;Hero[]&gt;
+getHeroes(): Observable&lt;Hero[]&gt; {
+  return of(HEROES);
+}
+
+getHeroes(): Observable&lt;Hero[]&gt; {
+  return this.http.get&lt;Hero[]&gt;(this.heroesUrl)
+}
+</code></pre>
 <p>所有的 HttpClient 方法都会返回某个值的 RxJS Observable</p>
 <p>HttpClient.get() 返回响应数据<br>get() 默认情况把响应体当做无类型的 JSON 对象进行返回。 如果指定了可选的模板类型 &lt;Hero[]&gt;，就会给返回你一个类型化的对象。</p>
 <p>API 可能在返回对象中深埋着你想要的数据，要借助 RxJS 的 map() 对结果处理</p>
-<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>捕获错误使用 RxJS 的 catchError() 建立对 Observable 结果的处理管道（pipe）<br>/hero.service.ts代码如下：<br>import { catchError, map, tap } from ‘rxjs/operators’;</p>
-<p>getHeroes( ): Observable&lt;Hero[]&gt; {<br>  return this.http.get&lt;Hero[]&gt;(this.heroesUrl)<br>    .pipe(<br>      catchError(this.handleError&lt;Hero[]&gt;(‘getHeroes’, [ ]))<br>    );<br>}</p>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>捕获错误使用 RxJS 的 catchError() 建立对 Observable 结果的处理管道（pipe）<br>/hero.service.ts代码如下：</p>
+<pre><code class="js">import { catchError, map, tap } from 'rxjs/operators';
+
+getHeroes( ): Observable&lt;Hero[]&gt; {
+  return this.http.get&lt;Hero[]&gt;(this.heroesUrl)
+    .pipe(
+      catchError(this.handleError&lt;Hero[]&gt;('getHeroes', [ ]))
+    );
+}
+</code></pre>
 <p>catchError( ) 拦截失败的 Observable，把错误对象传给错误处理器</p>
 <h3 id="handleError通用化"><a href="#handleError通用化" class="headerlink" title="handleError通用化"></a>handleError通用化</h3><p>不直接处理错误，而是返回给 catchError 一个错误处理函数</p>
-<pre><code>private handleError&lt;T&gt;(operation = 'operation', result?: T) {
+<pre><code class="js">private handleError&lt;T&gt;(operation = 'operation', result?: T) {
   // 匿名函数
   return (error: any): Observable&lt;T&gt; =&gt; {
     console.error(error); // log to console instead
@@ -142,17 +172,57 @@ goBack(): void {
   };
 }
 </code></pre>
-<h3 id="窥探-Observable"><a href="#窥探-Observable" class="headerlink" title="窥探 Observable"></a>窥探 Observable</h3><p>使用 RxJS 的 tap( ) 查看 使用 传出Observable 的值，但不会改变值本身<br>hero.service.ts代码如下：<br>getHeroes( ): Observable&lt;Hero[ ]&gt; {<br>  return this.http.get&lt;Hero[]&gt;(this.heroesUrl)<br>    .pipe(<br>      tap(_ =&gt; this.log(‘fetched heroes’)),<br>      catchError(this.handleError&lt;Hero[]&gt;(‘getHeroes’, []))<br>    );<br>}</p>
-<h3 id="通过-id-获取英雄"><a href="#通过-id-获取英雄" class="headerlink" title="通过 id 获取英雄"></a>通过 id 获取英雄</h3><p>hero.service.ts代码如下：<br>getHero(id: number): Observable<hero> {<br>  const url = <code>${this.heroesUrl}/${id}</code>;  // 构建url</hero></p>
-<p>  return this.http.get<hero>(url).pipe(<br>    tap(_ =&gt; this.log(<code>fetched hero id=${id}</code>)),<br>    catchError(this.handleError<hero>(<code>getHero id=${id}</code>))<br>  );<br>}</hero></hero></p>
-<h3 id="修改英雄"><a href="#修改英雄" class="headerlink" title="修改英雄"></a>修改英雄</h3><p>httpOptions = {<br>  headers: new HttpHeaders({ ‘Content-Type’: ‘application/json’ })<br>};</p>
-<p>updateHero(hero: Hero): Observable<any> {<br>  return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(<br>    tap(_ =&gt; this.log(<code>updated hero id=${hero.id}</code>)),<br>    catchError(this.handleError<any>(‘updateHero’))<br>  );<br>}</any></any></p>
+<h3 id="窥探-Observable"><a href="#窥探-Observable" class="headerlink" title="窥探 Observable"></a>窥探 Observable</h3><p>使用 RxJS 的 tap( ) 查看 使用 传出Observable 的值，但不会改变值本身<br>hero.service.ts代码如下：</p>
+<pre><code class="js">getHeroes( ): Observable&lt;Hero[ ]&gt; {
+  return this.http.get&lt;Hero[]&gt;(this.heroesUrl)
+    .pipe(
+      tap(_ =&gt; this.log('fetched heroes')),
+      catchError(this.handleError&lt;Hero[]&gt;('getHeroes', []))
+    );
+}
+</code></pre>
+<h3 id="通过-id-获取英雄"><a href="#通过-id-获取英雄" class="headerlink" title="通过 id 获取英雄"></a>通过 id 获取英雄</h3><pre><code class="js">hero.service.ts代码如下：
+getHero(id: number): Observable&lt;Hero&gt; {
+  const url = `${this.heroesUrl}/${id}`;  // 构建url
+
+  return this.http.get&lt;Hero&gt;(url).pipe(
+    tap(_ =&gt; this.log(`fetched hero id=${id}`)),
+    catchError(this.handleError&lt;Hero&gt;(`getHero id=${id}`))
+  );
+}
+</code></pre>
+<h3 id="修改英雄"><a href="#修改英雄" class="headerlink" title="修改英雄"></a>修改英雄</h3><pre><code class="js">httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
+updateHero(hero: Hero): Observable&lt;any&gt; {
+  return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+    tap(_ =&gt; this.log(`updated hero id=${hero.id}`)),
+    catchError(this.handleError&lt;any&gt;('updateHero'))
+  );
+}
+</code></pre>
 <h3 id="添加新英雄"><a href="#添加新英雄" class="headerlink" title="添加新英雄"></a>添加新英雄</h3><p>return this.http.post<hero>(this.heroesUrl, hero, this.httpOptions).pipe()</hero></p>
-<h3 id="删除某个英雄"><a href="#删除某个英雄" class="headerlink" title="删除某个英雄"></a>删除某个英雄</h3><p>heroes.component.ts代码如下：<br>delete(hero: Hero): void {<br>  // 去掉被删除数据后的列表<br>  this.heroes = this.heroes.filter(h =&gt; h !== hero);<br>  this.heroService.deleteHero(hero).subscribe();<br>}</p>
-<p>hero.service.ts<br>deleteHero(hero: Hero | number): Observable<hero> {<br>  const id = typeof hero === ‘number’ ? hero : hero.id;<br>  const url = <code>${this.heroesUrl}/${id}</code>;</hero></p>
-<p>  return this.http.delete<hero>(url, this.httpOptions).pipe(<br>    tap(_ =&gt; this.log(<code>deleted hero id=${id}</code>)),<br>    catchError(this.handleError<hero>(‘deleteHero’))<br>  );<br>}</hero></hero></p>
+<h3 id="删除某个英雄"><a href="#删除某个英雄" class="headerlink" title="删除某个英雄"></a>删除某个英雄</h3><p>heroes.component.ts代码如下：</p>
+<pre><code class="js">delete(hero: Hero): void {
+  // 去掉被删除数据后的列表
+  this.heroes = this.heroes.filter(h =&gt; h !== hero);
+  this.heroService.deleteHero(hero).subscribe();
+}
+
+hero.service.ts
+deleteHero(hero: Hero | number): Observable&lt;Hero&gt; {
+  const id = typeof hero === 'number' ? hero : hero.id;
+  const url = `${this.heroesUrl}/${id}`;
+
+  return this.http.delete&lt;Hero&gt;(url, this.httpOptions).pipe(
+    tap(_ =&gt; this.log(`deleted hero id=${id}`)),
+    catchError(this.handleError&lt;Hero&gt;('deleteHero'))
+  );
+}
+</code></pre>
 <h3 id="根据名字搜索"><a href="#根据名字搜索" class="headerlink" title="根据名字搜索"></a>根据名字搜索</h3><p> 当用户在搜索框中输入名字时，会不断发送HTTP 请求，目标是发出尽可能少的必要请求<br>hero.service.ts</p>
-<pre><code>searchHeroes(term: string): Observable&lt;Hero[]&gt; {
+<pre><code class="js">searchHeroes(term: string): Observable&lt;Hero[]&gt; {
   if (!term.trim()) {
     // if not search term, return empty hero array.
     return of([]);
@@ -167,21 +237,21 @@ goBack(): void {
 }
 </code></pre>
 <p>展示搜索结果的列表<br>hero-search.component.html</p>
-<div id="search-component">
-  <h4><label for="search-box">Hero Search</label></h4>
+<pre><code class="html">&lt;div id="search-component"&gt;
+  &lt;h4&gt;&lt;label for="search-box"&gt;Hero Search&lt;/label&gt;&lt;/h4&gt;
 
-<p>  &lt;input #searchBox id=”search-box” (input)=”search(searchBox.value)” /&gt;</p>
-  <ul class="search-result">
-    <li *ngfor="let hero of heroes$ | async">
-      <a routerlink="/detail/">
-        
-      </a>
-    </li>
-  </ul>
-</div>
-$ 是一个约定，表示 heroes$ 是一个 Observable 而不是数组
-由于 *ngFor 不能直接使用 Observable，要使用管道字符（|），后面跟着 async表示 AsyncPipe 管道，它会自动订阅 Observable，组件就不再需要订阅heroes$
+  &lt;input #searchBox id="search-box" (input)="search(searchBox.value)" /&gt;
 
+  &lt;ul class="search-result"&gt;
+    &lt;li *ngFor="let hero of heroes$ | async" &gt;
+      &lt;a routerLink="/detail/{{hero.id}}"&gt;
+        {{hero.name}}
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+<p>$ 是一个约定，表示 heroes$ 是一个 Observable 而不是数组<br>由于 *ngFor 不能直接使用 Observable，要使用管道字符（|），后面跟着 async表示 AsyncPipe 管道，它会自动订阅 Observable，组件就不再需要订阅heroes$</p>
 <h3 id="RxJS-Subject-类型的-searchTerms"><a href="#RxJS-Subject-类型的-searchTerms" class="headerlink" title="RxJS Subject 类型的 searchTerms"></a>RxJS Subject 类型的 searchTerms</h3><pre><code class="js">private searchTerms = new Subject&lt;string&gt;( );
 search(term: string): void {
   this.searchTerms.next(term);
