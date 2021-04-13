@@ -1,0 +1,314 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>css-basic</title><meta name="description" content="Front-end artist"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/avatar.jpg"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="css
+css3增加的大量样式、动画、3D特效和移动端特性
+内嵌style
+外链link
+link rel=”stylesheet” href=”…”
+
+
+导入style @import(url(xxx))
+行内式，后台使用
+
+选择器
+标签选择器：常用于标签初始化
+id选择器：#前缀
+class选择器 .前缀
+原子类：将所有的常用字号、文字颜色、行高、外边距、内边距等都设置为单独的类
+复合选择器 li.class
+后代选择器：空格表示后代 .box p{}
+交集选择器：h3.spec
+并集选择器：ul, ol {}
+伪类是添加到选择器的描述性词语，指定要选择的元素的特殊状态
+超级链接拥有4个特殊状态
+a:link 未访问
+a:visited 已访问
+a:hover 悬停
+a:active 按下按键但是还没有.."><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Hendry5479" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Hendry5479's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">css-basic</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#css"><span class="toc-text">css</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%87%8D%E8%AE%A1%E7%AE%97"><span class="toc-text">权重计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS3%E6%96%B0%E5%A2%9E%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">CSS3新增选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E4%BC%AA%E7%B1%BB"><span class="toc-text">新增伪类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E5%85%83%E7%B4%A0"><span class="toc-text">伪元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#color"><span class="toc-text">color</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#font-size"><span class="toc-text">font-size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#font%E5%90%88%E5%86%99%E5%B1%9E%E6%80%A7"><span class="toc-text">font合写属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E6%80%A7"><span class="toc-text">继承性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E5%B1%9E%E6%80%A7"><span class="toc-text">字体属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E9%A1%BA%E5%BA%8Fz-index%E5%B1%9E%E6%80%A7"><span class="toc-text">堆叠顺序z-index属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8D"><span class="toc-text">固定定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E6%A1%86%E7%9A%84%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="toc-text">边框的三要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#border-radius"><span class="toc-text">border-radius</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B4%E5%BD%B1"><span class="toc-text">阴影</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%B8%90%E5%8F%98"><span class="toc-text">线性渐变</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%A7%81%E6%9C%89%E5%89%8D%E7%BC%80"><span class="toc-text">浏览器私有前缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%84%E5%90%91%E6%B8%90%E5%8F%98"><span class="toc-text">径向渐变</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC%E5%8F%98%E5%BD%A2"><span class="toc-text">旋转变形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%A9%E6%94%BE%E5%8F%98%E5%BD%A2"><span class="toc-text">缩放变形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%9C%E5%88%87%E5%8F%98%E5%BD%A2"><span class="toc-text">斜切变形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E7%A7%BB%E5%8F%98%E5%BD%A2"><span class="toc-text">位移变形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3D%E6%97%8B%E8%BD%AC"><span class="toc-text">3D旋转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#perspective%E5%B1%9E%E6%80%A7"><span class="toc-text">perspective属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E7%A7%BB%E5%8A%A8"><span class="toc-text">空间移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transition%E8%BF%87%E6%B8%A1"><span class="toc-text">transition过渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB"><span class="toc-text">动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E8%B0%83%E7%94%A8"><span class="toc-text">动画调用</span></a></li></ol></li></ol></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/css"><i class="tag post-item-tag">css</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">css-basic</h1><time class="has-text-grey" datetime="2021-04-12T23:52:37.690Z">2021-04-13</time><article class="mt-2 post-content"><h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><ul>
+<li>css3增加的大量样式、动画、3D特效和移动端特性</li>
+<li>内嵌style</li>
+<li>外链link<ul>
+<li>link rel=”stylesheet” href=”…”</li>
+</ul>
+</li>
+<li>导入style @import(url(xxx))</li>
+<li>行内式，后台使用</li>
+</ul>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><ul>
+<li>标签选择器：常用于标签初始化</li>
+<li>id选择器：#前缀</li>
+<li>class选择器 .前缀</li>
+<li>原子类：将所有的常用字号、文字颜色、行高、外边距、内边距等都设置为单独的类</li>
+<li>复合选择器 li.class</li>
+<li>后代选择器：空格表示后代 .box p{}</li>
+<li>交集选择器：h3.spec</li>
+<li>并集选择器：ul, ol {}</li>
+<li>伪类是添加到选择器的描述性词语，指定要选择的元素的特殊状态<ul>
+<li>超级链接拥有4个特殊状态</li>
+<li>a:link 未访问</li>
+<li>a:visited 已访问</li>
+<li>a:hover 悬停</li>
+<li>a:active 按下按键但是还没有松开按键</li>
+</ul>
+</li>
+</ul>
+<h3 id="权重计算"><a href="#权重计算" class="headerlink" title="权重计算"></a>权重计算</h3><ul>
+<li>id权重 &gt; class权重 &gt; 标签权重</li>
+</ul>
+<h3 id="CSS3新增选择器"><a href="#CSS3新增选择器" class="headerlink" title="CSS3新增选择器"></a>CSS3新增选择器</h3><ul>
+<li>.box&gt;p {} 直接后代元素 子选择器</li>
+<li>img+span {} 相邻兄弟选择器</li>
+<li>h3~span {} 通用兄弟选择器</li>
+<li>a~b {} 选择a之后所有同级的b元素</li>
+<li>序号选择器<ul>
+<li>:first-child</li>
+<li>:nth-child(an+b) 2n+1 == odd 2n == even 匹配属于其父元素的第 N 个子元素，不论元素的类型</li>
+<li>:nth-of-type(3) 第三个某特定类型的元素</li>
+<li>:nth-last-of-type(n)</li>
+</ul>
+</li>
+<li>属性选择器<br>img[alt=”xxx”]，带有alt属性的img标签<br><img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210223120015.png"><h3 id="新增伪类"><a href="#新增伪类" class="headerlink" title="新增伪类"></a>新增伪类</h3><img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210223120148.png"><h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3></li>
+<li>虚拟动态创建的元素，用双冒号表示</li>
+<li>::before，创建一个成为匹配的元素的第一个子元素，必须设置content</li>
+<li>::after</li>
+<li>::selection 应用于被用户高亮的部分，用鼠标圈中的部分</li>
+<li>::first-letter：选中某元素的第一个字母（必须是块级元素）</li>
+<li>::first-line：第一行</li>
+</ul>
+<h3 id="color"><a href="#color" class="headerlink" title="color"></a>color</h3><ul>
+<li>主要可以用英语单词、十六进制、rgb()、rgba()等表示法</li>
+<li>黑色是#000，白色是#fff，常见的灰色有#ccc、#333、#2f2f2f等</li>
+<li>rgb()表示法 color: rgb(255, 0, 0);</li>
+<li>rgba()表示法，最后一个参数表示透明度，0表示纯透明，1表示纯实心</li>
+</ul>
+<h3 id="font-size"><a href="#font-size" class="headerlink" title="font-size"></a>font-size</h3><ul>
+<li>网页文字正文字号通常是16px，浏览器最小支持10px字号</li>
+<li>font-weight属性设置字体的粗细程度，通常就用normal和bold两个值</li>
+<li>font-style属性设置字体的倾斜</li>
+<li>text-decoration属性设置文本的修饰线外观的（下划线、删除线）</li>
+<li>text-indent定义首行文本的缩进量，缩进两个字符写作2em; em表示字符宽度</li>
+<li>line-height用于定义行高，字体 + 间隙<ul>
+<li>line-height: 30px; </li>
+<li>line-height: 1.5; 字号的1.5倍<br>单行文本垂直居中：text-align: center;<h3 id="font合写属性"><a href="#font合写属性" class="headerlink" title="font合写属性"></a>font合写属性</h3></li>
+<li>font作为style, weight,size, height，family的合写</li>
+<li>font: 20px/1.5 Arial, “微软雅黑”;</li>
+<li>font: italic bold 20px/1.5 Arial, “微软雅黑”;</li>
+</ul>
+</li>
+</ul>
+<h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><ul>
+<li>文本相关的属性普遍具有继承性，只需要给祖先标签设置，即可在后代标签中生效</li>
+<li>通常会设置body标签的字号、颜色、行高等，当做整个网页的默认样式</li>
+<li>在继承的情况下，选择器权重计算失效，而是“就近原则” 谁描述得最靠近内容，听谁的</li>
+</ul>
+<h3 id="字体属性"><a href="#字体属性" class="headerlink" title="字体属性"></a>字体属性</h3><ul>
+<li>字体可以是列表形式，一般英语字体放到前面，后面的字体是前面字体的“后备”<br>``` js<br>@font-face {<br>font-family: ‘字体名称’;<br>font-display: swap;<br>src: url(‘eot字体文件地址’);<br>src: url(‘eot字体文件地址’) format(‘embedded-opentype’),<br>url(‘woff2字体文件地址’) format(‘woff2’),<br>url(‘woff字体文件地址’) format(‘woff’),<br>url(‘ttf字体文件地址’) format(‘truetype’),<br>url(‘svg字体文件地址’) format(‘svg’);<br>}</li>
+</ul>
+<pre><code>  + 阿里巴巴普惠体
+
+### 盒模型
+  + width/height + padding + border
+  + width单位是px，移动端涉及百分数、rem等单位
+  + 块级元素没有设置width时，会自动撑满，但不代表width会继承
+  + height如果不设置，会自动被内容撑开，没有内容，默认是0
+  + padding
+    + 上  左右  下
+    + 上  右  下  左
+    + 上下  左右
+  + 小属性层叠大属性
+  + margin
+    + 盒子之间的距离
+    + 开发时需要清除默认margin
+    + 盒子的水平居中
+      + margin设置为auto将水平居中
+      + 文本居中text-align和盒子居中是两个概念
+      + 盒子的垂直居中需要使用绝对定位
++ 块级元素不能并排显示，可设置宽高，width自动撑满，如div，section，header，li
++ 行内元素可以并排，不可设置宽高
+### 行内块
+  + img和表单元素，即可设置宽高，也可并排显示
+### 行内和块级的转换
+  + display:block, inline(少见), inline-block
+  + display:none，将元素隐藏，放弃位置
+  + visibility：hidden是隐藏，但仍有位置
+  + box-sizing： border-box; padding和boder将占据宽高，将用于移动网页制作
+
+### 浮动
+  + float:left;
+  + 浮动使用要点：要浮动，并排的盒子都要设置浮动
+  + 父盒子要有足够的宽度，否则子盒子会掉下去
+  + 子盒子会按顺序进行贴靠，如果没有足够空间，则会寻找再前一个兄弟元素
+  + 浮动的元素不再区分块级、行内元素，已经脱离了标准文档流，一律能够设置宽度和高度
+
+### BFC规范，独立容器
+  + 块级格式化上下文，独立容器
+  + 盒子不设height，子元素浮动脱离，无法撑起自身，没有形成BFC
+  ![](https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210224080334.png)
+  + BFC可以取消盒子margin塌陷
+    + 在标准文档流中，竖直方向（记住是竖直方向，左右方向的不会出现塌陷现象）的margin会出现叠加现象，即大margin会覆盖掉小margin，竖直方向的两个盒子中间只有一个较大的margin，这就是margin的塌陷现象。
+    + margin的塌陷现象分两种情况：1，兄弟关系的盒子 2 ，父子关系的盒子
+      1，兄弟关系的盒子margin塌陷的解决方法：
+        给上面的盒子加个margin-bottom（这个距离等于两个盒子之间的距离）或者给下面的盒子加个margin-top（这个距离等于两个盒子之间的距离）。
+      2 ，父子关系的盒子margin塌陷的解决方法：
+        给父盒子加上下边框或者给父盒子添加上下padding。
+  + BFC可以阻止元素被浮动元素覆盖
+
+### 清除浮动
+  + 浮动一定要封闭到一个盒子中，否则就会对页面后续元素产生影响
+  1.让浮动的父盒子成为BFC，最好的方法是overflow:hidden
+  2.给后面的父盒子设置clear:both，clear浮动影响，both表示两边
+  3.::after给盒子添加最后一个子元素，并设置clear:both
+
+### 定位
+### 相对定位：相对自己原来的位置
+  position:relative
+  ![](https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210224083600.png)
+  + 相对定位会在老家留坑，本质是原来的位置，只是渲染在新地方，不会对其他元素产生影响
+  + 用于微调位置，当作绝对定位的参考盒子
+### 绝对定位
+  + 以坐标进行位置精准描述，拥有自己的绝对位置
+  + 绝对定位脱离标准文档流，将释放自己的位置，对其他元素不会产生干扰，而是进行压盖
+  + 绝对定位的盒子并不是永远以浏览器作为基准点而是以自己祖先元素中，离自己最近的拥有定位属性的盒子，当做基准点。这个盒子通常是相对定位的，这个性质也叫作子绝父相
+  + 绝对定位的盒子垂直居中
+``` js
+    position: absolute;
+    top: 50%;
+    margin-top: -height/2;
+</code></pre>
+<h3 id="堆叠顺序z-index属性"><a href="#堆叠顺序z-index属性" class="headerlink" title="堆叠顺序z-index属性"></a>堆叠顺序z-index属性</h3><ul>
+<li><p>数值大的压住数值小的</p>
+</li>
+<li><p>用途：压盖遮罩，结合精灵图，结合JS实现动画</p>
+<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3></li>
+<li><p>固定定位只能以页面为参考点，没有子固父相这个性质</p>
+</li>
+<li><p>脱离标准文档流</p>
+</li>
+<li><p>固定定位的用途：“返回顶部”、“楼层导航”</p>
+</li>
+<li><p>脱离标准文档流的方法：浮动、绝对定位、固定定位</p>
+</li>
+</ul>
+<h3 id="边框的三要素"><a href="#边框的三要素" class="headerlink" title="边框的三要素"></a>边框的三要素</h3><ul>
+<li>border： 1px solid red;</li>
+<li>小属性：<ul>
+<li>border-width, border-color,</li>
+<li>border-style: solid, dashed, dotted</li>
+</ul>
+</li>
+<li>去掉边框：border-left: none;</li>
+<li>利用边框制作三角形</li>
+</ul>
+<h3 id="border-radius"><a href="#border-radius" class="headerlink" title="border-radius"></a>border-radius</h3><ul>
+<li>px单位，表示圆角的半径，百分数作单位，50%是圆角</li>
+</ul>
+<h3 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h3><ul>
+<li>box-shadow: 10px 20px 30px rgba(0,0,0,.4);</li>
+<li>x偏移，y偏移，模糊量，颜色</li>
+<li>box-shadow: 10px 20px 30px 40px rgba(0,0,0,.4);</li>
+<li>阴影延展</li>
+<li>box-shadow: inset 10px 20px 30px 40px rgba(0,0,0,.4);</li>
+<li>内阴影</li>
+<li>box-shadow属性值可以用逗号隔开多个，表示携带多个阴影</li>
+</ul>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>background-repeat</p>
+<ul>
+<li>repeat, repeat-x, repeat-y, norepeat<br>background-size：width, height; 等比例设置写auto</li>
+<li>contain和cover<ul>
+<li>contain智能容纳到盒子里，cover将改变尺寸撑满盒子<br>background-clip</li>
+</ul>
+</li>
+<li>border-box, padding-box, content-box<br>background-attachment</li>
+<li>决定背景图像的位置是在视口内固定，或者随着包含它的区块滚动</li>
+<li>fixed 内外滚动条不动</li>
+<li>local 都动</li>
+<li>scroll 内不动，外动 默认</li>
+</ul>
+<p>background-position</p>
+<ul>
+<li>CSS精灵可以减少HTTP请求数，加快网页显示速度。缺点是不方便测量、后期改动麻烦</li>
+</ul>
+<p>background: white url(images/archer.png) no-repeat center center;</p>
+<ul>
+<li>背景位置center center</li>
+</ul>
+<h3 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变"></a>线性渐变</h3><ul>
+<li>background-image: linear-gradient(to right, blue, red);<ul>
+<li>渐变方向 开始颜色 结束颜色</li>
+<li>渐变方向可以写成度数，45deg</li>
+<li>可以有多个颜色值，用百分数定义位置 yellow 20%<h3 id="浏览器私有前缀"><a href="#浏览器私有前缀" class="headerlink" title="浏览器私有前缀"></a>浏览器私有前缀</h3></li>
+</ul>
+</li>
+<li>对试验性质的css属性加标识</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210224134817.png"></p>
+<h3 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变"></a>径向渐变</h3><ul>
+<li>background-image: radial-gradient(50% 50%, red, blue);</li>
+<li>圆心坐标，中心颜色，边缘颜色</li>
+</ul>
+<h3 id="旋转变形"><a href="#旋转变形" class="headerlink" title="旋转变形"></a>旋转变形</h3><ul>
+<li>transform: rotate(45deg); 顺时针方向</li>
+<li>transform-origin 设置变换原点<h3 id="缩放变形"><a href="#缩放变形" class="headerlink" title="缩放变形"></a>缩放变形</h3></li>
+<li>transform: scale(3);<h3 id="斜切变形"><a href="#斜切变形" class="headerlink" title="斜切变形"></a>斜切变形</h3></li>
+<li>transform: skew(10deg, 10deg);<h3 id="位移变形"><a href="#位移变形" class="headerlink" title="位移变形"></a>位移变形</h3></li>
+<li>transform: translate(100px, 200px);</li>
+<li>与相对定位相似，老家留坑，形影分离<h3 id="3D旋转"><a href="#3D旋转" class="headerlink" title="3D旋转"></a>3D旋转</h3></li>
+<li>transform: rotateX(30deg); </li>
+</ul>
+<h3 id="perspective属性"><a href="#perspective属性" class="headerlink" title="perspective属性"></a>perspective属性</h3><ul>
+<li>定义透视强度，可以理解为“人眼到舞台的距离”</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210224160652.png"></p>
+<h3 id="空间移动"><a href="#空间移动" class="headerlink" title="空间移动"></a>空间移动</h3><ul>
+<li>transform: rotate(30deg) translateX(30px) translateZ(100px);</li>
+</ul>
+<h3 id="transition过渡"><a href="#transition过渡" class="headerlink" title="transition过渡"></a>transition过渡</h3><ul>
+<li><p>作用：添加补间动画</p>
+</li>
+<li><p>transition: width 1s linear 0s;</p>
+</li>
+<li><p>过渡属性，动画时长，变化速度曲线，延迟时间</p>
+</li>
+<li><p>所有数值类型的属性都可以参与过渡</p>
+</li>
+<li><p>背景颜色和文字颜色都可过渡</p>
+</li>
+<li><p>所有属性参与过渡，写all</p>
+</li>
+<li><p>transition: all 1s linear 0s;</p>
+</li>
+<li><p>缓动参数<br><img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210224234102.png"></p>
+</li>
+<li><p>贝塞尔曲线</p>
+</li>
+<li><p>transition: width 1s cubic-bezier(0.1, 0.7, 1.0, 0.1) 0s;</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://cubic-bezier.com/">https://cubic-bezier.com/</a></p>
+</li>
+</ul>
+<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><ul>
+<li><p>定义动画 @keyframes 关键帧</p>
+</li>
+<li><p>项目上线前，补上@-webkit-的私有前缀</p>
+<pre><code>@keyframes r {
+from {
+  transform: rotate(0);
+}
+
+to {
+  transform: rotate(360deg);
+}
+}
+</code></pre>
+<h3 id="动画调用"><a href="#动画调用" class="headerlink" title="动画调用"></a>动画调用</h3><ul>
+<li>使用animation调用动画</li>
+<li>animation: r 1s linear 0s 3;</li>
+<li>执行次数如果永远执行写infinite</li>
+<li>如果让动画的偶数次逆向执行，加上alternate参数</li>
+<li>如果让动画停止在结束状态，加上forwards</li>
+</ul>
+</li>
+</ul>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2021/04/13/node/Buffer/" title="buffer"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: buffer</span></a><a class="button is-default" href="/2021/04/13/html+css/html/" title="html-basic"><span class="has-text-weight-semibold">Next: html-basic</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><article class="mt-6 comment-container"><script async repo="Hendry5479/Hendry5479.github.io" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Hendry5479"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Hendry5479 2021</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/post.js"></script></body></html>
