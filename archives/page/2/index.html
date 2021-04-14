@@ -14,31 +14,33 @@ const buffer = Buffer.from(message)
 2.解码buffer.toString()  默认utf8
 3.allocbuffer = Buffer.alloc(8)buffer[1] = 0x88
 4.文件
-const fs = require('..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/13/node/Buffer/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210223120015.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/04/13/html+css/css/"><img class="post-cover-img js-img-fadeIn" src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210223120015.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/css"><i class="tag post-item-tag">css</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/13/html+css/css/">css-basic</a></h2><time class="has-text-grey" datetime="2021-04-12T23:52:37.690Z">2021-04-13</time><p class="is-flex-grow-2 mt-2">css
+const fs = require('..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/13/node/Buffer/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210223120015.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/04/13/html+css/css/"><img class="post-cover-img js-img-fadeIn" src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210223120015.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/css"><i class="tag post-item-tag">css</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/13/html+css/css/">css-basic</a></h2><time class="has-text-grey" datetime="2021-04-12T23:52:37.690Z">2021-04-13</time><p class="is-flex-grow-2 mt-2">css3
 css3增加的大量样式、动画、3D特效和移动端特性
+css的使用方式
 内嵌style
 外链link
 link rel=”stylesheet” href=”…”
 
 
 导入style @import(url(xxx))
-行内式，后台使用
+行内式，一边是后台调试使用
+
+
 
 选择器
 标签选择器：常用于标签初始化
-id选择器：#前缀
-class选择器 .前缀
+id选择器：# 前缀 #id
+class选择器 . 前缀 .class
 原子类：将所有的常用字号、文字颜色、行高、外边距、内边距等都设置为单独的类
 复合选择器 li.class
 后代选择器：空格表示后代 .box p{}
 交集选择器：h3.spec
 并集选择器：ul, ol {}
-伪类是添加到选择器的描述性词语，指定要选择的元素的特殊状态
+伪类是添加到选择器的描述性词语，指定元素的特殊状态
 超级链接拥有4个特殊状态
 a:link 未访问
 a:visited 已访问
-a:hover 悬停
-a:active 按下按键但是还没有..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/13/html+css/css/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210222165051.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/04/13/html+css/html/"><img class="post-cover-img js-img-fadeIn" src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210222165051.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/html"><i class="tag post-item-tag">html</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/13/html+css/html/">html-basic</a></h2><time class="has-text-grey" datetime="2021-04-12T23:52:23.425Z">2021-04-13</time><p class="is-flex-grow-2 mt-2">HTML列表：dl &amp;gt; dt &amp;gt; dd
+a:h..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/13/html+css/css/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210222165051.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/04/13/html+css/html/"><img class="post-cover-img js-img-fadeIn" src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210222165051.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/html"><i class="tag post-item-tag">html</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/13/html+css/html/">html-basic</a></h2><time class="has-text-grey" datetime="2021-04-12T23:52:23.425Z">2021-04-13</time><p class="is-flex-grow-2 mt-2">HTML列表：dl &amp;gt; dt &amp;gt; dd
 有序列表：ol &amp;gt; li
 无序列表：ul &amp;gt; li
 li不能单独使用, 必须放到ul或者ol中; ul的子标签只能是li
