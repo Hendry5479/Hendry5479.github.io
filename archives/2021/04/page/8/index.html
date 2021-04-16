@@ -1,0 +1,130 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Hendry5479's blog</title><meta name="description" content="Front-end artist"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/avatar.jpg"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/widget-post-list.css"><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Hendry5479" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Hendry5479's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><span>Archives · 2021</span></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-04T10:08:42.001Z">2021-04-04</time><p class="is-flex-grow-2 mt-2">const PENDING = 'pending'
+const FULFILLED = 'fulfilled'
+const REJECTED = 'rejected'
+
+class MPromise {
+  FULFILLED_CALLBACK_LIST = []
+  REJECTED_CALLBACK_LIST = []
+
+  _status = PENDING
+
+  constructor(fn) {
+    this.status = PENDING
+    this.value = null
+    this.reason = null
+
+    // fn execute immediately, with 2 parameters, if get error should  throw exce..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/04/interview/zw-inter/promise-class/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-03T14:38:51.000Z">2021-04-03</time><p class="is-flex-grow-2 mt-2">const PENDING = 'pending';
+const FULFILLED = 'fulfilled';
+const REJECTED = 'rejected';
+
+class MPromise {
+
+    FULFILLED_CALLBACK_LIST = [];
+    REJECTED_CALLBACK_LIST = [];
+    _status = PENDING; 
+
+    constructor(fn) {
+        // 初始状态为pending
+        this.status = PENDING;
+        this.value = null;
+        this.reason = null;
+
+        try {
+            /..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/03/interview/1.promise/promise-class/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-02T15:22:35.000Z">2021-04-02</time><p class="is-flex-grow-2 mt-2">{&quot;name&quot;:&quot;module-lesson&quot;,&quot;version&quot;:&quot;1.0.0&quot;,&quot;main&quot;:&quot;index.js&quot;,&quot;author&quot;:&quot;cbbfcd&quot;,&quot;license&quot;:&quot;MIT&quot;,&quot;devDependencies&quot;:{&quot;@babel/preset-env&quot;:&quot;^7.13.12&quot;,&quot;rollup&quot;:&quot;^2.44.0&quot;,&quot;rollup-plugin-babel&quot;:&quot;^4.4.0&quot;,&quot;rollup-plugin-commonjs&quot;:&quot;^10.1.0&quot;,&quot;rollup-plugin-node-resolve&quot;:&quot;^5.2.0&quot;},&quot;scripts&quot;:{&quot;build&quot;:&quot;rm -rf dist &amp;amp;&amp;amp; rollup -c&quot;},&quot;dependencies&quot;:{&quot;lodash&quot;:&quot;^4.17.21&quot;..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/02/interview/2.module/module-lesson/package/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-02T15:22:35.000Z">2021-04-02</time><p class="is-flex-grow-2 mt-2">{&quot;name&quot;:&quot;module-lesson&quot;,&quot;version&quot;:&quot;1.0.0&quot;,&quot;lockfileVersion&quot;:2,&quot;requires&quot;:true,&quot;packages&quot;:{&quot;&quot;:{&quot;version&quot;:&quot;1.0.0&quot;,&quot;license&quot;:&quot;MIT&quot;,&quot;dependencies&quot;:{&quot;lodash&quot;:&quot;^4.17.21&quot;},&quot;devDependencies&quot;:{&quot;@babel/preset-env&quot;:&quot;^7.13.12&quot;,&quot;rollup&quot;:&quot;^2.44.0&quot;,&quot;rollup-plugin-babel&quot;:&quot;^4.4.0&quot;,&quot;rollup-plugin-commonjs&quot;:&quot;^10.1.0&quot;,&quot;rollup-plugin-node-resolve&quot;:&quot;^5.2.0&quot;}},&quot;node_modules/@bab..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/02/interview/2.module/module-lesson/package-lock/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-02T03:20:10.000Z">2021-04-02</time><p class="is-flex-grow-2 mt-2">Generator 和 Async 简介在讲Generator之前, 咱们要来先了解另外一个概念, 迭代器.
+迭代器 Iterator迭代器Iterator 是 ES6 引入的一种新的遍历机制，同时也是一种特殊对象，它具有一些专门为迭代过程设计的专有接口。
+每个迭代器对象都有一个next()方法，每次调用都返回一个当前结果对象。当前结果对象中有两个属性：
+
+value：当前属性的值
+
+done：用于判断是否遍历结束，当没有更多可返回的数据时，返回true
+
+
+每调用一次next()方法，都会返回下一个可用的值，直到遍历结束。
+生成器 Generator生成器是一种返回迭代器的函数，通过function关键字后的星号(*)来表示，函数中会用到新的关键字yield。星号可以紧挨着function关键字，也可以在..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/02/interview/1.promise/generator%20&amp;%20async%20await/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-02T03:10:05.000Z">2021-04-02</time><p class="is-flex-grow-2 mt-2">function longTimeFn(time) {
+    return new Promise(resolve =&amp;gt; {
+        setTimeout(() =&amp;gt; {
+            resolve(time);
+        }, time);
+    })
+};
+
+function asyncFunc(generator) {
+    const iterator = generator(); // 接下来要执行next
+    // data为第一次执行之后的返回结果，用于传给第二次执行
+    const next = (data) =&amp;gt; {
+        const {
+            value,
+            done
+      ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/02/interview/1.promise/async/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-02T03:05:16.000Z">2021-04-02</time><p class="is-flex-grow-2 mt-2">function longTimeFn(time) {
+    return new Promise((resolve) =&amp;gt; {
+        setTimeout(() =&amp;gt; {
+            resolve(time);
+        }, time)
+    })
+}
+
+function* generator() {
+    const list = [1, 2, 3];
+    for (let i of list) {
+        yield i;
+    }
+}
+
+let g = generator();
+
+console.log(g.next()); // {value: 1, done: false}
+console.log(g.next()); // {va..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/02/interview/1.promise/generator/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-02T01:18:28.000Z">2021-04-02</time><p class="is-flex-grow-2 mt-2">一步步实现一个Promise
+平常用promise的时候, 是通过new关键字来new Promise(), 所以咱们应该用构造函数或者class来实现. 都2021年了, 咱们就用class来实现一下吧.
+class MPromise {
+    constructor() {
+
+    }
+}
+
+
+定义三种状态类型
+ ```js
+
+
+```
+
+
+设置初始状态
+class MPromise {
+    constructor() {
+        // 初始状态为pending
+        this.status = PENDING;
+        this.value = null;
+        this.reason = null;
+    }
+}
+
+
+resolve 和 reject ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/02/interview/1.promise/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAPromise/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-01T08:35:33.000Z">2021-04-01</time><p class="is-flex-grow-2 mt-2">PromiseA+规范术语
+promise 是一个有then方法的对象或者是函数，行为遵循本规范
+thenable 是一个有then方法的对象或者是函数
+value 是promise状态成功时的值，也就是resolve的参数, 包括各种数据类型, 也包括undefined/thenable或者是 promise
+reason 是promise状态失败时的值, 也就是reject的参数, 表示拒绝的原因
+exception 是一个使用throw抛出的异常值
+
+规范接下来分几部分来讲解PromiseA+规范. 
+Promise Statespromise应该有三种状态. 要注意他们之间的流转关系.
+
+pending
+ 1.1 初始的状态, 可改变. 1.2 一个promise在resolve或者reject前都..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/01/interview/1.promise/PromiseA+%E8%A7%84%E8%8C%83/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap"><a class="extend prev" rel="prev" href="/archives/2021/04/page/7/"><i class="iconfont icon-prev has-text-grey"></i></a><a class="page-number" href="/archives/2021/04/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/04/page/6/">6</a><a class="page-number" href="/archives/2021/04/page/7/">7</a><span class="page-number current">8</span></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container archives-widget is-in-archive-page"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">79</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">7</span></li></ul></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Hendry5479"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Hendry5479 2021</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></body></html>

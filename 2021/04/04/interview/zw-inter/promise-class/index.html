@@ -1,0 +1,225 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Hendry5479's blog</title><meta name="description" content="Front-end artist"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/avatar.jpg"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="const PENDING = 'pending'
+const FULFILLED = 'fulfilled'
+const REJECTED = 'rejected'
+
+class MPromise {
+  FULFILLED_CALLBACK_LIST = []
+  REJECTED_CALLBACK_LIST = []
+
+  _status = PENDING
+
+  constructor(fn) {
+    this.status = PENDING
+    this.value = null
+    this.reason = null
+
+    // fn execute immediately, with 2 parameters, if get error should  throw exce.."><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Hendry5479" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Hendry5479's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center"></p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile is-hidden"></div><div class="column is-9"><header class="my-4"></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle"></h1><time class="has-text-grey" datetime="2021-04-04T10:08:42.001Z">2021-04-04</time><article class="mt-2 post-content">const PENDING = 'pending'
+const FULFILLED = 'fulfilled'
+const REJECTED = 'rejected'
+
+class MPromise {
+  FULFILLED_CALLBACK_LIST = []
+  REJECTED_CALLBACK_LIST = []
+
+  _status = PENDING
+
+  constructor(fn) {
+    this.status = PENDING
+    this.value = null
+    this.reason = null
+
+    // fn execute immediately, with 2 parameters, if get error should  throw exception
+    try {
+      // 'bind' make sure 'this' point at the right way.
+      fn(this.resolve.bind(this), this.reject.bind(this))
+    } catch (e) {
+      this.reject(e)
+    }
+  }
+
+  get status() {
+    return this._status
+  }
+
+  set status(newStatus) {
+    this._status = newStatus
+    switch (newStatus) {
+      case FULFILLED: {
+        this.FULFILLED_CALLBACK_LIST.forEach((callback) =&gt; callback(this.value))
+        break
+      }
+      case REJECTED: {
+        this.REJECTED_CALLBACK_LIST.forEach((callback) =&gt; callback(this.reason))
+        break
+      }
+    }
+  }
+
+  resolve(value) {
+    if (this.status === PENDING) {
+      this.value = value
+      this.status = FULFILLED
+    }
+  }
+
+  reject(reason) {
+    if (this.status === PENDING) {
+      this.reason = reason
+      this.status = REJECTED
+    }
+  }
+
+  then(onFulfilled, onRejected) {
+    const fulFilledFn = this.isFunction(onFulfilled)
+      ? onFulfilled
+      : (value) =&gt; value
+    const rejectedFn = this.isFunction(onRejected)
+      ? onRejected
+      : (reason) =&gt; reason
+
+    // define function with catch
+    const fulFilledFnWithCatch = (resolve, reject) =&gt; {
+      queueMicrotask(() =&gt; {
+        try {
+          if (!this.isFunction(onFulfilled)) {
+            resolve(this.value)
+          } else {
+            const x = fulFilledFn(this.value)
+            this.resolvePromise(newPromise, x, resolve, reject)
+          }
+          resolve(this.value)
+        } catch (e) {
+          reject(e)
+        }
+      })
+    }
+
+    const rejectedFnWithCatch = (resolve, reject, newPromise) =&gt; {
+      queueMicrotask(() =&gt; {
+        try {
+          if (!this.isFunction(onRejected)) {
+            reject(this.reason)
+          } else {
+            const x = rejectedFn(this.reason)
+            this.resolvePromise(newPromise, x, resolve, reject)
+          }
+        } catch (e) {
+          reject(e)
+        }
+      })
+    }
+
+    switch (this.status) {
+      case FULFILLED: {
+        const newPromise = new MPromise((resolve, reject) =&gt;
+          fulFilledFnWithCatch(resolve, reject, newPromise)
+        )
+        return newPromise
+      }
+      case REJECTED: {
+        const newPromise = new MPromise((resolve, reject) =&gt;
+          rejectedFnWithCatch(resolve, reject, newPromise)
+        )
+        return newPromise
+      }
+      case PENDING: {
+        const newPromise = new MPromise((resolve, reject) =&gt; {
+          this.FULFILLED_CALLBACK_LIST.push(() =&gt;
+            fulFilledFnWithCatch(resolve, reject)
+          )
+          this.REJECTED_CALLBACK_LIST.push(() =&gt;
+            rejectedFnWithCatch(resolve, reject)
+          )
+        })
+        return newPromise
+      }
+    }
+  }
+
+  catch (onRejected) {
+    return this.then(null, onRejected)
+  }
+
+  resolvePromise(newPromise, x, resolve, reject) {
+    if (newPromise === x) {
+      return reject(new TypeError('error'))
+    }
+    if (x instanceof MPromise) {
+      x.then((y) =&gt; {
+        this.resolvePromise(newPromise(newPromise, y, resolve, reject))
+      }, reject)
+    } else if (typeof x === 'object' || this.isFunction(x)) {
+      if (x === null) {
+        return resolve(x)
+      }
+
+      let then = null
+      try {
+        then = x.then
+      } catch (error) {
+        return reject(error)
+      }
+
+      if (this.isFunction(then)) {
+        let called = false
+        try {
+          then.call(
+            x,
+            (y) =&gt; {
+              if (called) {
+                return
+              }
+              called = true
+              this.resolvePromise(newPromise, y, resolve, reject)
+            },
+            (r) =&gt; {
+              if (called) {
+                return
+              }
+              called = true
+              reject(r)
+            }
+          )
+        } catch (error) {
+          if (called) {
+            return
+          }
+          reject(error)
+        }
+      } else {
+      }
+    } else {
+      resolve(x)
+    }
+  }
+
+  isFunction(param) {
+    return typeof param === 'function'
+  }
+}
+
+const test = new MPromise((resolve, reject) =&gt; {
+  setTimeout(() =&gt; {
+    // resolve(1111)
+    reject(2222)
+  }, 1000)
+}).then((value) =&gt; {
+  console.log('完成' + value)
+  console.log(test)
+}).catch((reason) =&gt; {
+  console.log('error' + reason)
+  console.log(test)
+})
+
+console.log(test)
+
+// 补充
+// 实例方法存储在原型链上，静态方法存储在类上
+// MPromise.prototype.then
+// MPromise.aaa
+
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2021/04/04/interview/2.module/module-lesson/src/a/" title=""><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: </span></a><a class="button is-default" href="/2021/04/03/interview/1.promise/promise-class/" title=""><span class="has-text-weight-semibold">Next: </span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><article class="mt-6 comment-container"><script async repo="Hendry5479/Hendry5479.github.io" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Hendry5479"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Hendry5479 2021</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/post.js"></script></body></html>
