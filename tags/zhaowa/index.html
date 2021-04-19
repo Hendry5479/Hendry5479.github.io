@@ -10,7 +10,7 @@ type, interface
 
 联合类型 | (联合类型一次只能一种类型；而交叉类型每次都是多个类型的合并类型。)
 
-交叉类型 &amp;amp; (联合类型一次只能一种类型；而交叉类型每次都是多个类型的合并类型。)
+交叉类型 &amp;amp; 
 
 typeof
 function toArray(x: number): Array&amp;lt;number&amp;gt; {
@@ -21,7 +21,10 @@ type Func = typeof toArray; // -&amp;gt; (x: number) =&amp;gt; number[]
 
 keyof：get all keys of the obj
 interface Person {
- name: ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/16/interview/zw-inter/(4)typescript/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/zhaowa"><i class="tag post-item-tag">zhaowa</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/16/interview/zw-inter/(3)browser/">(3)browser</a></h2><time class="has-text-grey" datetime="2021-04-16T12:19:07.467Z">2021-04-16</time><p class="is-flex-grow-2 mt-2">BOM Objecthttps://segmentfault.com/a/1190000014212576
+ name: string;
+ age: number;
+}
+type K1 = ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/16/interview/zw-inter/(4)typescript/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/zhaowa"><i class="tag post-item-tag">zhaowa</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/16/interview/zw-inter/(3)browser/">(3)browser</a></h2><time class="has-text-grey" datetime="2021-04-16T12:19:07.467Z">2021-04-16</time><p class="is-flex-grow-2 mt-2">BOM Objecthttps://segmentfault.com/a/1190000014212576
 什么是浏览器对象模型BOM ：Browser Object Model（浏览器对象模型）,浏览器模型提供了独立于内容的、可以与浏览器窗口进行滑动的对象结构，就是浏览器提供的 API其主要对象有：
 
 window 对象——BOM 的核心，是 js 访问浏览器的接口，也是 ES 规定的 Global 对象
@@ -30,24 +33,15 @@ navigation 对象：获取浏览器的系统信息
 screen 对象：用来表示浏览器窗口外部的显示器的信息等
 history 对象：保存用户上网的历史信息
 
-W..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/16/interview/zw-inter/(3)browser/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/zhaowa"><i class="tag post-item-tag">zhaowa</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/16/interview/zw-inter/(2)module/">(2)module</a></h2><time class="has-text-grey" datetime="2021-04-16T12:18:53.301Z">2021-04-16</time><p class="is-flex-grow-2 mt-2">AMDconst def = new Map();
-
-// AMD mini impl
-const defaultOptions = {
-  paths: ''
-}
-
-// From CDN
-const __import = (url) =&amp;gt; {
-  return new Promise((resove, reject) =&amp;gt; {
-    System.import(url).then(resove, reject)
-  })
-}
-
-// normal script
-const __load = (url) =&amp;gt; {
-  return new Promise((resolve, reject) =&amp;gt; {
-    const head = document.getElementsByT..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/16/interview/zw-inter/(2)module/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/zhaowa"><i class="tag post-item-tag">zhaowa</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/12/interview/zw-inter/(1)promise/">(1)promise</a></h2><time class="has-text-grey" datetime="2021-04-11T23:54:43.728Z">2021-04-12</time><p class="is-flex-grow-2 mt-2">PromiseA+states
+W..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/16/interview/zw-inter/(3)browser/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/zhaowa"><i class="tag post-item-tag">zhaowa</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/16/interview/zw-inter/(2)module/">(2)module</a></h2><time class="has-text-grey" datetime="2021-04-16T12:18:53.301Z">2021-04-16</time><p class="is-flex-grow-2 mt-2">CJS
+暴露模块暴露模块有两种方式：module.exports = {}exports.xxx = ‘xxx’内部实现中，module.exports = exports，即module.export是export的一个引用最终导出的是module.export如果export被重新赋值，module.export的指向将会失效，因此导入module时会显示为空对象因此，使用module.export是较安全的做法
+引入模块require(), node中的全局方法，并不是cjs独有的
+// 直接导入  
+const path = require('path');  
+// 相对路径  
+const m1 = require('./m1.js');  
+// 直接导入  
+const lodash = r..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/16/interview/zw-inter/(2)module/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/zhaowa"><i class="tag post-item-tag">zhaowa</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/12/interview/zw-inter/(1)promise/">(1)promise</a></h2><time class="has-text-grey" datetime="2021-04-11T23:54:43.728Z">2021-04-12</time><p class="is-flex-grow-2 mt-2">PromiseA+states
 pending initial state, can change into fulfilled through resolve / rejected through reject
 fullfilled final state, stable, must contain value
 rejected final state, stable, must contain reasonpending -&amp;gt; resolve(value) -&amp;gt; fulfilledpending -&amp;gt; reject(reason) -&amp;gt; rejected
@@ -55,7 +49,7 @@ rejected final state, stable, must contain reasonpending -&amp;gt; resolve(value
 thenpromise.then(onFulfilled, onRejected)
 
 
-onFulfilled and on..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/12/interview/zw-inter/(1)promise/">Read more</a></section></article></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container tag-widget is-in-tag-page"><h3>Tags</h3><section><a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93"><span class="tag post-item-tag" style="margin-bottom: 5px;">面试之道</span></a><a href="/tags/algorithm"><span class="tag post-item-tag" style="margin-bottom: 5px;">algorithm</span></a><a href="/tags/angular"><span class="tag post-item-tag" style="margin-bottom: 5px;">angular</span></a><a href="/tags/visual"><span class="tag post-item-tag" style="margin-bottom: 5px;">visual</span></a><a href="/tags/css"><span class="tag post-item-tag" style="margin-bottom: 5px;">css</span></a><a href="/tags/html"><span class="tag post-item-tag" style="margin-bottom: 5px;">html</span></a><a href="/tags/node"><span class="tag post-item-tag" style="margin-bottom: 5px;">node</span></a><a href="/tags/vue"><span class="tag post-item-tag" style="margin-bottom: 5px;">vue</span></a><a href="/tags/webpack"><span class="tag post-item-tag" style="margin-bottom: 5px;">webpack</span></a><a href="/tags/zhaowa"><span class="tag post-item-tag" style="margin-bottom: 5px;">zhaowa</span></a></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+onFulfilled and on..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/12/interview/zw-inter/(1)promise/">Read more</a></section></article></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container tag-widget is-in-tag-page"><h3>Tags</h3><section><a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93"><span class="tag post-item-tag" style="margin-bottom: 5px;">面试之道</span></a><a href="/tags/algorithm"><span class="tag post-item-tag" style="margin-bottom: 5px;">algorithm</span></a><a href="/tags/angular"><span class="tag post-item-tag" style="margin-bottom: 5px;">angular</span></a><a href="/tags/visual"><span class="tag post-item-tag" style="margin-bottom: 5px;">visual</span></a><a href="/tags/css"><span class="tag post-item-tag" style="margin-bottom: 5px;">css</span></a><a href="/tags/html"><span class="tag post-item-tag" style="margin-bottom: 5px;">html</span></a><a href="/tags/node"><span class="tag post-item-tag" style="margin-bottom: 5px;">node</span></a><a href="/tags/vue"><span class="tag post-item-tag" style="margin-bottom: 5px;">vue</span></a><a href="/tags/webpack"><span class="tag post-item-tag" style="margin-bottom: 5px;">webpack</span></a><a href="/tags/zhaowa"><span class="tag post-item-tag" style="margin-bottom: 5px;">zhaowa</span></a><a href="/tags/js"><span class="tag post-item-tag" style="margin-bottom: 5px;">js</span></a></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
 window.addEventListener('resize', $claudia.throttle(function () {
     var images = document.querySelectorAll('.js-img-fadeIn')

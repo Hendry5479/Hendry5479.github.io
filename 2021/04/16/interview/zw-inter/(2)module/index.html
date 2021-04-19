@@ -1,27 +1,84 @@
 <!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>(2)module</title><meta name="description" content="Front-end artist"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
-<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/avatar.jpg"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="AMDconst def = new Map();
-
-// AMD mini impl
-const defaultOptions = {
-  paths: ''
-}
-
-// From CDN
-const __import = (url) =&amp;gt; {
-  return new Promise((resove, reject) =&amp;gt; {
-    System.import(url).then(resove, reject)
-  })
-}
-
-// normal script
-const __load = (url) =&amp;gt; {
-  return new Promise((resolve, reject) =&amp;gt; {
-    const head = document.getElementsByT.."><meta name="generator" content="Hexo 5.4.0">
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/avatar.jpg"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="CJS
+暴露模块暴露模块有两种方式：module.exports = {}exports.xxx = ‘xxx’内部实现中，module.exports = exports，即module.export是export的一个引用最终导出的是module.export如果export被重新赋值，module.export的指向将会失效，因此导入module时会显示为空对象因此，使用module.export是较安全的做法
+引入模块require(), node中的全局方法，并不是cjs独有的
+// 直接导入  
+const path = require('path');  
+// 相对路径  
+const m1 = require('./m1.js');  
+// 直接导入  
+const lodash = r.."><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Hendry5479" type="application/atom+xml">
-</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Hendry5479's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">(2)module</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AMD"><span class="toc-text">AMD</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CMD"><span class="toc-text">CMD</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CJS"><span class="toc-text">CJS</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/zhaowa"><i class="tag post-item-tag">zhaowa</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">(2)module</h1><time class="has-text-grey" datetime="2021-04-16T12:18:53.301Z">2021-04-16</time><article class="mt-2 post-content"><h1 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h1><pre><code class="js">const def = new Map();
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Hendry5479's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">(2)module</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%B4%E9%9C%B2%E6%A8%A1%E5%9D%97"><span class="toc-text">暴露模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%85%A5%E6%A8%A1%E5%9D%97"><span class="toc-text">引入模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%AE%9A%E4%BD%8D"><span class="toc-text">文件定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cjs%E7%89%B9%E7%82%B9"><span class="toc-text">cjs特点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AMD"><span class="toc-text">AMD</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#usage"><span class="toc-text">usage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AMD-mini-impl"><span class="toc-text">AMD mini impl</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CMD"><span class="toc-text">CMD</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CJS"><span class="toc-text">CJS</span></a></div><div class="column is-9"><header class="my-4"><a href="/tags/zhaowa"><i class="tag post-item-tag">zhaowa</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">(2)module</h1><time class="has-text-grey" datetime="2021-04-16T12:18:53.301Z">2021-04-16</time><article class="mt-2 post-content"><p>CJS</p>
+<h3 id="暴露模块"><a href="#暴露模块" class="headerlink" title="暴露模块"></a>暴露模块</h3><p>暴露模块有两种方式：<br>module.exports = {}<br>exports.xxx = ‘xxx’<br>内部实现中，module.exports = exports，即module.export是export的一个引用<br>最终导出的是module.export<br>如果export被重新赋值，module.export的指向将会失效，因此导入module时会显示为空对象<br>因此，使用module.export是较安全的做法</p>
+<h3 id="引入模块"><a href="#引入模块" class="headerlink" title="引入模块"></a>引入模块</h3><p>require(), node中的全局方法，并不是cjs独有的</p>
+<pre><code class="JS">// 直接导入  
+const path = require('path');  
+// 相对路径  
+const m1 = require('./m1.js');  
+// 直接导入  
+const lodash = require('lodash');  
+</code></pre>
+<p>三种模块的查找方式：<br>核心模块，直接跳过路径分析和文件定位<br>路径模块，直接得出相对路径<br>自定义模块（路径分析），从当前目录的node_modules里查找到根目录下，没有,就抛出错误</p>
+<h3 id="文件定位"><a href="#文件定位" class="headerlink" title="文件定位"></a>文件定位</h3><p>在NodeJS中, 省略了扩展名的文件, 会依次补充上.js, .node, .json来尝试,<br>如果传入的是一个目录, 那么NodeJS会把它当成一个包来看待, 会采用以下方式确定文件名<br>第一步, 找出目录下的package.json, 用JSON.parse()解析出main字段<br>第二步, 如果main字段指定的文件还是省略了扩展, 那么会依次补充.js, .node, .json尝试.<br>第三步, 如果main制定的文件不存在, 或者不存在package.json, 那么会默认加载这个目录下的index.js, index.node, index.json文件.</p>
+<p>以上就是文件定位的过程, 再搭配上路径分析的过程, 进行排列组合, 这得有多少种可能呀. 所以说, 自定义模块的引入, 是最费性能的</p>
+<h3 id="cjs特点"><a href="#cjs特点" class="headerlink" title="cjs特点"></a>cjs特点</h3><p>所有代码都运行在模块作用域，不会污染全局作用域；<br>模块是同步加载的，即只有加载完成，才能执行后面的操作；<br>模块在首次执行后就会缓存，再次加载只返回缓存结果，如果想要再次执行，可清除缓存；<br>CommonJS输出是值的拷贝(即，require返回的值是被输出的值的拷贝，模块内部的变化也不会影响这个值)。</p>
+<p>缓存举例</p>
+<pre><code class="js">_m1.js_:
 
-// AMD mini impl
+var name = 'lindaidai';  
+var sex = 'boy';  
+  
+exports.name = name;  
+exports.sex = sex;  
+_test.js_:
+
+var m1 = require('./m1');  
+m1.sex = 'girl';  
+console.log(m1);  
+  
+var m2 = require('./m1');  
+console.log(m2);  
+// test同样依赖于m1，但是我会在其中导入两次m1，第一次导入的时候修改了m1.sex的值，第二次的时候命名为m2，但是结果m1和m2竟然是相等的
+// node test.js  
+// { name: 'lindaidai', sex: 'girl' }  
+// { name: 'lindaidai', sex: 'girl' }
+</code></pre>
+<h1 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h1><p>cjs规范不太适用于浏览器端，例如同步加载特点，浏览器不适用<br>CommonJS规范对服务器端和浏览器的不同，它有助于让你理解为什么说CommonJS不太适合于客户端：<br>服务器端所有的模块都存放在本地硬盘中，可以同步加载完成，等待时间就是硬盘的读取时间。<br>浏览器，所有的模块都放在服务器端，等待时间取决于网速的快慢，可能要等很长时间，浏览器处于假死状态。</p>
+<p>Asynchronous Module Definition</p>
+<p>采用异步方式加载模块，模块的加载不影响它后面语句的运行。<br>所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行</p>
+<h2 id="usage"><a href="#usage" class="headerlink" title="usage"></a>usage</h2><pre><code class="js">// config
+rj.config({ paths: {
+  'jquery': 'https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js'
+} });
+
+// define module
+rj('moduleA', [], function() {
+  return 'hello zhuawa!';
+})
+
+// load module
+rj(['jquery'], function(jquery) {
+  // ....
+})
+
+// action
+define('a', function() {
+  return {
+    run: function() {
+      'a run'
+    }
+  }
+})
+
+require(['a'], function(a) {
+  a.run()
+})
+</code></pre>
+<h2 id="AMD-mini-impl"><a href="#AMD-mini-impl" class="headerlink" title="AMD mini impl"></a>AMD mini impl</h2><pre><code class="js">const def = new Map();
+
+
 const defaultOptions = {
   paths: ''
 }
@@ -82,8 +139,7 @@ require = (deps, factory) =&gt; {
   .then(instances =&gt; factory(...instances))
 }
 </code></pre>
-<h1 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h1><pre><code class="js">
-const modules = {};
+<h1 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h1><pre><code class="js">const modules = {};
 const exports = {};
 sj = {};
 
@@ -170,14 +226,10 @@ const cache = {}
       name: mn,
       exports: {}
     }
-
     modules[mn](module, exports, require)
-
     return module.exports
   }
-
   return require('index.js')
-
 })({
   'a.js': function(module, exports, require) {
      // ...
