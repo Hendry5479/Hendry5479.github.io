@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hendry5479.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="语法$(selector).action() 文档就绪事件所有jq函数都在documenet.ready函数中为了防止文档在完全加载之前运行jQuery代码，需要DOM加载完成后才能对DOM操作$(document).ready(function(){} 简写成 $(function(){}) jQuery选择器元素选择器 $(function() {   $(&#39;button&#39;).click(fu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery">
+<meta property="og:url" content="https://hendry5479.github.io/2021/04/19/js/jQuery/index.html">
+<meta property="og:site_name" content="Hendry5479">
+<meta property="og:description" content="语法$(selector).action() 文档就绪事件所有jq函数都在documenet.ready函数中为了防止文档在完全加载之前运行jQuery代码，需要DOM加载完成后才能对DOM操作$(document).ready(function(){} 简写成 $(function(){}) jQuery选择器元素选择器 $(function() {   $(&#39;button&#39;).click(fu">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210123214500.png">
+<meta property="article:published_time" content="2021-04-19T11:42:40.304Z">
+<meta property="article:modified_time" content="2021-04-19T11:43:19.509Z">
+<meta property="article:author" content="cjh">
+<meta property="article:tag" content="js">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210123214500.png">
+
+<link rel="canonical" href="https://hendry5479.github.io/2021/04/19/js/jQuery/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>jQuery | Hendry5479</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Hendry5479" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hendry5479</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Artist Hendry</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://hendry5479.github.io/2021/04/19/js/jQuery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="cjh">
+      <meta itemprop="description" content="Front-end artist">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hendry5479">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          jQuery
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-04-19 19:42:40 / Modified: 19:43:19" itemprop="dateCreated datePublished" datetime="2021-04-19T19:42:40+08:00">2021-04-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/basic/" itemprop="url" rel="index"><span itemprop="name">basic</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>$(selector).action()</p>
+<h3 id="文档就绪事件"><a href="#文档就绪事件" class="headerlink" title="文档就绪事件"></a>文档就绪事件</h3><p>所有jq函数都在documenet.ready函数中<br>为了防止文档在完全加载之前运行jQuery代码，需要DOM加载完成后才能对DOM操作<br>$(document).ready(function(){} 简写成 $(function(){})</p>
+<h3 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h3><p>元素选择器</p>
+<pre><code class="javascript">$(function() {
+  $('button').click(function() {
+    $('p').hide()
+  })
+})
+</code></pre>
+<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="#id选择器"></a>#id选择器</h3><p>$(‘#test’).hide()</p>
+<h3 id="class选择器"><a href="#class选择器" class="headerlink" title=".class选择器"></a>.class选择器</h3><p>$(‘.wrapper’).hide()</p>
+<h3 id="其他选择器"><a href="#其他选择器" class="headerlink" title="其他选择器"></a>其他选择器</h3><pre><code class="javascript">$('*')
+$(this)
+$('p.into')
+$('p:first')
+$('ul li:first-child')
+$('[href]')
+$("a[target='_blank']")
+$(":button")
+$('tr:even')
+$('tr:odd')
+</code></pre>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><h4 id="常见的DOM事件"><a href="#常见的DOM事件" class="headerlink" title="常见的DOM事件"></a>常见的DOM事件</h4><ul>
+<li>鼠标事件:click，dbclick, mouseenter, mouseleave, hover<pre><code class="javascript">$('#f').hover(() =&gt; {
+alert('enter')
+}, () =&gt; {
+alert('leave')
+})
+</code></pre>
+</li>
+<li>键盘事件：keypress, keydown, keyup</li>
+<li>表单事件：submit，change，focus, blur（获取失去焦点）</li>
+<li>文档/窗口事件：load, unload, resize, scroll</li>
+</ul>
+<h4 id="常见事件方法"><a href="#常见事件方法" class="headerlink" title="常见事件方法"></a>常见事件方法</h4><p>$(document).ready():允许我们在文档完全加载完后执行函数<br>click():</p>
+<h3 id="jQuery-效果"><a href="#jQuery-效果" class="headerlink" title="jQuery 效果"></a>jQuery 效果</h3><h4 id="隐藏和显示-hide-和-show"><a href="#隐藏和显示-hide-和-show" class="headerlink" title="隐藏和显示 hide() 和 show()"></a>隐藏和显示 hide() 和 show()</h4><p><code>$(selector).hide(speed,callback);</code></p>
+<ul>
+<li>speed 取”slow”、”fast” 或毫秒</li>
+<li>callback 是隐藏或显示完成后执行的函数</li>
+</ul>
+<pre><code class="javascript">$(".hidebtn").click(function(){
+  $("div").hide(1000,"linear",function(){
+    alert("Hide() 方法已完成!");
+  });
+});
+</code></pre>
+<h4 id="切换-hide和-show-的toggle"><a href="#切换-hide和-show-的toggle" class="headerlink" title="切换 hide和 show 的toggle()"></a>切换 hide和 show 的toggle()</h4><p><code>$(selector).toggle(speed,callback);</code><br>显示被隐藏的元素，并隐藏已显示的元素</p>
+<h4 id="淡入淡出-Fading"><a href="#淡入淡出-Fading" class="headerlink" title="淡入淡出 Fading"></a>淡入淡出 Fading</h4><ul>
+<li>fadeIn()：淡入已隐藏的元素<ul>
+<li><code>$(selector).fadeIn(speed,callback);</code></li>
+</ul>
+</li>
+<li>fadeOut()：淡出可见元素</li>
+<li>fadeToggle()：在 fadeIn() 与 fadeOut() 之间切换</li>
+<li>fadeTo()：渐变为给定的不透明度<ul>
+<li><code>$(selector).fadeTo(speed,opacity,callback);</code></li>
+<li>speed为必需参数</li>
+<li>opacity取值0-1</li>
+</ul>
+</li>
+</ul>
+<h4 id="滑动"><a href="#滑动" class="headerlink" title="滑动"></a>滑动</h4><ul>
+<li>slideDown()：向下滑动元素<ul>
+<li><code>$(selector).slideDown(speed,callback);</code></li>
+</ul>
+</li>
+<li>slideUp()</li>
+</ul>
+<h4 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h4><ul>
+<li>animate()：创建自定义动画<ul>
+<li><code>$(selector).animate({params},speed,callback);</code></li>
+<li>params：必须参数，表示动画的CSS属性</li>
+<li>必须使用 Camel 标记法书写所有的属性名，比如 paddingLeft 而不是 padding-left</li>
+<li>使用相对值，例如 <code>height:'+=150px'</code></li>
+<li>使用预定义的值，例如可以把属性的动画值设置为 “show”、”hide” 或 “toggle”</li>
+<li>使用队列功能：编写多个 animate()，jQuery 会创建调用的”内部”队列，逐一运行</li>
+</ul>
+</li>
+</ul>
+<h4 id="停止动画"><a href="#停止动画" class="headerlink" title="停止动画"></a>停止动画</h4><ul>
+<li>stop()，动画或效果完成前对它们进行停止</li>
+<li>适用于所有 jQuery 效果函数</li>
+<li>$(selector).stop(stopAll,goToEnd);</li>
+<li>stopAll 规定是否应该清除动画队列。默认是 false，即仅停止活动的动画</li>
+<li>goToEnd 规定是否立即完成当前动画。默认是 false<h4 id="动画的问题"><a href="#动画的问题" class="headerlink" title="动画的问题"></a>动画的问题</h4>在隐藏效果完全实现后回调函数<pre><code class="javascript">$("button").click(function(){
+$("p").hide("slow",function(){
+  alert("段落现在被隐藏了");
+});
+});
+</code></pre>
+没有回调函数，警告框会在隐藏效果完成前弹出：<pre><code class="javascript">$("button").click(function(){
+$("p").hide(1000);
+alert("段落现在被隐藏了");
+});
+</code></pre>
+</li>
+</ul>
+<h4 id="链"><a href="#链" class="headerlink" title="链"></a>链</h4><p>把动作/方法链接在一起<br>在相同的元素上运行多条 jQuery 命令，一条接着另一条，浏览器就不必多次查找相同的元素</p>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><h4 id="获取内容和属性"><a href="#获取内容和属性" class="headerlink" title="获取内容和属性"></a>获取内容和属性</h4><ul>
+<li>获得内容 - text()、html() 以及 val()<ul>
+<li>text() - 设置或返回所选元素的文本</li>
+<li>html() - 设置或返回所选元素的文本内容（包括 HTML 标记）</li>
+<li>val() - 设置或返回表单字段的值</li>
+</ul>
+</li>
+<li>获取属性 - attr()</li>
+</ul>
+<h4 id="设置内容和属性"><a href="#设置内容和属性" class="headerlink" title="设置内容和属性"></a>设置内容和属性</h4><ul>
+<li>设置内容 - text()、html() 以及 val()<ul>
+<li>回调函数有两个参数：被选元素列表中当前元素的下标，以及原始（旧的）值。然后以函数新值返回您希望使用的字符串。</li>
+</ul>
+</li>
+<li>设置属性 - attr()<pre><code class="javascript">$("button").click(function(){
+$("#runoob").attr("href","http://www.runoob.com/jquery");
+});
+</code></pre>
+</li>
+</ul>
+<h4 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h4><ul>
+<li>append() - 在被选元素的结尾插入内容<ul>
+<li>内容仍然在该元素的内部</li>
+<li>能够通过参数接收无限数量的新元素</li>
+<li>可以通过 jQuery 来生成文本/HTML</li>
+</ul>
+</li>
+<li>prepend() - 在被选元素的开头插入内容</li>
+<li>after() - 在被选元素之后插入内容</li>
+<li>before() - 在被选元素之前插入内容</li>
+</ul>
+<h4 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h4><ul>
+<li>remove() - 删除被选元素（及其子元素）<ul>
+<li>可接受一个参数，允许您对被删元素进行过滤,该参数可以是任何 jQuery 选择器的语法。</li>
+</ul>
+</li>
+<li>empty() - 从被选元素中删除子元素,</li>
+</ul>
+<h4 id="获取并设置-CSS-类"><a href="#获取并设置-CSS-类" class="headerlink" title="获取并设置 CSS 类"></a>获取并设置 CSS 类</h4><ul>
+<li>addClass() - 向被选元素添加一个或多个类<ul>
+<li><code>$("h1,h2,p").addClass("blue");</code></li>
+</ul>
+</li>
+<li>removeClass() - 从被选元素删除一个或多个类</li>
+<li>toggleClass() - 对被选元素进行添加/删除类的切换操作</li>
+<li>css() - 设置或返回样式属性</li>
+<li>返回指定的 CSS 属性的值:<code>$("p").css("background-color");</code></li>
+<li>设置样式属性：<code>$("p").css("background-color","yellow");</code></li>
+<li>设置多个样式属性：<code>$("p").css({"background-color":"yellow","font-size":"200%"});</code></li>
+</ul>
+<h4 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h4><ul>
+<li>width()：设置或返回宽度（不包括边距、边框）</li>
+<li>height()</li>
+<li>innerWidth()：返回元素的宽度（包括内边距）</li>
+<li>innerHeight()</li>
+<li>outerWidth()：返回元素的宽度（包括内边距和边框）</li>
+<li>outerHeight()<br><img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210123214500.png"></li>
+</ul>
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><p>遍历方法中最大的种类是树遍历（tree-traversal）</p>
+<h4 id="祖先"><a href="#祖先" class="headerlink" title="祖先"></a>祖先</h4><ul>
+<li><p>parent()：返回被选元素的直接父元素，只会向上一级对 DOM 树进行遍历</p>
+</li>
+<li><p>parents()：返回被选元素的所有祖先元素，它一路向上直到文档的根元素 ()</p>
+</li>
+<li><p>可以使用可选参数来过滤对祖先元素的搜索</p>
+<pre><code class="javascript">$(document).ready(function(){
+$("span").parents("ul");
+});
+</code></pre>
+</li>
+<li><p>parentsUntil()：返回介于两个给定元素之间的所有祖先元素</p>
+<ul>
+<li>返回介于 <span> 与 <div> 元素之间的所有祖先元素<pre><code class="javascript">$(document).ready(function(){
+$("span").parentsUntil("div");
+});
+</code></pre>
+</div></span></li>
+</ul>
+</li>
+</ul>
+<h4 id="后代"><a href="#后代" class="headerlink" title="后代"></a>后代</h4><ul>
+<li>children()：返回被选元素的所有直接子元素</li>
+<li>可以使用可选参数来过滤对子元素的搜索<pre><code class="javascript">$(document).ready(function(){
+$("div").children("p.1");
+});
+</code></pre>
+</li>
+<li>find()：返回被选元素的后代元素，一路向下直到最后一个后代</li>
+</ul>
+<h4 id="同胞-siblings"><a href="#同胞-siblings" class="headerlink" title="同胞(siblings)"></a>同胞(siblings)</h4><ul>
+<li>水平遍历</li>
+<li>siblings()：返回被选元素的所有同胞元素<ul>
+<li>可以使用可选参数来过滤对同胞元素的搜索</li>
+</ul>
+</li>
+<li>next()：返回被选元素的下一个同胞元素</li>
+<li>nextAll()：返回被选元素的所有跟随的同胞元素</li>
+<li>nextUntil()：返回介于两个给定参数之间的所有跟随的同胞元素</li>
+<li>prev()</li>
+<li>prevAll()</li>
+<li>prevUntil()</li>
+</ul>
+<h4 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h4><ul>
+<li>first()：返回被选元素的首个元素</li>
+<li>last():返回被选元素的最后一个元素</li>
+<li>eq()：返回被选元素中带有指定索引号的元素</li>
+<li>filter()：规定一个标准，匹配的元素会被返回</li>
+<li>not()：返回不匹配标准的所有元素</li>
+</ul>
+<h3 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h3><p>AJAX 是与服务器交换数据的技术，它在不重载全部页面的情况下，实现了对部分网页的更新<br>AJAX = 异步js + XML<br>不重载整个网页的情况下，通过后台加载数据，在网页显示</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/js/" rel="tag"># js</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/18/js/IIFE/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/19/js/RegExp/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E5%B0%B1%E7%BB%AA%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">文档就绪事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">jQuery选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">#id选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">.class选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">6.</span> <span class="nav-text">其他选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6"><span class="nav-number">7.</span> <span class="nav-text">事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84DOM%E4%BA%8B%E4%BB%B6"><span class="nav-number">7.1.</span> <span class="nav-text">常见的DOM事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E4%BA%8B%E4%BB%B6%E6%96%B9%E6%B3%95"><span class="nav-number">7.2.</span> <span class="nav-text">常见事件方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery-%E6%95%88%E6%9E%9C"><span class="nav-number">8.</span> <span class="nav-text">jQuery 效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%90%E8%97%8F%E5%92%8C%E6%98%BE%E7%A4%BA-hide-%E5%92%8C-show"><span class="nav-number">8.1.</span> <span class="nav-text">隐藏和显示 hide() 和 show()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E6%8D%A2-hide%E5%92%8C-show-%E7%9A%84toggle"><span class="nav-number">8.2.</span> <span class="nav-text">切换 hide和 show 的toggle()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA-Fading"><span class="nav-number">8.3.</span> <span class="nav-text">淡入淡出 Fading</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%BB%91%E5%8A%A8"><span class="nav-number">8.4.</span> <span class="nav-text">滑动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E7%94%BB"><span class="nav-number">8.5.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E5%8A%A8%E7%94%BB"><span class="nav-number">8.6.</span> <span class="nav-text">停止动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E7%94%BB%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">8.7.</span> <span class="nav-text">动画的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%93%BE"><span class="nav-number">8.8.</span> <span class="nav-text">链</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">9.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%86%85%E5%AE%B9%E5%92%8C%E5%B1%9E%E6%80%A7"><span class="nav-number">9.1.</span> <span class="nav-text">获取内容和属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%86%85%E5%AE%B9%E5%92%8C%E5%B1%9E%E6%80%A7"><span class="nav-number">9.2.</span> <span class="nav-text">设置内容和属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="nav-number">9.3.</span> <span class="nav-text">添加元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="nav-number">9.4.</span> <span class="nav-text">删除元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%B9%B6%E8%AE%BE%E7%BD%AE-CSS-%E7%B1%BB"><span class="nav-number">9.5.</span> <span class="nav-text">获取并设置 CSS 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%BA%E5%AF%B8"><span class="nav-number">9.6.</span> <span class="nav-text">尺寸</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8D%E5%8E%86"><span class="nav-number">10.</span> <span class="nav-text">遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A5%96%E5%85%88"><span class="nav-number">10.1.</span> <span class="nav-text">祖先</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E4%BB%A3"><span class="nav-number">10.2.</span> <span class="nav-text">后代</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E8%83%9E-siblings"><span class="nav-number">10.3.</span> <span class="nav-text">同胞(siblings)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%87%E6%BB%A4"><span class="nav-number">10.4.</span> <span class="nav-text">过滤</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AJAX"><span class="nav-number">11.</span> <span class="nav-text">AJAX</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">cjh</p>
+  <div class="site-description" itemprop="description">Front-end artist</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cjh</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

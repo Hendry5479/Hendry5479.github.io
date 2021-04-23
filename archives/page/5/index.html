@@ -1,79 +1,541 @@
-<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Hendry5479's blog</title><meta name="description" content="Front-end artist"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
-<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/avatar.jpg"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/widget-post-list.css"><meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Hendry5479" type="application/atom+xml">
-</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Hendry5479's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><span>Archives · All</span></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-11T14:38:48.000Z">2021-04-11</time><p class="is-flex-grow-2 mt-2">这节课的重点是实战, 对于ts的编译原理部分, 同学们了解一下就可以, 面试也不会问的特别细, 知道大概的流程就行。
-之前没接触过Ts等强类型语言的同学：这节课会有很多概念，可能很难直接记住, 那么这些同学听这节课的时候, 目的就不是去死记硬背这些概念, 而且去体会ts的写法, 能不能优化自己在平时js里的一些书写方式。接触过ts的同学：注意一下这节课里的一些泛型 以及各种实战代码与ts的结合.
-基础知识基础类型: number string boolean array object
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-enum: 枚举
+<link rel="stylesheet" href="/css/main.css">
 
-type, interface
 
-联合类型 | (联合类型一次只能一种类型；而交叉类型每次都是多个类型的合并类型。)
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-交叉类型 &amp;amp; (联合类型一次只能一种类型；而交叉类型每次都是多个类型的合并类..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/11/interview/4.typescript/%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-11T14:38:48.000Z">2021-04-11</time><p class="is-flex-grow-2 mt-2">面试题及实战
-你觉得使用ts的好处是什么?
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hendry5479.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
-1.1 TypeScript是JavaScript的加强版，它给JavaScript添加了可选的静态类型和基于类的面向对象编程，它拓展了JavaScript的语法。所以ts的功能比js只多不少.1.2 Typescript 是纯面向对象的编程语言，包含类和接口的概念.1.3 TS 在开发时就能给出编译错误， 而 JS 错误则需要在运行时才能暴露。1.4 作为强类型语言，你可以明确知道数据的类型。代码可读性极强，几乎每个人都能理解。1.5 ts中有很多很方便的特性, 比如可选链.
+  <meta name="description" content="Front-end artist">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hendry5479">
+<meta property="og:url" content="https://hendry5479.github.io/archives/page/5/index.html">
+<meta property="og:site_name" content="Hendry5479">
+<meta property="og:description" content="Front-end artist">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="cjh">
+<meta property="article:tag" content="Front">
+<meta name="twitter:card" content="summary">
 
-type 和 interface的异同
+<link rel="canonical" href="https://hendry5479.github.io/archives/page/5/">
 
-重点：用interface描述数据结构，用type描述类型
-2.1 都可以描述一个对象或者函数
-interface User {
-  name..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/11/interview/4.typescript/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%8A%E5%AE%9E%E6%88%98/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-11T14:38:48.000Z">2021-04-11</time><p class="is-flex-grow-2 mt-2">{&quot;compilerOptions&quot;:{&quot;target&quot;:&quot;esnext&quot;,&quot;module&quot;:&quot;esnext&quot;,&quot;strict&quot;:true,&quot;jsx&quot;:&quot;preserve&quot;,&quot;importHelpers&quot;:true,&quot;moduleResolution&quot;:&quot;node&quot;,&quot;experimentalDecorators&quot;:true,&quot;skipLibCheck&quot;:true,&quot;esModuleInterop&quot;:true,&quot;allowSyntheticDefaultImports&quot;:true,&quot;sourceMap&quot;:true,&quot;baseUrl&quot;:&quot;.&quot;,&quot;types&quot;:[&quot;node&quot;],&quot;lib&quot;:[&quot;esnext&quot;,&quot;dom&quot;,&quot;dom.iterable&quot;,&quot;scripthost&quot;]},&quot;include&quot;:[&quot;src..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/11/interview/4.typescript/demo/tsconfig/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-11T14:38:41.000Z">2021-04-11</time><p class="is-flex-grow-2 mt-2">{&quot;name&quot;:&quot;demo&quot;,&quot;version&quot;:&quot;0.1.0&quot;,&quot;private&quot;:true,&quot;scripts&quot;:{&quot;serve&quot;:&quot;vue-cli-service serve&quot;,&quot;build&quot;:&quot;vue-cli-service build&quot;,&quot;lint&quot;:&quot;vue-cli-service lint&quot;},&quot;dependencies&quot;:{&quot;core-js&quot;:&quot;^3.6.5&quot;,&quot;query-string&quot;:&quot;^7.0.0&quot;,&quot;register-service-worker&quot;:&quot;^1.7.1&quot;,&quot;vue&quot;:&quot;^2.6.11&quot;,&quot;vue-class-component&quot;:&quot;=6.0.0&quot;,&quot;vue-property-decorator&quot;:&quot;=7.0.0&quot;,&quot;vue-router&quot;:&quot;=3.0.1&quot;},&quot;devDe..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/11/interview/4.typescript/demo/package/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-10T14:20:57.000Z">2021-04-10</time><p class="is-flex-grow-2 mt-2">{
-  &quot;compilerOptions&quot;: {
 
-    /* 基本选项 */
-    &quot;target&quot;: &quot;es5&quot;,                       // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
-    &quot;module&quot;: &quot;commonjs&quot;,                  // 指定使用模块: 'commonjs', 'amd', 'system', 'umd' or 'es2015'
-    &quot;lib&quot;: [],                             // 指定要包含在编译中的库文件
-    &quot;allowJs&quot;: true,    ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/10/interview/4.typescript/compileOptions/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-10T14:20:57.000Z">2021-04-10</time><p class="is-flex-grow-2 mt-2">module.exports = {
-  presets: [
-    '@vue/cli-plugin-babel/preset'
-  ]
-}
-</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/10/interview/4.typescript/demo/babel.config/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-10T14:20:57.000Z">2021-04-10</time><p class="is-flex-grow-2 mt-2">demoProject setupyarn install
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
 
-Compiles and hot-reloads for developmentyarn serve
-
-Compiles and minifies for productionyarn build
-
-Lints and fixes filesyarn lint
-
-Customize configurationSee Configuration Reference.
-</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/10/interview/4.typescript/demo/README/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-10T14:20:57.000Z">2021-04-10</time><p class="is-flex-grow-2 mt-2">{&quot;defaultSeverity&quot;:&quot;warning&quot;,&quot;extends&quot;:[&quot;tslint:recommended&quot;],&quot;linterOptions&quot;:{&quot;exclude&quot;:[&quot;node_modules/**&quot;]},&quot;rules&quot;:{&quot;indent&quot;:[true,&quot;spaces&quot;,4],&quot;interface-name&quot;:false,&quot;no-consecutive-blank-lines&quot;:false,&quot;object-literal-sort-keys&quot;:false,&quot;ordered-imports&quot;:false,&quot;quotemark&quot;:[true,&quot;single&quot;],&quot;only-arrow-functions&quot;:false,&quot;no-console&quot;:false,&quot;interface-over-type-..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/10/interview/4.typescript/demo/tslint/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-10T14:20:57.000Z">2021-04-10</time><p class="is-flex-grow-2 mt-2">
-    
-      We're sorry but &amp;lt;%= htmlWebpackPlugin.options.title %&amp;gt; doesn't work properly without JavaScript enabled. Please enable it to continue.
-    
-    
-    
+  <title>Archive | Hendry5479</title>
   
 
-</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/10/interview/4.typescript/demo/public/index/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-09T12:31:14.000Z">2021-04-09</time><p class="is-flex-grow-2 mt-2">先说一点，同学们这几个问题都问的非常专业！！！
-为什么promise resolve了一个value, 最后输出的value值确是undefinedconst test = new MPromise((resolve, reject) =&amp;gt; {
-    setTimeout(() =&amp;gt; {
-        resolve(111);
-    }, 1000);
-}).then((value) =&amp;gt; {
-    console.log('then');
-});
 
-setTimeout(() =&amp;gt; {
-    console.log(test);
-}, 3000)
 
-答：因为现在这种写法, 相当于在.then里return undefined, 所以最后的value是undefined...</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/09/interview/3.brower/OpenCourse%20-%200/%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap"><a class="extend prev" rel="prev" href="/archives/page/4/"><i class="iconfont icon-prev has-text-grey"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/12/">12</a><a class="extend next" rel="next" href="/archives/page/6/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container archives-widget is-in-archive-page"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">85</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">7</span></li></ul></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
-window.addEventListener('resize', $claudia.throttle(function () {
-    var images = document.querySelectorAll('.js-img-fadeIn')
 
-    images.forEach($claudia.blurBackdropImg)
-}, 150))</script></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Hendry5479"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Hendry5479 2021</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
-window.addEventListener('resize', $claudia.throttle(function () {
-    var images = document.querySelectorAll('.js-img-fadeIn')
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    images.forEach($claudia.blurBackdropImg)
-}, 150))</script></body></html>
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Hendry5479" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hendry5479</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Artist Hendry</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content archive">
+            
+
+  
+  
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        
+        <span class="collection-header">Good! 115 posts in total. Keep on posting.</span>
+      </div>
+
+      
+    <div class="collection-year">
+      <span class="collection-header">2021</span>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-04-11T22:43:22+08:00"
+              content="2021-04-11">
+          04-11
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/04/11/interview/4.typescript/promise-class/" itemprop="url">
+            <span itemprop="name">Untitled</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-04-11T22:38:48+08:00"
+              content="2021-04-11">
+          04-11
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/04/11/interview/4.typescript/%E5%8E%9F%E7%90%86/" itemprop="url">
+            <span itemprop="name">Untitled</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-04-11T22:38:48+08:00"
+              content="2021-04-11">
+          04-11
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/04/11/interview/4.typescript/%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/" itemprop="url">
+            <span itemprop="name">Untitled</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-04-11T22:38:48+08:00"
+              content="2021-04-11">
+          04-11
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/04/11/interview/4.typescript/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%8A%E5%AE%9E%E6%88%98/" itemprop="url">
+            <span itemprop="name">Untitled</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-04-11T22:38:48+08:00"
+              content="2021-04-11">
+          04-11
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/04/11/interview/4.typescript/demo/tsconfig/" itemprop="url">
+            <span itemprop="name">Untitled</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-04-11T22:38:41+08:00"
+              content="2021-04-11">
+          04-11
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/04/11/interview/4.typescript/demo/package/" itemprop="url">
+            <span itemprop="name">Untitled</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-04-10T22:20:57+08:00"
+              content="2021-04-10">
+          04-10
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/04/10/interview/4.typescript/compileOptions/" itemprop="url">
+            <span itemprop="name">Untitled</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-04-10T22:20:57+08:00"
+              content="2021-04-10">
+          04-10
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/04/10/interview/4.typescript/demo/babel.config/" itemprop="url">
+            <span itemprop="name">Untitled</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-04-10T22:20:57+08:00"
+              content="2021-04-10">
+          04-10
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/04/10/interview/4.typescript/demo/README/" itemprop="url">
+            <span itemprop="name">Untitled</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-04-10T22:20:57+08:00"
+              content="2021-04-10">
+          04-10
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/04/10/interview/4.typescript/demo/tslint/" itemprop="url">
+            <span itemprop="name">Untitled</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+
+    </div>
+  </div>
+  
+  
+  
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/archives/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/12/">12</a><a class="extend next" rel="next" href="/archives/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">cjh</p>
+  <div class="site-description" itemprop="description">Front-end artist</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cjh</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
