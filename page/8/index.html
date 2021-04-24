@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -60,7 +60,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -71,7 +71,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -82,7 +82,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -93,7 +93,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -104,7 +104,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -115,7 +115,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -126,14 +126,14 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -163,7 +163,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -174,7 +174,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -185,7 +185,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -196,7 +196,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -207,7 +207,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -218,7 +218,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -229,7 +229,7 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -365,7 +365,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/dist/cjs/a-15c8ca38/">
+                    <a href="/2021/04/02/interview/1.promise/generator/">
                         <div class="card-image">
                             
                             
@@ -378,17 +378,15 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                'use strict';
-
-var lodash = require('lodash');
-
-const safeGet = (target, path, defaultValue) =&gt; {
-  return lodash.get
+                                function longTimeFn(time) {
+    return new Promise((resolve) =&gt; {
+        setTimeout(() =&gt; {
+            resolve(t
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-02
                             </span>
                             <span class="publish-author">
                                 
@@ -405,7 +403,7 @@ const safeGet = (target, path, defaultValue) =&gt; {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/dist/amd/a-a1dbb12f/">
+                    <a href="/2021/04/02/interview/1.promise/shi-xian-yi-ge-promise/">
                         <div class="card-image">
                             
                             
@@ -418,14 +416,14 @@ const safeGet = (target, path, defaultValue) =&gt; {
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                define(['exports', 'lodash'], function (exports, lodash) { 'use strict';
-
-  const safeGet = (target, path, defaultValue)
+                                一步步实现一个Promise
+平常用promise的时候, 是通过new关键字来new Promise(), 所以咱们应该用构造函数或者class来实现. 都2021年了, 咱们就用class来实现一下吧.
+class MPromise 
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-02
                             </span>
                             <span class="publish-author">
                                 
@@ -442,7 +440,7 @@ const safeGet = (target, path, defaultValue) =&gt; {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/dist/cjs/index/">
+                    <a href="/2021/04/01/interview/1.promise/promisea-gui-fan/">
                         <div class="card-image">
                             
                             
@@ -455,18 +453,15 @@ const safeGet = (target, path, defaultValue) =&gt; {
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                'use strict';
-
-// import { safeGet } from './a'
-
-// safeGet({}, 'a.b.c');
-
-Promise.resolve().then(function () { return r
+                                PromiseA+规范术语
+promise 是一个有then方法的对象或者是函数，行为遵循本规范
+thenable 是一个有then方法的对象或者是函数
+value 是promise状态成功时的值，也就是resolve的参数, 包括各种数据
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-01
                             </span>
                             <span class="publish-author">
                                 
@@ -483,277 +478,449 @@ Promise.resolve().then(function () { return r
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/dist/esm/a-6fd4cb86/">
+                    <a href="/2021/03/29/yck/20-she-ji-mo-shi/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="(20)设计模式">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">(20)设计模式</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                import { get } from 'lodash';
-
-const safeGet = (target, path, defaultValue) =&gt; {
-  return get(target, path, defaultVa
+                                30.设计模式设计模式总的来说是一个抽象的概念，前人通过无数次的实践总结出的一套写代码的方式，通过这种方式写的代码可以让别人更加容易阅读、维护以及复用。
+简单工厂模式class Man {
+  constructor(name) {
+   
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                Hendry Chen
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Interview/" class="post-category">
+                                    Interview
+                                </a>
+                                
                                 
                             </span>
                         </div>
                     </div>
 
                     
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/dist/esm/index/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                            
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                // import { safeGet } from './a'
-
-// safeGet({}, 'a.b.c');
-
-import('./a-6fd4cb86.js').then(({ default: d }) =&gt; {
-  co
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Hendry Chen
-                                
-                            </span>
-                        </div>
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93/">
+                            <span class="chip bg-color">面试之道</span>
+                        </a>
+                        
                     </div>
-
                     
                 </div>
             </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/rollup.config/">
+                    <a href="/2021/03/29/yck/19-shu-ru-url-dao-ye-mian-xuan-ran-de-guo-cheng/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="(19)输入 URL 到页面渲染的整个流程">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">(19)输入 URL 到页面渲染的整个流程</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                module.exports = {
-  input: "./src/index.js",
-  output: [
-    {
-      dir: './dist/cjs',
-      // file: "./dist/index-cj
+                                29.输入 URL 到页面渲染的整个流程大致过程DNS解析、TCP握手建立连接、TLS握手开始传输数据、浏览器判断状态码、解析文件；构建DOM树和CSSOM树，遇到script标签就去请求js文件并执行，生成Render树，调用GPU绘制
+
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                Hendry Chen
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Interview/" class="post-category">
+                                    Interview
+                                </a>
+                                
                                 
                             </span>
                         </div>
                     </div>
 
                     
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/src/index/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                            
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                // import { safeGet } from './a'
-
-// safeGet({}, 'a.b.c');
-
-import('./a').then(({ default: d }) =&gt; {
-  console.log(d)
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Hendry Chen
-                                
-                            </span>
-                        </div>
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93/">
+                            <span class="chip bg-color">面试之道</span>
+                        </a>
+                        
                     </div>
-
                     
                 </div>
             </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/src/a/">
+                    <a href="/2021/03/29/yck/18-http/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="(18)HTTP">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">(18)HTTP</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                import { get } from 'lodash'
-
-export const safeGet = (target, path, defaultValue) =&gt; {
-  return get(target, path, def
+                                27.HTTP 及 TLS这一章节我们将来学习 HTTP 及 TLS 协议中的内容。
+HTTP 请求中的内容HTTP 请求由三部分构成，分别为：
+请求行首部实体请求行大概长这样 GET /images/logo.gif HTTP/1.1，基
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                Hendry Chen
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Interview/" class="post-category">
+                                    Interview
+                                </a>
+                                
                                 
                             </span>
                         </div>
                     </div>
 
                     
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/04/interview/zw-inter/promise-class/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                            
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                const PENDING = 'pending'
-const FULFILLED = 'fulfilled'
-const REJECTED = 'rejected'
-
-class MPromise {
-  FULFILLED_CALLBA
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Hendry Chen
-                                
-                            </span>
-                        </div>
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93/">
+                            <span class="chip bg-color">面试之道</span>
+                        </a>
+                        
                     </div>
-
                     
                 </div>
             </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/03/interview/1.promise/promise-class/">
+                    <a href="/2021/03/29/yck/17-udp-he-tcp/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="(17)UDP 与 TCP">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">(17)UDP 与 TCP</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                const PENDING = 'pending';
-const FULFILLED = 'fulfilled';
-const REJECTED = 'rejected';
-
-class MPromise {
-
-    FULFILLED_
+                                25.UDP常考面试题：UDP 与 TCP 的区别是什么？
+首先 UDP 协议是面向无连接的，也就是说不需要在正式传递数据之前先连接起双方。然后 UDP 协议只是数据报文的搬运工，不保证有序且不丢失的传递到对端，并且UDP 协议也没有任何控
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                Hendry Chen
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Interview/" class="post-category">
+                                    Interview
+                                </a>
+                                
                                 
                             </span>
                         </div>
                     </div>
 
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93/">
+                            <span class="chip bg-color">面试之道</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/03/29/yck/16-jian-kong/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="(16)监控">
+                            
+                            <span class="card-title">(16)监控</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                24.前端监控一般分为三种，分别为页面埋点、性能监控以及异常监控
+这一章节我们将来学习这些监控相关的内容，但是基本不会涉及到代码，只是让大家了解下前端监控该用什么方式实现。毕竟大部分公司都只是使用到了第三方的监控工具，而不是选择自己造轮子
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Interview/" class="post-category">
+                                    Interview
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93/">
+                            <span class="chip bg-color">面试之道</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/03/29/yck/15-react-he-vue/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="(15)React 和 Vue">
+                            
+                            <span class="card-title">(15)React 和 Vue</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                19.React 和 Vue 两大框架之间的相爱相杀
+MVVM 是什么
+Virtual DOM 是什么
+前端路由是如何跳转的
+React 和 Vue 之间的区别
+
+MVVM涉及面试题：什么是 MVVM？比之 MVC 有什么区别？
+View 
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Interview/" class="post-category">
+                                    Interview
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93/">
+                            <span class="chip bg-color">面试之道</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/03/29/yck/14-shi-xian-xiao-xing-da-bao-gong-ju/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="(14)实现小型打包工具">
+                            
+                            <span class="card-title">(14)实现小型打包工具</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                18.实现一个几十行的迷你打包工具，该工具实现以下两个功能
+
+将 ES6 转换为 ES5
+支持在 JS 文件中 import CSS 文件
+
+通过这个工具的实现，可以理解到打包工具的原理到底是什么
+实现因为涉及到 ES6 转 ES5，所以我
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Interview/" class="post-category">
+                                    Interview
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93/">
+                            <span class="chip bg-color">面试之道</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/03/29/yck/13-webpack-xing-neng-you-hua/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="(13)Webpack 性能优化">
+                            
+                            <span class="card-title">(13)Webpack 性能优化</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                17.在这部分的内容中，我们会聚焦于以下两个知识点，并且每一个知识点都属于高频考点：
+减少 Webpack 的打包时间、让 Webpack 打出来的包更小
+减少 Webpack 打包时间优化 Loader对于 Loader 来说，影响打包效
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Interview/" class="post-category">
+                                    Interview
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93/">
+                            <span class="chip bg-color">面试之道</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/03/29/yck/12-xing-neng-you-hua/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="(12)性能优化">
+                            
+                            <span class="card-title">(12)性能优化</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                15.从 V8 中看 JS注意：该知识点属于性能优化领域。
+性能问题越来越成为前端火热的话题，因为随着项目的逐步变大，性能问题也逐步体现出来。为了提高用户的体验，减少加载时间，工程师们想尽一切办法去优化细节。
+掘金之前已经出过一本关于性能的
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Interview/" class="post-category">
+                                    Interview
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93/">
+                            <span class="chip bg-color">面试之道</span>
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -775,7 +942,7 @@ class MPromise {
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">8 / 12</div>
+            <div class="center-align b-text-gray">8 / 10</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -922,8 +1089,8 @@ class MPromise {
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

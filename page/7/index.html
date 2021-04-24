@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -60,7 +60,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -71,7 +71,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -82,7 +82,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -93,7 +93,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -104,7 +104,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -115,7 +115,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -126,14 +126,14 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -163,7 +163,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -174,7 +174,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -185,7 +185,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -196,7 +196,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -207,7 +207,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -218,7 +218,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -229,7 +229,7 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -365,7 +365,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmd/main/">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/dist/cjs/index/">
                         <div class="card-image">
                             
                             
@@ -378,10 +378,13 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                define('main', async function (require, exports, module) {
-  console.log('main run')
-  var a = await require('a')
-  a.ru
+                                'use strict';
+
+// import { safeGet } from './a'
+
+// safeGet({}, 'a.b.c');
+
+Promise.resolve().then(function () { return r
                             
                         </div>
                         <div class="publish-info">
@@ -403,7 +406,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmd/index/">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/dist/esm/a-6fd4cb86/">
                         <div class="card-image">
                             
                             
@@ -416,13 +419,10 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                
-  hello cmd
-  
-    sj.use('main')
-  
+                                import { get } from 'lodash';
 
-
+const safeGet = (target, path, defaultValue) =&gt; {
+  return get(target, path, defaultVa
                             
                         </div>
                         <div class="publish-info">
@@ -444,7 +444,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmd/b/">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/dist/esm/index/">
                         <div class="card-image">
                             
                             
@@ -457,9 +457,12 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                define('b', function (require, exports, module) {
-  console.log('b load')
-  exports.run = function () { console.log('b r
+                                // import { safeGet } from './a'
+
+// safeGet({}, 'a.b.c');
+
+import('./a-6fd4cb86.js').then(({ default: d }) =&gt; {
+  co
                             
                         </div>
                         <div class="publish-info">
@@ -481,7 +484,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmd/a/">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/rollup.config/">
                         <div class="card-image">
                             
                             
@@ -494,9 +497,12 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                define('a', function (require, exports, module) {
-  console.log('a load')
-  exports.run = function () { console.log('a r
+                                module.exports = {
+  input: "./src/index.js",
+  output: [
+    {
+      dir: './dist/cjs',
+      // file: "./dist/index-cj
                             
                         </div>
                         <div class="publish-info">
@@ -518,7 +524,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmd/sj/">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/src/index/">
                         <div class="card-image">
                             
                             
@@ -531,13 +537,12 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                const modules = {};
-const exports = {};
-sj = {};
+                                // import { safeGet } from './a'
 
-const toUrl = (dep) =&gt; {
-  const p = location.pathname;
-  return p.
+// safeGet({}, 'a.b.c');
+
+import('./a').then(({ default: d }) =&gt; {
+  console.log(d)
                             
                         </div>
                         <div class="publish-info">
@@ -559,7 +564,7 @@ const toUrl = (dep) =&gt; {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmd/readme/">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/src/a/">
                         <div class="card-image">
                             
                             
@@ -572,11 +577,10 @@ const toUrl = (dep) =&gt; {
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                CMD代表人物玉伯，代表技术实现 Seajs
-Usage// sea.js
-define('a', function (require, exports, module) {
-  console.log('a load')
-  export
+                                import { get } from 'lodash'
+
+export const safeGet = (target, path, defaultValue) =&gt; {
+  return get(target, path, def
                             
                         </div>
                         <div class="publish-info">
@@ -598,7 +602,7 @@ define('a', function (require, exports, module) {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/amd/index/">
+                    <a href="/2021/04/04/interview/zw-inter/promise-class/">
                         <div class="card-image">
                             
                             
@@ -611,15 +615,12 @@ define('a', function (require, exports, module) {
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                
-  
-  
+                                const PENDING = 'pending'
+const FULFILLED = 'fulfilled'
+const REJECTED = 'rejected'
 
-  
-
-    // rj.config({
-    //   paths: {
-    //     lodash: 'https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21
+class MPromise {
+  FULFILLED_CALLBA
                             
                         </div>
                         <div class="publish-info">
@@ -641,7 +642,7 @@ define('a', function (require, exports, module) {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/amd/a/">
+                    <a href="/2021/04/03/interview/1.promise/promise-class/">
                         <div class="card-image">
                             
                             
@@ -654,17 +655,18 @@ define('a', function (require, exports, module) {
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                define('a', ['lodash'], function(_) {
-  console.log('module a load');
+                                const PENDING = 'pending';
+const FULFILLED = 'fulfilled';
+const REJECTED = 'rejected';
 
-  return {
-    str: function() {
-      console.lo
+class MPromise {
+
+    FULFILLED_
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-03
                             </span>
                             <span class="publish-author">
                                 
@@ -681,7 +683,7 @@ define('a', function (require, exports, module) {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/amd/readme/">
+                    <a href="/2021/04/02/interview/2.module/module-lesson/package/">
                         <div class="card-image">
                             
                             
@@ -694,16 +696,12 @@ define('a', function (require, exports, module) {
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                AMD
-AMD 的代表肯定就是大名鼎鼎的 RequireJS
-
-James Burke 觉得 CMJ 很好，但是在浏览器里玩不转，所以自己提出了一个 AMD 规范
-AMD Usagedefine(id?, depencies?, facto
+                                {"name":"module-lesson","version":"1.0.0","main":"index.js","author":"cbbfcd","license":"MIT","devDependencies":{"@babel
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-02
                             </span>
                             <span class="publish-author">
                                 
@@ -720,7 +718,7 @@ AMD Usagedefine(id?, depencies?, facto
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/04/interview/2.module/module-lesson/dist/amd/index/">
+                    <a href="/2021/04/02/interview/2.module/module-lesson/package-lock/">
                         <div class="card-image">
                             
                             
@@ -733,18 +731,86 @@ AMD Usagedefine(id?, depencies?, facto
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                define(['require'], function (require) { 'use strict';
-
-  // import { safeGet } from './a'
-
-  // safeGet({}, 'a.b.c');
-
-
+                                {"name":"module-lesson","version":"1.0.0","lockfileVersion":2,"requires":true,"packages":{"":{"version":"1.0.0","license
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-02
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Hendry Chen
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/04/02/interview/1.promise/generator-async-await/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Generator 和 Async 简介在讲Generator之前, 咱们要来先了解另外一个概念, 迭代器.
+迭代器 Iterator迭代器Iterator 是 ES6 引入的一种新的遍历机制，同时也是一种特殊对象，它具有一些专门为迭代过程
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-02
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Hendry Chen
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/04/02/interview/1.promise/async/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                function longTimeFn(time) {
+    return new Promise(resolve =&gt; {
+        setTimeout(() =&gt; {
+            resolve(tim
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-02
                             </span>
                             <span class="publish-author">
                                 
@@ -776,7 +842,7 @@ AMD Usagedefine(id?, depencies?, facto
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">7 / 12</div>
+            <div class="center-align b-text-gray">7 / 10</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -923,8 +989,8 @@ AMD Usagedefine(id?, depencies?, facto
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>
