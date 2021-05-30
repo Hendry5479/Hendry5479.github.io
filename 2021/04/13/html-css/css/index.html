@@ -493,7 +493,10 @@
 </ul>
 </li>
 </ul>
-<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><ul>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><pre class=" language-css"><code class="language-css"><span class="token selector">div </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.class</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
+<ul>
 <li>标签选择器：常用于标签初始化</li>
 <li>id选择器：# 前缀 #id</li>
 <li>class选择器 . 前缀 .class</li>
@@ -570,16 +573,16 @@
 <h3 id="字体属性"><a href="#字体属性" class="headerlink" title="字体属性"></a>字体属性</h3><ul>
 <li>字体可以是列表形式，一般英语字体放到前面，后面的字体是前面字体的“后备”</li>
 </ul>
-<pre><code class="js">  @font-face {
-    font-family: '字体名称';
-    font-display: swap;
-    src: url('eot字体文件地址');
-    src: url('eot字体文件地址') format('embedded-opentype'),
-    url('woff2字体文件地址') format('woff2'),
-    url('woff字体文件地址') format('woff'),
-    url('ttf字体文件地址') format('truetype'),
-    url('svg字体文件地址') format('svg');
-    }
+<pre class=" language-js"><code class="language-js">  @font<span class="token operator">-</span>face <span class="token punctuation">{</span>
+    font<span class="token operator">-</span>family<span class="token punctuation">:</span> <span class="token string">'字体名称'</span><span class="token punctuation">;</span>
+    font<span class="token operator">-</span>display<span class="token punctuation">:</span> swap<span class="token punctuation">;</span>
+    src<span class="token punctuation">:</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'eot字体文件地址'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    src<span class="token punctuation">:</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'eot字体文件地址'</span><span class="token punctuation">)</span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'embedded-opentype'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'woff2字体文件地址'</span><span class="token punctuation">)</span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'woff2'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'woff字体文件地址'</span><span class="token punctuation">)</span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'woff'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'ttf字体文件地址'</span><span class="token punctuation">)</span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'truetype'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'svg字体文件地址'</span><span class="token punctuation">)</span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'svg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 </code></pre>
 <h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><ul>
 <li>width/height + padding + border</li>
@@ -648,9 +651,9 @@
 </li>
 <li>绝对定位的盒子垂直居中</li>
 </ul>
-<pre><code class="js">    position: absolute;
-    top: 50%;
-    margin-top: -height/2;
+<pre class=" language-js"><code class="language-js">    position<span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    top<span class="token punctuation">:</span> <span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    margin<span class="token operator">-</span>top<span class="token punctuation">:</span> <span class="token operator">-</span>height<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 id="堆叠顺序z-index属性"><a href="#堆叠顺序z-index属性" class="headerlink" title="堆叠顺序z-index属性"></a>堆叠顺序z-index属性</h3><ul>
 <li>数值大的压住数值小的</li>
@@ -762,14 +765,11 @@
 </li>
 </ul>
 <h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><ul>
-<li><p>定义动画 @keyframes 关键帧</p>
-</li>
-<li><p>项目上线前，补上@-webkit-的私有前缀</p>
-<pre><code>@keyframes r {
+<li>定义动画 @keyframes 关键帧</li>
+<li>@-webkit-：项目上线前，补上@-webkit-的私有前缀<pre><code>@keyframes r {
 from {
   transform: rotate(0);
 }
-
 to {
   transform: rotate(360deg);
 }

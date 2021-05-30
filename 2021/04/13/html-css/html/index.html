@@ -499,47 +499,57 @@
 </ul>
 <h3 id="video视频"><a href="#video视频" class="headerlink" title="video视频"></a>video视频</h3><p>  controls</p>
 <h3 id="HTML5中新增的表单控件"><a href="#HTML5中新增的表单控件" class="headerlink" title="HTML5中新增的表单控件"></a>HTML5中新增的表单控件</h3><ul>
-<li>input种类：</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210222172051.png"></p>
-<pre><code>  datalist 为输入框提供备选项
-    option value=“xxx”
+<li><p>input种类：<br><img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210222172051.png"></p>
+<pre><code>datalist 为输入框提供备选项
+  option value=“xxx”
 </code></pre>
-<h3 id="表单创建"><a href="#表单创建" class="headerlink" title="表单创建"></a>表单创建</h3><ul>
-<li>表单以form开始<pre><code>form action="save.php" method="post"
-xxx
+<h3 id="表单创建"><a href="#表单创建" class="headerlink" title="表单创建"></a>表单创建</h3><p>表单以form开始</p>
+<pre><code>form action="save.php" method="post"
+  xxx
 </code></pre>
-<h3 id="基本控件"><a href="#基本控件" class="headerlink" title="基本控件"></a>基本控件</h3><code>input type="text" value="xxx" placeholder="xxx" disabled</code></li>
-<li>input type=”radio” (互斥的单选按钮应该设置name为相同值)</li>
-<li>单选按钮要有value值，用于向服务器提交，checked表示默认被选中</li>
-<li>label将文字和单选按钮绑定，单击文字等同于点击按钮<ul>
-<li>label for=’id’<ul>
-<li>input</li>
-</ul>
+<h3 id="基本控件"><a href="#基本控件" class="headerlink" title="基本控件"></a>基本控件</h3><h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p><code>input type="text" value="xxx" placeholder="xxx" disabled</code></p>
+</li>
+<li><p>input type=”radio”可以创建单选按钮 (互斥按钮应该设置name为相同值)</p>
+</li>
+<li><p>单选按钮要有value值，用于向服务器提交</p>
+</li>
+<li><p>添加checked属性，表示默认被选中</p>
+</li>
+<li><p>label将文字和单选按钮绑定，单击文字等同于点击按钮</p>
+<pre class=" language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- label不再需要添加for属性 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+</code></pre>
+</li>
+<li><p>input type=”checkbox” 复选框</p>
+</li>
+<li><p>input type=”password”</p>
+<h4 id="select-下拉菜单"><a href="#select-下拉菜单" class="headerlink" title="select 下拉菜单"></a>select 下拉菜单</h4><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>a<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>b<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
+</code></pre>
+<h4 id="textarea"><a href="#textarea" class="headerlink" title="textarea"></a>textarea</h4></li>
+<li><p>rows cols设置文本框的行数和列数</p>
+<h4 id="表单常见的三种input"><a href="#表单常见的三种input" class="headerlink" title="表单常见的三种input"></a>表单常见的三种input</h4><p>type: button, submit, reset</p>
 </li>
 </ul>
-</li>
-</ul>
+<h3 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>caption</span><span class="token punctuation">></span></span>title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>caption</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>row-title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>A<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>B<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
+</code></pre>
 <ul>
-<li>input type=”checkbox”</li>
-<li>input type=”password”</li>
-<li>select 下拉菜单<ul>
-<li>option value</li>
-</ul>
-</li>
-<li>textarea</li>
-<li>rows cols设置文本框的行数和列数<h3 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h3><pre><code>table
-tr
-td
-</code></pre>
-</li>
-<li>table通常有border属性<ul>
-<li>caption是标题，第一个子元素</li>
+<li>table通常有border属性，以实现边框</li>
+<li>caption：标题，第一个子元素</li>
 <li>th是标题小格，代替td作为标题小格</li>
 <li>colspan和rowspan设置td或者th的列或者行的跨度</li>
 <li>thead，tbody，tfoot定义表头、核心内容、表尾</li>
-</ul>
-</li>
 </ul>
 
                 

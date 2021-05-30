@@ -481,13 +481,13 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="ng常用命令"><a href="#ng常用命令" class="headerlink" title="ng常用命令"></a>ng常用命令</h3><p>ng new project-name<br>ng serve –open 构建应用并监听文件<br>–open 标志会打开浏览器<br>–host 0.0.0.0 指定host地址<br>ng g component name</p>
-<pre><code class="js">import { Component, OnInit } from '@angular/core';
+<pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> OnInit <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
 
-@Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
-})
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-heroes'</span><span class="token punctuation">,</span>
+  templateUrl<span class="token punctuation">:</span> <span class="token string">'./heroes.component.html'</span><span class="token punctuation">,</span>
+  styleUrls<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'./heroes.component.css'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <p>导入 Component 符号，并为组件类加上 @Component 装饰器，用于为该组件指定 Angular 所需的元数据<br>里面是CLI 自动生成了三个元数据属性<br>selector— 组件的选择器（CSS 元素选择器）<br>templateUrl— 组件模板文件的位置。<br>styleUrls— 组件私有 CSS 样式表文件的位置。</p>
 <h3 id="UppercasePipe-格式化"><a href="#UppercasePipe-格式化" class="headerlink" title="UppercasePipe 格式化"></a>UppercasePipe 格式化</h3><p><code>&lt;h2&gt;{{hero.name | uppercase}} Details&lt;/h2&gt;</code><br> uppercase 位于管道操作符（ | ）的右边，用来调用内置管道 UppercasePipe<br>管道 是格式化字符串、金额、日期和其它显示数据的好办法</p>
@@ -504,53 +504,53 @@
 <h3 id="组件样式"><a href="#组件样式" class="headerlink" title="组件样式"></a>组件样式</h3><p>@Component 元数据中指定的样式和样式表都是局限于该组件的</p>
 <h3 id="click-事件绑定"><a href="#click-事件绑定" class="headerlink" title="click 事件绑定"></a>click 事件绑定</h3><p><code>&lt;li *ngFor="let hero of heroes" (click)="onSelect(hero)"&gt;</code><br>click 外面的圆括号会让 Angular 监听这个 </p></li><li> 元素的 click 事件。 当用户点击 </li><li> 时，Angular 就会执行表达式 onSelect(hero)。<p></p>
 <h3 id="ngIf"><a href="#ngIf" class="headerlink" title="*ngIf"></a>*ngIf</h3><p><code>&lt;div *ngIf="selectedHero"&gt;</code><br>selectedHero为undefined时不进行显示，避免报错</p>
-<h3 id="CSS-类绑定机制"><a href="#CSS-类绑定机制" class="headerlink" title="CSS 类绑定机制"></a>CSS 类绑定机制</h3><pre><code class="js">[class.classname]="some-condition" 
-eg: [class.selected]="hero === selectedHero"
+<h3 id="CSS-类绑定机制"><a href="#CSS-类绑定机制" class="headerlink" title="CSS 类绑定机制"></a>CSS 类绑定机制</h3><pre class=" language-js"><code class="language-js"><span class="token punctuation">[</span><span class="token keyword">class</span><span class="token punctuation">.</span>classname<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"some-condition"</span> 
+eg<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token keyword">class</span><span class="token punctuation">.</span>selected<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"hero === selectedHero"</span>
 </code></pre>
-<h3 id="Input"><a href="#Input" class="headerlink" title="@Input()"></a>@Input()</h3><pre><code class="ts">import { Component, OnInit, Input } from '@angular/core';
-@Input() hero: Hero;
+<h3 id="Input"><a href="#Input" class="headerlink" title="@Input()"></a>@Input()</h3><pre class=" language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> OnInit<span class="token punctuation">,</span> Input <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+@<span class="token function">Input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> hero<span class="token punctuation">:</span> Hero<span class="token punctuation">;</span>
 </code></pre>
 <p>从hero-com传入某个hero信息到hero-detail中<br>hero 必须是带有 @Input() 装饰器的输入属性，因为外部的 HeroesComponent 将会绑定到它<br>&lt;app-hero-detail [hero]=”selectedHero”&gt;<br>[hero]=”selectedHero” 是属性绑定语法，单向数据绑定，selectedHero 属性绑定到目标元素的 hero 属性</p>
 <h3 id="创建服务"><a href="#创建服务" class="headerlink" title="创建服务"></a>创建服务</h3><p>用Angular 的依赖注入机制将service注入组件构造函数中<br>创建 HeroService：ng generate service hero，生成如下：</p>
-<pre><code class="js">import { Injectable } from '@angular/core';
-@Injectable({
-  providedIn: 'root',
-})
-export class HeroService {
-  constructor() { }
-}
+<pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Injectable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+@<span class="token function">Injectable</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  providedIn<span class="token punctuation">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">HeroService</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>@Injectable() 装饰器会接受该服务的元数据对象，就像 @Component() 对组件类的作用一样。<br>注入器是一个对象，负责当应用要求获取它的实例时选择和注入该提供者。</p>
 <h3 id="注入-HeroService"><a href="#注入-HeroService" class="headerlink" title="注入 HeroService"></a>注入 HeroService</h3><p>在component中：<br>constructor(private heroService: HeroService) { }<br>在创建组件时，依赖注入系统把service设置为组件的单例对象</p>
 <h3 id="可观察（Observable）数据"><a href="#可观察（Observable）数据" class="headerlink" title="可观察（Observable）数据"></a>可观察（Observable）数据</h3><p>HeroService.getHeroes() 是异步函数，需要使用HttpClient.get获取数据，并返回Observable对象<br>Observable 是 RxJS 库中的一个关键类</p>
 <p>使用RxJS的of( )模拟服务器返回数据，hero.service中：</p>
-<pre><code class="ts">import { Observable, of } from 'rxjs';
-getHeroes(): Observable&lt;Hero[]&gt; {
-  return of(HEROES);
-}
+<pre class=" language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> Observable<span class="token punctuation">,</span> of <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'rxjs'</span><span class="token punctuation">;</span>
+<span class="token function">getHeroes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Observable<span class="token operator">&lt;</span>Hero<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">of</span><span class="token punctuation">(</span>HEROES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>of(HEROES) 会返回一个 Observable&lt;Hero[]&gt;，它会发出单个值，这里是一个英雄数组</p>
-<h3 id="在-Component-中订阅Service"><a href="#在-Component-中订阅Service" class="headerlink" title="在 Component 中订阅Service"></a>在 Component 中订阅Service</h3><pre><code class="ts">getHeroes(): void {
-  this.heroService.getHeroes()
-      .subscribe(heroes =&gt; this.heroes = heroes);
-}
+<h3 id="在-Component-中订阅Service"><a href="#在-Component-中订阅Service" class="headerlink" title="在 Component 中订阅Service"></a>在 Component 中订阅Service</h3><pre class=" language-ts"><code class="language-ts"><span class="token function">getHeroes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>heroService<span class="token punctuation">.</span><span class="token function">getHeroes</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>heroes <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">this</span><span class="token punctuation">.</span>heroes <span class="token operator">=</span> heroes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>在模板中绑定的组件属性必须是公共属性</p>
 <h3 id="添加AppRoutingModule"><a href="#添加AppRoutingModule" class="headerlink" title="添加AppRoutingModule"></a>添加AppRoutingModule</h3><p>ng generate module app-routing –flat –module=app<br>–flat 把文件放进src/app 中，而不是单独的目录中。<br>–module=app 告诉 CLI 把它注册到 AppModule 的 imports 数组中</p>
 <p>Module代码：</p>
-<pre><code class="js">import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HeroesComponent } from './heroes/heroes.component';
+<pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> NgModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> RouterModule<span class="token punctuation">,</span> Routes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/router'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> HeroesComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./heroes/heroes.component'</span><span class="token punctuation">;</span>
 
-const routes: Routes = [
-  { path: 'heroes', component: HeroesComponent }
-];
+<span class="token keyword">const</span> routes<span class="token punctuation">:</span> Routes <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> path<span class="token punctuation">:</span> <span class="token string">'heroes'</span><span class="token punctuation">,</span> component<span class="token punctuation">:</span> HeroesComponent <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  imports<span class="token punctuation">:</span> <span class="token punctuation">[</span>RouterModule<span class="token punctuation">.</span><span class="token function">forRoot</span><span class="token punctuation">(</span>routes<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  exports<span class="token punctuation">:</span> <span class="token punctuation">[</span>RouterModule<span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppRoutingModule</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
 </code></pre>
 <p>导入 RouterModule 和 Routes，以便该应用具有路由功能<br>Routes属性有两个参数，path和component</p>
 <p>RouterModule.forRoot()<br>@NgModule 元数据会初始化路由器，并监听地址变化<br>forRoot() 会提供路由所需的服务提供者和指令，还会基于浏览器的当前 URL 执行首次导航</p>
@@ -564,178 +564,178 @@ export class AppRoutingModule { }
 <h3 id="添加默认路由"><a href="#添加默认路由" class="headerlink" title="添加默认路由"></a>添加默认路由</h3><p>{ path: ‘’, redirectTo: ‘/dashboard’, pathMatch: ‘full’ },</p>
 <h3 id="抽离hero-detail组件"><a href="#抽离hero-detail组件" class="headerlink" title="抽离hero-detail组件"></a>抽离hero-detail组件</h3><p>app-routing.module.ts<br>{ path: ‘detail/:id’, component: HeroDetailComponent },<br>path 中的冒号（:）表示 :id 是一个占位符，表示特定id</p>
 <h3 id="支持路由的-HeroDetail"><a href="#支持路由的-HeroDetail" class="headerlink" title="支持路由的 HeroDetail"></a>支持路由的 HeroDetail</h3><p>从一种新途径获取要显示的英雄<br>获取创建本组件的路由，从路由提取 id，通过 HeroService 获取这个 id 的英雄数据<br>hero-detail.component.ts代码如下：</p>
-<pre><code class="js">import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+<pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> ActivatedRoute <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/router'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Location <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/common'</span><span class="token punctuation">;</span>
 
-import { HeroService } from '../hero.service';
-// 将三个服务注入构造函数
-constructor(
-  private route: ActivatedRoute,
-  private heroService: HeroService,
-  private location: Location
-) { }
+<span class="token keyword">import</span> <span class="token punctuation">{</span> HeroService <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../hero.service'</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 将三个服务注入构造函数</span>
+<span class="token function">constructor</span><span class="token punctuation">(</span>
+  <span class="token keyword">private</span> route<span class="token punctuation">:</span> ActivatedRoute<span class="token punctuation">,</span>
+  <span class="token keyword">private</span> heroService<span class="token punctuation">:</span> HeroService<span class="token punctuation">,</span>
+  <span class="token keyword">private</span> location<span class="token punctuation">:</span> Location
+<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
 </code></pre>
 <p>ActivatedRoute 保存路由信息，location 是Angular 服务，用来与浏览器打交道<br>从路由参数中提取 id：<br>const id = +this.route.snapshot.paramMap.get(‘id’);<br>route.snapshot 是一个路由信息的静态快照，抓取自组件刚创建完毕时<br>paramMap 是从 URL 提取的路由参数值的字典</p>
 <p>hero.service.ts代码如下：</p>
-<pre><code class="js">getHero(id: number): Observable&lt;Hero&gt; {
-  this.messageService.add(`HeroService: fetched hero id=${id}`);
-  return of(HEROES.find(hero =&gt; hero.id === id));
-}
+<pre class=" language-js"><code class="language-js"><span class="token function">getHero</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> number<span class="token punctuation">)</span><span class="token punctuation">:</span> Observable<span class="token operator">&lt;</span>Hero<span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>messageService<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`HeroService: fetched hero id=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">of</span><span class="token punctuation">(</span>HEROES<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>hero <span class="token operator">=</span><span class="token operator">></span> hero<span class="token punctuation">.</span>id <span class="token operator">===</span> id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<h3 id="回到原路"><a href="#回到原路" class="headerlink" title="回到原路"></a>回到原路</h3><pre><code class="ts">&lt;button (click)="goBack()"&gt;go back&lt;/button&gt;
-goBack(): void {
-  this.location.back();
-}
+<h3 id="回到原路"><a href="#回到原路" class="headerlink" title="回到原路"></a>回到原路</h3><pre class=" language-ts"><code class="language-ts"><span class="token operator">&lt;</span>button <span class="token punctuation">(</span>click<span class="token punctuation">)</span><span class="token operator">=</span><span class="token string">"goBack()"</span><span class="token operator">></span>go back<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+<span class="token function">goBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>location<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="启用-HTTP-服务"><a href="#启用-HTTP-服务" class="headerlink" title="启用 HTTP 服务"></a>启用 HTTP 服务</h3><p>HttpClient 是 Angular 通过 HTTP 与远程服务器通讯的机制<br>把HttpClient添加到根模块 AppModule 中</p>
-<pre><code class="js">import { HttpClientModule } from '@angular/common/http';
+<pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> HttpClientModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/common/http'</span><span class="token punctuation">;</span>
 
-@NgModule({
-  imports: [
-    HttpClientModule,
-  ],
-})
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  imports<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    HttpClientModule<span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <h3 id="模拟数据服务器-In-memory-Web-API"><a href="#模拟数据服务器-In-memory-Web-API" class="headerlink" title="模拟数据服务器 In-memory Web API"></a>模拟数据服务器 In-memory Web API</h3><p>npm install angular-in-memory-web-api –save</p>
 <p>在 AppModule 中导入 HttpClientInMemoryWebApiModule 和 InMemoryDataService 类</p>
 <p>将 WebApiModule 添加到 AppModule 的 imports 数组中，并以 InMemoryDataService 为参数进行配置</p>
-<pre><code class="ts">HttpClientInMemoryWebApiModule.forRoot(
-  InMemoryDataService, { dataEncapsulation: false }
-)
+<pre class=" language-ts"><code class="language-ts">HttpClientInMemoryWebApiModule<span class="token punctuation">.</span><span class="token function">forRoot</span><span class="token punctuation">(</span>
+  InMemoryDataService<span class="token punctuation">,</span> <span class="token punctuation">{</span> dataEncapsulation<span class="token punctuation">:</span> <span class="token keyword">false</span> <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
 </code></pre>
 <p>forRoot() 配置方法接收一个 InMemoryDataService 类来初始化内存数据库</p>
 <h3 id="模拟Http请求"><a href="#模拟Http请求" class="headerlink" title="模拟Http请求"></a>模拟Http请求</h3><p>hero.service.ts代码如下：</p>
-<pre><code class="ts">import { HttpClient, HttpHeaders } from '@angular/common/http';
-constructor(private http: HttpClient,) { }
+<pre class=" language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> HttpClient<span class="token punctuation">,</span> HttpHeaders <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/common/http'</span><span class="token punctuation">;</span>
+<span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token keyword">private</span> http<span class="token punctuation">:</span> HttpClient<span class="token punctuation">,</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
 
-// 将 RxJS 的 of( ) 模拟转换成使用 HttpClient ，两者都返回Observable&lt;Hero[]&gt;
-getHeroes(): Observable&lt;Hero[]&gt; {
-  return of(HEROES);
-}
+<span class="token comment" spellcheck="true">// 将 RxJS 的 of( ) 模拟转换成使用 HttpClient ，两者都返回Observable&lt;Hero[]></span>
+<span class="token function">getHeroes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Observable<span class="token operator">&lt;</span>Hero<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">of</span><span class="token punctuation">(</span>HEROES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-getHeroes(): Observable&lt;Hero[]&gt; {
-  return this.http.get&lt;Hero[]&gt;(this.heroesUrl)
-}
+<span class="token function">getHeroes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Observable<span class="token operator">&lt;</span>Hero<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token operator">&lt;</span>Hero<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>heroesUrl<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>所有的 HttpClient 方法都会返回某个值的 RxJS Observable</p>
 <p>HttpClient.get() 返回响应数据<br>get() 默认情况把响应体当做无类型的 JSON 对象进行返回。 如果指定了可选的模板类型 &lt;Hero[]&gt;，就会给返回你一个类型化的对象。</p>
 <p>API 可能在返回对象中深埋着你想要的数据，要借助 RxJS 的 map() 对结果处理</p>
 <h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>捕获错误使用 RxJS 的 catchError() 建立对 Observable 结果的处理管道（pipe）<br>/hero.service.ts代码如下：</p>
-<pre><code class="js">import { catchError, map, tap } from 'rxjs/operators';
+<pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> catchError<span class="token punctuation">,</span> map<span class="token punctuation">,</span> tap <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'rxjs/operators'</span><span class="token punctuation">;</span>
 
-getHeroes( ): Observable&lt;Hero[]&gt; {
-  return this.http.get&lt;Hero[]&gt;(this.heroesUrl)
-    .pipe(
-      catchError(this.handleError&lt;Hero[]&gt;('getHeroes', [ ]))
-    );
-}
+<span class="token function">getHeroes</span><span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">:</span> Observable<span class="token operator">&lt;</span>Hero<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token operator">&lt;</span>Hero<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>heroesUrl<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+      <span class="token function">catchError</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleError<span class="token operator">&lt;</span>Hero<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token string">'getHeroes'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span> <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>catchError( ) 拦截失败的 Observable，把错误对象传给错误处理器</p>
 <h3 id="handleError通用化"><a href="#handleError通用化" class="headerlink" title="handleError通用化"></a>handleError通用化</h3><p>不直接处理错误，而是返回给 catchError 一个错误处理函数</p>
-<pre><code class="js">private handleError&lt;T&gt;(operation = 'operation', result?: T) {
-  // 匿名函数
-  return (error: any): Observable&lt;T&gt; =&gt; {
-    console.error(error); // log to console instead
-    this.log(`${operation} failed: ${error.message}`);
-    return of(result as T);
-  };
-}
+<pre class=" language-js"><code class="language-js"><span class="token keyword">private</span> handleError<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>operation <span class="token operator">=</span> <span class="token string">'operation'</span><span class="token punctuation">,</span> result<span class="token operator">?</span><span class="token punctuation">:</span> T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 匿名函数</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>error<span class="token punctuation">:</span> any<span class="token punctuation">)</span><span class="token punctuation">:</span> Observable<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// log to console instead</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>operation<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> failed: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>error<span class="token punctuation">.</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">of</span><span class="token punctuation">(</span>result <span class="token keyword">as</span> T<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="窥探-Observable"><a href="#窥探-Observable" class="headerlink" title="窥探 Observable"></a>窥探 Observable</h3><p>使用 RxJS 的 tap( ) 查看 使用 传出Observable 的值，但不会改变值本身<br>hero.service.ts代码如下：</p>
-<pre><code class="js">getHeroes( ): Observable&lt;Hero[ ]&gt; {
-  return this.http.get&lt;Hero[]&gt;(this.heroesUrl)
-    .pipe(
-      tap(_ =&gt; this.log('fetched heroes')),
-      catchError(this.handleError&lt;Hero[]&gt;('getHeroes', []))
-    );
-}
+<pre class=" language-js"><code class="language-js"><span class="token function">getHeroes</span><span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">:</span> Observable<span class="token operator">&lt;</span>Hero<span class="token punctuation">[</span> <span class="token punctuation">]</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token operator">&lt;</span>Hero<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>heroesUrl<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+      <span class="token function">tap</span><span class="token punctuation">(</span>_ <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'fetched heroes'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token function">catchError</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleError<span class="token operator">&lt;</span>Hero<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token string">'getHeroes'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<h3 id="通过-id-获取英雄"><a href="#通过-id-获取英雄" class="headerlink" title="通过 id 获取英雄"></a>通过 id 获取英雄</h3><pre><code class="js">hero.service.ts代码如下：
-getHero(id: number): Observable&lt;Hero&gt; {
-  const url = `${this.heroesUrl}/${id}`;  // 构建url
+<h3 id="通过-id-获取英雄"><a href="#通过-id-获取英雄" class="headerlink" title="通过 id 获取英雄"></a>通过 id 获取英雄</h3><pre class=" language-js"><code class="language-js">hero<span class="token punctuation">.</span>service<span class="token punctuation">.</span>ts代码如下：
+<span class="token function">getHero</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> number<span class="token punctuation">)</span><span class="token punctuation">:</span> Observable<span class="token operator">&lt;</span>Hero<span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>heroesUrl<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 构建url</span>
 
-  return this.http.get&lt;Hero&gt;(url).pipe(
-    tap(_ =&gt; this.log(`fetched hero id=${id}`)),
-    catchError(this.handleError&lt;Hero&gt;(`getHero id=${id}`))
-  );
-}
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token operator">&lt;</span>Hero<span class="token operator">></span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+    <span class="token function">tap</span><span class="token punctuation">(</span>_ <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`fetched hero id=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">catchError</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleError<span class="token operator">&lt;</span>Hero<span class="token operator">></span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`getHero id=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<h3 id="修改英雄"><a href="#修改英雄" class="headerlink" title="修改英雄"></a>修改英雄</h3><pre><code class="js">httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+<h3 id="修改英雄"><a href="#修改英雄" class="headerlink" title="修改英雄"></a>修改英雄</h3><pre class=" language-js"><code class="language-js">httpOptions <span class="token operator">=</span> <span class="token punctuation">{</span>
+  headers<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">HttpHeaders</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">'application/json'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-updateHero(hero: Hero): Observable&lt;any&gt; {
-  return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
-    tap(_ =&gt; this.log(`updated hero id=${hero.id}`)),
-    catchError(this.handleError&lt;any&gt;('updateHero'))
-  );
-}
+<span class="token function">updateHero</span><span class="token punctuation">(</span>hero<span class="token punctuation">:</span> Hero<span class="token punctuation">)</span><span class="token punctuation">:</span> Observable<span class="token operator">&lt;</span>any<span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>http<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>heroesUrl<span class="token punctuation">,</span> hero<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>httpOptions<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+    <span class="token function">tap</span><span class="token punctuation">(</span>_ <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`updated hero id=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>hero<span class="token punctuation">.</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">catchError</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleError<span class="token operator">&lt;</span>any<span class="token operator">></span><span class="token punctuation">(</span><span class="token string">'updateHero'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="添加新英雄"><a href="#添加新英雄" class="headerlink" title="添加新英雄"></a>添加新英雄</h3><p>return this.http.post<hero>(this.heroesUrl, hero, this.httpOptions).pipe()</hero></p>
 <h3 id="删除某个英雄"><a href="#删除某个英雄" class="headerlink" title="删除某个英雄"></a>删除某个英雄</h3><p>heroes.component.ts代码如下：</p>
-<pre><code class="js">delete(hero: Hero): void {
-  // 去掉被删除数据后的列表
-  this.heroes = this.heroes.filter(h =&gt; h !== hero);
-  this.heroService.deleteHero(hero).subscribe();
-}
+<pre class=" language-js"><code class="language-js"><span class="token keyword">delete</span><span class="token punctuation">(</span>hero<span class="token punctuation">:</span> Hero<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 去掉被删除数据后的列表</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>heroes <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>heroes<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>h <span class="token operator">=</span><span class="token operator">></span> h <span class="token operator">!==</span> hero<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>heroService<span class="token punctuation">.</span><span class="token function">deleteHero</span><span class="token punctuation">(</span>hero<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-hero.service.ts
-deleteHero(hero: Hero | number): Observable&lt;Hero&gt; {
-  const id = typeof hero === 'number' ? hero : hero.id;
-  const url = `${this.heroesUrl}/${id}`;
+hero<span class="token punctuation">.</span>service<span class="token punctuation">.</span>ts
+<span class="token function">deleteHero</span><span class="token punctuation">(</span>hero<span class="token punctuation">:</span> Hero <span class="token operator">|</span> number<span class="token punctuation">)</span><span class="token punctuation">:</span> Observable<span class="token operator">&lt;</span>Hero<span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> id <span class="token operator">=</span> <span class="token keyword">typeof</span> hero <span class="token operator">===</span> <span class="token string">'number'</span> <span class="token operator">?</span> hero <span class="token punctuation">:</span> hero<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>heroesUrl<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
 
-  return this.http.delete&lt;Hero&gt;(url, this.httpOptions).pipe(
-    tap(_ =&gt; this.log(`deleted hero id=${id}`)),
-    catchError(this.handleError&lt;Hero&gt;('deleteHero'))
-  );
-}
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>http<span class="token punctuation">.</span><span class="token keyword">delete</span><span class="token operator">&lt;</span>Hero<span class="token operator">></span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>httpOptions<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+    <span class="token function">tap</span><span class="token punctuation">(</span>_ <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`deleted hero id=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">catchError</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleError<span class="token operator">&lt;</span>Hero<span class="token operator">></span><span class="token punctuation">(</span><span class="token string">'deleteHero'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="根据名字搜索"><a href="#根据名字搜索" class="headerlink" title="根据名字搜索"></a>根据名字搜索</h3><p> 当用户在搜索框中输入名字时，会不断发送HTTP 请求，目标是发出尽可能少的必要请求<br>hero.service.ts</p>
-<pre><code class="js">searchHeroes(term: string): Observable&lt;Hero[]&gt; {
-  if (!term.trim()) {
-    // if not search term, return empty hero array.
-    return of([]);
-  }
+<pre class=" language-js"><code class="language-js"><span class="token function">searchHeroes</span><span class="token punctuation">(</span>term<span class="token punctuation">:</span> string<span class="token punctuation">)</span><span class="token punctuation">:</span> Observable<span class="token operator">&lt;</span>Hero<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>term<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// if not search term, return empty hero array.</span>
+    <span class="token keyword">return</span> <span class="token keyword">of</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  return this.http.get&lt;Hero[]&gt;(`${this.heroesUrl}/?name=${term}`).pipe(
-    tap(x =&gt; x.length ?
-       this.log(`found heroes matching "${term}"`) :
-       this.log(`no heroes matching "${term}"`)),
-    catchError(this.handleError&lt;Hero[]&gt;('searchHeroes', []))
-  );
-}
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token operator">&lt;</span>Hero<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>heroesUrl<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/?name=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>term<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+    <span class="token function">tap</span><span class="token punctuation">(</span>x <span class="token operator">=</span><span class="token operator">></span> x<span class="token punctuation">.</span>length <span class="token operator">?</span>
+       <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`found heroes matching "</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>term<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"`</span></span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+       <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`no heroes matching "</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>term<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">catchError</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleError<span class="token operator">&lt;</span>Hero<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token string">'searchHeroes'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>展示搜索结果的列表<br>hero-search.component.html</p>
-<pre><code class="html">&lt;div id="search-component"&gt;
-  &lt;h4&gt;&lt;label for="search-box"&gt;Hero Search&lt;/label&gt;&lt;/h4&gt;
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>search-component<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>search-box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hero Search<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span>
 
-  &lt;input #searchBox id="search-box" (input)="search(searchBox.value)" /&gt;
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">#searchBox</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>search-box<span class="token punctuation">"</span></span> <span class="token attr-name">(input)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>search(searchBox.value)<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
 
-  &lt;ul class="search-result"&gt;
-    &lt;li *ngFor="let hero of heroes$ | async" &gt;
-      &lt;a routerLink="/detail/{{hero.id}}"&gt;
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>search-result<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">*ngFor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>let hero of heroes$ | async<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">routerLink</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/detail/{{hero.id}}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         {{hero.name}}
-      &lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>$ 是一个约定，表示 heroes$ 是一个 Observable 而不是数组<br>由于 *ngFor 不能直接使用 Observable，要使用管道字符（|），后面跟着 async表示 AsyncPipe 管道，它会自动订阅 Observable，组件就不再需要订阅heroes$</p>
-<h3 id="RxJS-Subject-类型的-searchTerms"><a href="#RxJS-Subject-类型的-searchTerms" class="headerlink" title="RxJS Subject 类型的 searchTerms"></a>RxJS Subject 类型的 searchTerms</h3><pre><code class="js">private searchTerms = new Subject&lt;string&gt;( );
-search(term: string): void {
-  this.searchTerms.next(term);
-}
+<h3 id="RxJS-Subject-类型的-searchTerms"><a href="#RxJS-Subject-类型的-searchTerms" class="headerlink" title="RxJS Subject 类型的 searchTerms"></a>RxJS Subject 类型的 searchTerms</h3><pre class=" language-js"><code class="language-js"><span class="token keyword">private</span> searchTerms <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Subject</span><span class="token operator">&lt;</span>string<span class="token operator">></span><span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">search</span><span class="token punctuation">(</span>term<span class="token punctuation">:</span> string<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>searchTerms<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span>term<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Subject 既是Observable对象的数据源，本身也是 Observable<br>通过调用next(value) 往 Observable 中推送一些值</p>
 <h3 id="串联-RxJS-操作符"><a href="#串联-RxJS-操作符" class="headerlink" title="串联 RxJS 操作符"></a>串联 RxJS 操作符</h3><p>ngOnInit( ) 往 searchTerms 的处理管道中加入 RxJS 操作符，缩减对 searchHeroes( ) 的调用次数，并返回一个搜索结果的可观察对象（Hero[ ] ）</p>
-<pre><code class="js">this.heroes$ = this.searchTerms.pipe(
-  // 传出最终字符串之前，debounceTime(300) 将会等待直至300内无新事件
-  debounceTime(300),
-  // 只在过滤条件变化时发送请求
-  distinctUntilChanged(),
-  // 取消丢弃旧的数据，保留最新的
-  switchMap((term: string) =&gt; this.heroService.searchHeroes(term)),
-);
+<pre class=" language-js"><code class="language-js"><span class="token keyword">this</span><span class="token punctuation">.</span>heroes$ <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>searchTerms<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+  <span class="token comment" spellcheck="true">// 传出最终字符串之前，debounceTime(300) 将会等待直至300内无新事件</span>
+  <span class="token function">debounceTime</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 只在过滤条件变化时发送请求</span>
+  <span class="token function">distinctUntilChanged</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 取消丢弃旧的数据，保留最新的</span>
+  <span class="token function">switchMap</span><span class="token punctuation">(</span><span class="token punctuation">(</span>term<span class="token punctuation">:</span> string<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">this</span><span class="token punctuation">.</span>heroService<span class="token punctuation">.</span><span class="token function">searchHeroes</span><span class="token punctuation">(</span>term<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 </nav></li>
                 

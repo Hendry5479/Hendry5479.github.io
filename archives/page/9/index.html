@@ -365,7 +365,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/02/interview/2.module/module-lesson/package/">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/readme/">
                         <div class="card-image">
                             
                             
@@ -378,12 +378,26 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                {"name":"module-lesson","version":"1.0.0","main":"index.js","author":"cbbfcd","license":"MIT","devDependencies":{"@babel
+                                前端模块化
+大纲：
+
+模块化的历史
+模块化技术方案介绍
+手写实现
+
+
+模块化的历史
+
+什么是模块？
+
+
+实实在在的需求推进了所有技术的演进，模块化也是。
+站在前端发展的上帝视角来看，随着前端的能力在纵深都得到增强之后，迫切的需要更好的代码管
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
                             </span>
                             <span class="publish-author">
                                 
@@ -400,7 +414,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/02/interview/2.module/module-lesson/package-lock/">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmj/readme/">
                         <div class="card-image">
                             
                             
@@ -413,12 +427,17 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                {"name":"module-lesson","version":"1.0.0","lockfileVersion":2,"requires":true,"packages":{"":{"version":"1.0.0","license
+                                CMJ文件是一个模块，私有。内置两个变量 module require (exports = module.exports)
+一个引入一个导出，就构成了通信的基本结构
+需要注意的两个问题
+缓存，require 会缓存一下，所以
+
+// a.
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
                             </span>
                             <span class="publish-author">
                                 
@@ -435,7 +454,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/02/interview/1.promise/generator-async-await/">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/amd/rj/">
                         <div class="card-image">
                             
                             
@@ -448,13 +467,20 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Generator 和 Async 简介在讲Generator之前, 咱们要来先了解另外一个概念, 迭代器.
-迭代器 Iterator迭代器Iterator 是 ES6 引入的一种新的遍历机制，同时也是一种特殊对象，它具有一些专门为迭代过程
+                                const def = new Map();
+
+// AMD mini impl
+const defaultOptions = {
+  paths: ''
+}
+
+// From CDN
+const __import = (url) =&gt
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
                             </span>
                             <span class="publish-author">
                                 
@@ -471,7 +497,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/04/02/interview/1.promise/async/">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmj/cmj/">
                         <div class="card-image">
                             
                             
@@ -484,285 +510,261 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                function longTimeFn(time) {
-    return new Promise(resolve =&gt; {
-        setTimeout(() =&gt; {
-            resolve(tim
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-02
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Hendry Chen
-                                
-                            </span>
-                        </div>
-                    </div>
+                                // webpack -&gt; cmj -&gt; broswer -&gt; iife
 
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/02/interview/1.promise/generator/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                            
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
+const cache = {}
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                function longTimeFn(time) {
-    return new Promise((resolve) =&gt; {
-        setTimeout(() =&gt; {
-            resolve(t
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-02
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Hendry Chen
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/02/interview/1.promise/shi-xian-yi-ge-promise/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                            
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                一步步实现一个Promise
-平常用promise的时候, 是通过new关键字来new Promise(), 所以咱们应该用构造函数或者class来实现. 都2021年了, 咱们就用class来实现一下吧.
-class MPromise 
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-02
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Hendry Chen
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/01/interview/1.promise/promisea-gui-fan/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                            
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                PromiseA+规范术语
-promise 是一个有then方法的对象或者是函数，行为遵循本规范
-thenable 是一个有then方法的对象或者是函数
-value 是promise状态成功时的值，也就是resolve的参数, 包括各种数据
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Hendry Chen
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/03/29/yck/20-she-ji-mo-shi/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="(20)设计模式">
-                            
-                            <span class="card-title">(20)设计模式</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                30.设计模式设计模式总的来说是一个抽象的概念，前人通过无数次的实践总结出的一套写代码的方式，通过这种方式写的代码可以让别人更加容易阅读、维护以及复用。
-简单工厂模式class Man {
-  constructor(name) {
+(function(modules) {
+  const require = (mn) =&gt; {
    
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Interview/" class="post-category">
-                                    Interview
-                                </a>
-                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Hendry Chen
                                 
                             </span>
                         </div>
                     </div>
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93/">
-                            <span class="chip bg-color">面试之道</span>
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/03/29/yck/19-shu-ru-url-dao-ye-mian-xuan-ran-de-guo-cheng/">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmd/main/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="(19)输入 URL 到页面渲染的整个流程">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                             
-                            <span class="card-title">(19)输入 URL 到页面渲染的整个流程</span>
+                            <span class="card-title"></span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                29.输入 URL 到页面渲染的整个流程大致过程DNS解析、TCP握手建立连接、TLS握手开始传输数据、浏览器判断状态码、解析文件；构建DOM树和CSSOM树，遇到script标签就去请求js文件并执行，生成Render树，调用GPU绘制
-
+                                define('main', async function (require, exports, module) {
+  console.log('main run')
+  var a = await require('a')
+  a.ru
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Interview/" class="post-category">
-                                    Interview
-                                </a>
-                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Hendry Chen
                                 
                             </span>
                         </div>
                     </div>
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93/">
-                            <span class="chip bg-color">面试之道</span>
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/03/29/yck/18-http/">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmd/index/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="(18)HTTP">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                             
-                            <span class="card-title">(18)HTTP</span>
+                            <span class="card-title"></span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                27.HTTP 及 TLS这一章节我们将来学习 HTTP 及 TLS 协议中的内容。
-HTTP 请求中的内容HTTP 请求由三部分构成，分别为：
-请求行首部实体请求行大概长这样 GET /images/logo.gif HTTP/1.1，基
+                                
+  hello cmd
+  
+    sj.use('main')
+  
+
+
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Interview/" class="post-category">
-                                    Interview
-                                </a>
-                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Hendry Chen
                                 
                             </span>
                         </div>
                     </div>
 
                     
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93/">
-                            <span class="chip bg-color">面试之道</span>
-                        </a>
-                        
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmd/b/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                define('b', function (require, exports, module) {
+  console.log('b load')
+  exports.run = function () { console.log('b r
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Hendry Chen
+                                
+                            </span>
+                        </div>
                     </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmd/a/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                define('a', function (require, exports, module) {
+  console.log('a load')
+  exports.run = function () { console.log('a r
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Hendry Chen
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmd/sj/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                const modules = {};
+const exports = {};
+sj = {};
+
+const toUrl = (dep) =&gt; {
+  const p = location.pathname;
+  return p.
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Hendry Chen
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/04/04/interview/2.module/module-lesson/impl/cmd/readme/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            
+                            <span class="card-title"></span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                CMD代表人物玉伯，代表技术实现 Seajs
+Usage// sea.js
+define('a', function (require, exports, module) {
+  console.log('a load')
+  export
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-04
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Hendry Chen
+                                
+                            </span>
+                        </div>
+                    </div>
+
                     
                 </div>
             </div>
@@ -784,7 +786,7 @@ HTTP 请求中的内容HTTP 请求由三部分构成，分别为：
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">9 / 12</div>
+            <div class="center-align b-text-gray">9 / 16</div>
         </div>
         <div class="col s6 m4 l4">
             
