@@ -1,1333 +1,213 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/heng.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/heng.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/heng.png">
-  <link rel="mask-icon" href="/images/heng.png" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"hendry5479.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta name="description" content="Front-end artist">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hendry5479">
-<meta property="og:url" content="https://hendry5479.github.io/index.html">
-<meta property="og:site_name" content="Hendry5479">
-<meta property="og:description" content="Front-end artist">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="Hendry Chen">
-<meta property="article:tag" content="Front">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://hendry5479.github.io/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'en'
-  };
-</script>
-
-  <title>Hendry5479</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Hendry5479's blog</title><meta name="description" content="Front-end artist"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/avatar.jpg"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/widget-post-list.css"><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Hendry5479" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hendry5479</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-      <p class="site-subtitle" itemprop="description">Artist Hendry</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content index posts-expand">
-            
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hendry5479.github.io/2021/04/24/angular/my-angular/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/heng.png">
-      <meta itemprop="name" content="Hendry Chen">
-      <meta itemprop="description" content="Front-end artist">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hendry5479">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/24/angular/my-angular/" class="post-title-link" itemprop="url">My angular learning road</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-04-24 21:18:05" itemprop="dateCreated datePublished" datetime="2021-04-24T21:18:05+08:00">2021-04-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-30 20:26:11" itemprop="dateModified" datetime="2021-05-30T20:26:11+08:00">2021-05-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/front/" itemprop="url" rel="index"><span itemprop="name">front</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h1><h2 id="data-binding"><a href="#data-binding" class="headerlink" title="data binding"></a>data binding</h2><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">[class.active]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>boo_exp<span class="token punctuation">"</span></span> <span class="token attr-name">class.active</span><span class="token attr-value"><span class="token punctuation">=</span>{{boo_exp}}/</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">[(ngModel)]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hero.name<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">(click)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>func()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-</code></pre>
-<h2 id="style-binding"><a href="#style-binding" class="headerlink" title="style binding"></a>style binding</h2><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">[ngClass]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{class1: boo, class2: boo}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">[ngStyle]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{<span class="token punctuation">'</span>color<span class="token punctuation">'</span>: red, <span class="token punctuation">'</span>font-size<span class="token punctuation">'</span>: 14px}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-</code></pre>
-<h2 id="modify-dom"><a href="#modify-dom" class="headerlink" title="modify dom"></a>modify dom</h2><pre class=" language-js"><code class="language-js"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token keyword">private</span> rd2<span class="token punctuation">:</span> Renderer2<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token keyword">this</span><span class="token punctuation">.</span>rd2<span class="token punctuation">.</span><span class="token function">setStyle</span><span class="token punctuation">(</span>xxx<span class="token punctuation">.</span>nativeElement<span class="token punctuation">,</span> <span class="token string">'height'</span><span class="token punctuation">,</span> <span class="token string">'100px'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// xxx ==  ElementRef?</span>
-</code></pre>
-<h1 id="decorator"><a href="#decorator" class="headerlink" title="decorator"></a>decorator</h1><h2 id="class-decorator"><a href="#class-decorator" class="headerlink" title="class decorator"></a>class decorator</h2><h1 id="component"><a href="#component" class="headerlink" title="component"></a>component</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/24/angular/my-angular/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hendry5479.github.io/2021/04/19/js/regexp/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/heng.png">
-      <meta itemprop="name" content="Hendry Chen">
-      <meta itemprop="description" content="Front-end artist">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hendry5479">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/19/js/regexp/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-04-19 19:44:26" itemprop="dateCreated datePublished" datetime="2021-04-19T19:44:26+08:00">2021-04-19</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hendry5479.github.io/2021/04/19/js/jquery/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/heng.png">
-      <meta itemprop="name" content="Hendry Chen">
-      <meta itemprop="description" content="Front-end artist">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hendry5479">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/19/js/jquery/" class="post-title-link" itemprop="url">jQuery</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-04-19 19:42:40" itemprop="dateCreated datePublished" datetime="2021-04-19T19:42:40+08:00">2021-04-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-24 21:12:03" itemprop="dateModified" datetime="2021-04-24T21:12:03+08:00">2021-04-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/basic/" itemprop="url" rel="index"><span itemprop="name">basic</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>$(selector).action()</p>
-<h3 id="文档就绪事件"><a href="#文档就绪事件" class="headerlink" title="文档就绪事件"></a>文档就绪事件</h3><p>所有jq函数都在documenet.ready函数中<br>为了防止文档在完全加载之前运行jQuery代码，需要DOM加载完成后才能对DOM操作<br>$(document).ready(function(){} 简写成 $(function(){})</p>
-<h3 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h3><p>元素选择器</p>
-<pre class=" language-js"><code class="language-js"><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
-<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="#id选择器"></a>#id选择器</h3><p>$(‘#test’).hide()</p>
-<h3 id="class选择器"><a href="#class选择器" class="headerlink" title=".class选择器"></a>.class选择器</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/19/js/jquery/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hendry5479.github.io/2021/04/18/js/iife/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/heng.png">
-      <meta itemprop="name" content="Hendry Chen">
-      <meta itemprop="description" content="Front-end artist">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hendry5479">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/18/js/iife/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-04-18 20:02:59 / Modified: 20:03:02" itemprop="dateCreated datePublished" datetime="2021-04-18T20:02:59+08:00">2021-04-18</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Immediately-invoked Function Expression</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/18/js/iife/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hendry5479.github.io/2021/04/18/js/module-usage/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/heng.png">
-      <meta itemprop="name" content="Hendry Chen">
-      <meta itemprop="description" content="Front-end artist">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hendry5479">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/18/js/module-usage/" class="post-title-link" itemprop="url">js_module_usage</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-04-18 20:00:19" itemprop="dateCreated datePublished" datetime="2021-04-18T20:00:19+08:00">2021-04-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-19 08:30:12" itemprop="dateModified" datetime="2021-04-19T08:30:12+08:00">2021-04-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/basic/" itemprop="url" rel="index"><span itemprop="name">basic</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="IIFE-impl-module"><a href="#IIFE-impl-module" class="headerlink" title="IIFE impl module"></a>IIFE impl module</h1><p>use IIFE to create closure, impl module</p>
-<pre><code class="js">var&nbsp;module1&nbsp;=&nbsp;(function()&nbsp;{  
-&nbsp;&nbsp;var&nbsp;_sum&nbsp;=&nbsp;0;  
-&nbsp;&nbsp;var&nbsp;foo1&nbsp;=&nbsp;function&nbsp;()&nbsp;{};  
-&nbsp;&nbsp;var&nbsp;foo2&nbsp;=&nbsp;function&nbsp;()&nbsp;{};  
-&nbsp;&nbsp;return&nbsp;{  
-&nbsp;&nbsp;&nbsp;&nbsp;foo1:&nbsp;foo1,  
-&nbsp;&nbsp;&nbsp;&nbsp;foo2:&nbsp;foo2  
-&nbsp;&nbsp;}  
-})();  
-
-console.log(module1._sum) // undefined
-</code></pre>
-<h1 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h1><h2 id="1-define-module"><a href="#1-define-module" class="headerlink" title="1.define module"></a>1.define module</h2><p>2 ways:</p>
-<pre><code class="js">module.exports = {name: 'xxx'}
-exports.name = 'xxx'
-</code></pre>
-<p>module stand for the whole module, module.exports is the refference of exports, like that</p>
-<pre><code class="js">var&nbsp;exports&nbsp;=&nbsp;{};  
-var&nbsp;module&nbsp;=&nbsp;{  
-&nbsp;&nbsp;&nbsp;&nbsp;exports:&nbsp;exports  
-}  
-return&nbsp;module.exports  
-</code></pre>
-<p>so the finally output is module.exports</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/18/js/module-usage/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hendry5479.github.io/2021/04/18/js/java-script/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/heng.png">
-      <meta itemprop="name" content="Hendry Chen">
-      <meta itemprop="description" content="Front-end artist">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hendry5479">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/18/js/java-script/" class="post-title-link" itemprop="url">string, math, array</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-04-18 13:40:41 / Modified: 13:52:53" itemprop="dateCreated datePublished" datetime="2021-04-18T13:40:41+08:00">2021-04-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/basic/" itemprop="url" rel="index"><span itemprop="name">basic</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="总结string、math、array的常用方法"><a href="#总结string、math、array的常用方法" class="headerlink" title="总结string、math、array的常用方法"></a>总结string、math、array的常用方法</h1><h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h3><ul>
-<li>返回指定索引处的字符  stringObject.charAt(index)  </li>
-<li>index 必需，如果index 不在 0 与 string.length-1 之间，将返回一个空字符串<pre><code class="js">var str="fighting 2018!";
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Hendry5479's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/angular"><i class="tag post-item-tag">angular</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/24/angular/my-angular/">My angular learning road</a></h2><time class="has-text-grey" datetime="2021-04-24T13:18:05.152Z">2021-04-24</time><p class="is-flex-grow-2 mt-2">basicdata binding&amp;lt;input [class.active]=&quot;boo_exp&quot; class.active={{boo_exp}}/&gt;
+&amp;lt;input [(ngModel)]=&quot;hero.name&quot;/&gt;
+&amp;lt;input (click)=&quot;func()&quot;&gt;
+
+style binding&amp;lt;div [ngClass]=&quot;{class1: boo, class2: boo}&quot;&gt;&amp;lt;/div&gt;
+&amp;lt;div [ngStyle]=&quot;{'color': red, 'font-size': 14px}&quot;&gt;&amp;lt;/div&gt;
+
+modify domconstructor(private rd2: Renderer2){}
+this.rd2.setStyle(xxx.nativeEle..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/24/angular/my-angular/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-19T11:44:26.490Z">2021-04-19</time><p class="is-flex-grow-2 mt-2"></p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/19/js/regexp/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210123214500.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/04/19/js/jquery/"><img class="post-cover-img js-img-fadeIn" src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210123214500.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/19/js/jquery/">jQuery</a></h2><time class="has-text-grey" datetime="2021-04-19T11:42:40.304Z">2021-04-19</time><p class="is-flex-grow-2 mt-2">语法$(selector).action()
+文档就绪事件所有jq函数都在documenet.ready函数中为了防止文档在完全加载之前运行jQuery代码，需要DOM加载完成后才能对DOM操作$(document).ready(function(){} 简写成 $(function(){})
+jQuery选择器元素选择器
+$(function() {
+  $('button').click(function() {
+    $('p').hide()
+  })
+})
+
+#id选择器$(‘#test’).hide()
+.class选择器</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/19/js/jquery/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-18T12:02:59.261Z">2021-04-18</time><p class="is-flex-grow-2 mt-2">Immediately-invoked Function Expression
+</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/18/js/iife/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/18/js/module-usage/">js_module_usage</a></h2><time class="has-text-grey" datetime="2021-04-18T12:00:19.981Z">2021-04-18</time><p class="is-flex-grow-2 mt-2">IIFE impl moduleuse IIFE to create closure, impl module
+var&amp;nbsp;module1&amp;nbsp;=&amp;nbsp;(function()&amp;nbsp;{  
+&amp;nbsp;&amp;nbsp;var&amp;nbsp;_sum&amp;nbsp;=&amp;nbsp;0;  
+&amp;nbsp;&amp;nbsp;var&amp;nbsp;foo1&amp;nbsp;=&amp;nbsp;function&amp;nbsp;()&amp;nbsp;{};  
+&amp;nbsp;&amp;nbsp;var&amp;nbsp;foo2&amp;nbsp;=&amp;nbsp;function&amp;nbsp;()&amp;nbsp;{};  
+&amp;nbsp;&amp;nbsp;return&amp;nbsp;{  
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;foo1:&amp;nbsp;foo1,  
+&amp;nbsp;..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/18/js/module-usage/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/18/js/java-script/">string, math, array</a></h2><time class="has-text-grey" datetime="2021-04-18T05:40:41.968Z">2021-04-18</time><p class="is-flex-grow-2 mt-2">总结string、math、array的常用方法StringcharAt()
+返回指定索引处的字符  stringObject.charAt(index)  
+index 必需，如果index 不在 0 与 string.length-1 之间，将返回一个空字符串var str=&quot;fighting 2018!&quot;;
 str.charAt(3);//h
-</code></pre>
-<h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3></li>
-<li>返回指定字符串在字符串中首次出现的位置  stringObject.indexOf(str,startpos)</li>
-<li>str 必需，需要检索的字符串</li>
-<li>startpos 可选的整数参数，规定开始检索的位置, 0 到length - 1<pre><code class="js">var str="fighting 2018!";
-str.indexOf("t");//4
-</code></pre>
-</li>
-</ul>
-<h3 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h3><p>将字符串分割成字符串数组，并返回此数组     stringObject.split(separator,limit)<br>separator 必需，从该参数指定的地方分割。 limit 可选，分割的次数</p>
-<pre><code class="js">"2:3:4:5".split(":")    //将返回["2", "3", "4", "5"]
-"|a|b|c".split("|")    //将返回["", "a", "b", "c"]
-</code></pre>
-<h3 id="substring"><a href="#substring" class="headerlink" title="substring()"></a>substring()</h3><p>提取两个指定下标之间的字符，从 start 处到 stop-1<br>stringObject.substring(start,stop)<br>start 必需<br>stop 可选</p>
-<pre><code class="js">var str="Hello world!";
-document.write(str.substring(3));//lo world!
-document.write(str.substring(3,8));//lo wo 
-</code></pre>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/18/js/java-script/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
+indexOf()
+返回指定字符串在字符串中首次出现的位置  stringObject.indexOf(str,startpos)
+str 必需，需要检索的字符串
+startpos 可选的整数参数，规定开始检索的位置, 0 到length - 1var str=&quot;fighting 2018!&quot;;
+str.indexOf(&quot;t&quot;);//4
+
+
+
+split()将..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/18/js/java-script/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/17/js/event-loop/">event loop</a></h2><time class="has-text-grey" datetime="2021-04-17T12:20:47.957Z">2021-04-17</time><p class="is-flex-grow-2 mt-2">
+definebrowser event loop: bridge between js and browser API through callback funcnode event loop: bridge between js and system through callback func
+
+process &amp;amp; threadprocess: programmthread: smallest unit of system schedulingopen a programm means create a new process, including several threadsthe running one called main thread
+
+
+browser event loopasyn..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/17/js/event-loop/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-17T12:14:37.515Z">2021-04-17</time><p class="is-flex-grow-2 mt-2">branch  -a check remote branch  -d delete    -r -d remote branch
+checkout  –track origin/xxx    track remote branch
+push  –set-upstream origin localxxx     create new remote branch, use pull &amp;amp; push to sync
+merge  git checkout master  git merge dev
+status
   
-  
-  
+</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/17/others/git/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2021-04-13T04:41:34.961Z">2021-04-13</time><p class="is-flex-grow-2 mt-2"></p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/13/html-css/margin-collapsing/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20201230082904.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/04/13/webpack/webpack/"><img class="post-cover-img js-img-fadeIn" src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20201230082904.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/webpack"><i class="tag post-item-tag">webpack</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/13/webpack/webpack/">webpack-interview</a></h2><time class="has-text-grey" datetime="2021-04-12T23:58:14.810Z">2021-04-13</time><p class="is-flex-grow-2 mt-2">前端开发的复杂度和规模庞大，需要工程化来独立开发如react的jsx代码必须编译后才能在浏览器中使用如sass和less的代码浏览器也是不支持如果摒弃了这些开发框架，那么开发的效率将大幅下降。在众多前端工程化工具中，webpack脱颖而出成为了当今最流行的前端构建工具。 然而大多数的使用者都只是单纯的会使用，而并不知道其深层的原理。
+问题一览webpack与grunt、gulp的不同？与webpack类似的工具还有哪些？谈谈你为什么最终选择（或放弃）使用webpack？有哪些常见的Loader？他们是解决什么问题的？有哪些常见的Plugin？他们是解决什么问题的？Loader和Plugin的不同？webpack的构建流程是什么?从读取配置到输出文件这个过程尽量说全是否写过Loader和Plugin？描述一下..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/13/webpack/webpack/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20201230082904.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/04/13/webpack/webpack-interview/"><img class="post-cover-img js-img-fadeIn" src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20201230082904.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/webpack"><i class="tag post-item-tag">webpack</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/13/webpack/webpack-interview/">webpack-interview-2</a></h2><time class="has-text-grey" datetime="2021-04-12T23:58:14.776Z">2021-04-13</time><p class="is-flex-grow-2 mt-2">前端开发的复杂度和规模庞大，需要工程化来独立开发如react的jsx代码必须编译后才能在浏览器中使用如sass和less的代码浏览器也是不支持如果摒弃了这些开发框架，那么开发的效率将大幅下降。在众多前端工程化工具中，webpack脱颖而出成为了当今最流行的前端构建工具。 然而大多数的使用者都只是单纯的会使用，而并不知道其深层的原理。
+问题一览webpack与grunt、gulp的不同？与webpack类似的工具还有哪些？谈谈你为什么最终选择（或放弃）使用webpack？有哪些常见的Loader？他们是解决什么问题的？有哪些常见的Plugin？他们是解决什么问题的？Loader和Plugin的不同？webpack的构建流程是什么?从读取配置到输出文件这个过程尽量说全是否写过Loader和Plugin？描述一下..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/13/webpack/webpack-interview/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/webpack"><i class="tag post-item-tag">webpack</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/04/13/webpack/webpack-guan-wang-xue-xi/">basic</a></h2><time class="has-text-grey" datetime="2021-04-12T23:58:14.741Z">2021-04-13</time><p class="is-flex-grow-2 mt-2">概念
+webpack是js的静态模块打包工具
+处理js程序时会构建dependency graph，对应映射到项目的每个模块，生成多个bundle
+webpack4不再引入配置文件来打包项目
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hendry5479.github.io/2021/04/17/js/event-loop/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/heng.png">
-      <meta itemprop="name" content="Hendry Chen">
-      <meta itemprop="description" content="Front-end artist">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hendry5479">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/17/js/event-loop/" class="post-title-link" itemprop="url">event loop</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-04-17 20:20:47 / Modified: 21:45:26" itemprop="dateCreated datePublished" datetime="2021-04-17T20:20:47+08:00">2021-04-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/basic/" itemprop="url" rel="index"><span itemprop="name">basic</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ol>
-<li><p>define<br>browser event loop: bridge between js and browser API through callback func<br>node event loop: bridge between js and system through callback func</p>
-</li>
-<li><p>process &amp; thread<br>process: programm<br>thread: smallest unit of system scheduling<br>open a programm means create a new process, including several threads<br>the running one called main thread</p>
-</li>
-</ol>
-<h2 id="browser-event-loop"><a href="#browser-event-loop" class="headerlink" title="browser event loop"></a>browser event loop</h2><p>async func will put into “event queue” through web api<br>event queue will put the async func into “call stack” and the async func will be envoked</p>
-<h3 id="2-types-of-event-queue"><a href="#2-types-of-event-queue" class="headerlink" title="2 types of event queue"></a>2 types of event queue</h3><p>macrotask queue:<br>  ajax, setTimeout, setInterval, DOM listener, UI render<br>microtask queue:<br>  promise.then(), Mutation Observer API, queueMicrotask</p>
-<h3 id="priority-between-event-queue"><a href="#priority-between-event-queue" class="headerlink" title="priority between event queue"></a>priority between event queue</h3><ol>
-<li>main script code will be executed at first</li>
-<li>before execute any marcotask, event loop will executes all of task in microtask queue</li>
-</ol>
-<h3 id="keypoint："><a href="#keypoint：" class="headerlink" title="keypoint："></a>keypoint：</h3><p>remeber all of the task<br>write down ma_queue, mi_queue, output</p>
-<h2 id="node-event-loop"><a href="#node-event-loop" class="headerlink" title="node event loop"></a>node event loop</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/17/js/event-loop/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hendry5479.github.io/2021/04/17/others/git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/heng.png">
-      <meta itemprop="name" content="Hendry Chen">
-      <meta itemprop="description" content="Front-end artist">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hendry5479">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/17/others/git/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-04-17 20:14:37 / Modified: 20:17:37" itemprop="dateCreated datePublished" datetime="2021-04-17T20:14:37+08:00">2021-04-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>branch<br>  -a check remote branch<br>  -d delete<br>    -r -d remote branch</p>
-<p>checkout<br>  –track origin/xxx    track remote branch</p>
-<p>push<br>  –set-upstream origin localxxx     create new remote branch, use pull &amp; push to sync</p>
-<p>merge<br>  git checkout master<br>  git merge dev</p>
-<p>status
-  </p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/17/others/git/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hendry5479.github.io/2021/04/13/html-css/margin-collapsing/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/heng.png">
-      <meta itemprop="name" content="Hendry Chen">
-      <meta itemprop="description" content="Front-end artist">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hendry5479">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/13/html-css/margin-collapsing/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-04-13 12:41:34" itemprop="dateCreated datePublished" datetime="2021-04-13T12:41:34+08:00">2021-04-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hendry5479.github.io/2021/04/13/webpack/webpack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/heng.png">
-      <meta itemprop="name" content="Hendry Chen">
-      <meta itemprop="description" content="Front-end artist">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hendry5479">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/13/webpack/webpack/" class="post-title-link" itemprop="url">webpack-interview</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-04-13 07:58:14 / Modified: 07:59:14" itemprop="dateCreated datePublished" datetime="2021-04-13T07:58:14+08:00">2021-04-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/webpack/" itemprop="url" rel="index"><span itemprop="name">webpack</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>前端开发的复杂度和规模庞大，需要工程化来独立开发<br>如react的jsx代码必须编译后才能在浏览器中使用<br>如sass和less的代码浏览器也是不支持<br>如果摒弃了这些开发框架，那么开发的效率将大幅下降。在众多前端工程化工具中，webpack脱颖而出成为了当今最流行的前端构建工具。 然而大多数的使用者都只是单纯的会使用，而并不知道其深层的原理。</p>
-<h3 id="问题一览"><a href="#问题一览" class="headerlink" title="问题一览"></a>问题一览</h3><p>webpack与grunt、gulp的不同？<br>与webpack类似的工具还有哪些？谈谈你为什么最终选择（或放弃）使用webpack？<br>有哪些常见的Loader？他们是解决什么问题的？<br>有哪些常见的Plugin？他们是解决什么问题的？<br>Loader和Plugin的不同？<br>webpack的构建流程是什么?从读取配置到输出文件这个过程尽量说全<br>是否写过Loader和Plugin？描述一下编写loader或plugin的思路？<br>webpack的热更新是如何做到的？说明其原理？<br>如何利用webpack来优化前端性能？（提高性能和体验）<br>如何提高webpack的构建速度？<br>怎么配置单页应用？怎么配置多页应用？<br>npm打包时需要注意哪些？如何利用webpack来更好的构建？<br>如何在vue项目中实现按需加载？</p>
-<h2 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h2><h3 id="1-webpack与grunt、gulp的不同？"><a href="#1-webpack与grunt、gulp的不同？" class="headerlink" title="1. webpack与grunt、gulp的不同？"></a>1. webpack与grunt、gulp的不同？</h3><p>轻量化的任务会用gulp来处理，比如单独打包CSS文件</p>
-<p><strong>grunt和gulp是基于任务和流（Task、Stream）的</strong><br>类似jQuery，找到一个（或一类）文件，对其做一系列链式操作，更新流上的数据， 整条链式操作构成了一个任务，多个任务就构成了整个web的构建流程。</p>
-<p><strong>webpack是基于入口</strong><br>webpack会解析入口所需要加载的所有资源文件，用不同的Loader处理文件，用Plugin来扩展功能</p>
-<p>总结：<br>从构建思路来说<br>gulp和grunt将构建过程拆分成多个<code>Task</code>，并合理控制所有<code>Task</code>的调用关系<br>webpack需要入口，需要清楚对于不同的资源应该使用什么Loader做解析</p>
-<p>gulp更像后端开发者的思路，需要对于整个流程了如指掌<br>webpack更倾向于前端开发者的思路</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/13/webpack/webpack/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hendry5479.github.io/2021/04/13/webpack/webpack-interview/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/heng.png">
-      <meta itemprop="name" content="Hendry Chen">
-      <meta itemprop="description" content="Front-end artist">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hendry5479">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/13/webpack/webpack-interview/" class="post-title-link" itemprop="url">webpack-interview-2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-04-13 07:58:14 / Modified: 07:59:37" itemprop="dateCreated datePublished" datetime="2021-04-13T07:58:14+08:00">2021-04-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/webpack/" itemprop="url" rel="index"><span itemprop="name">webpack</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>前端开发的复杂度和规模庞大，需要工程化来独立开发<br>如react的jsx代码必须编译后才能在浏览器中使用<br>如sass和less的代码浏览器也是不支持<br>如果摒弃了这些开发框架，那么开发的效率将大幅下降。在众多前端工程化工具中，webpack脱颖而出成为了当今最流行的前端构建工具。 然而大多数的使用者都只是单纯的会使用，而并不知道其深层的原理。</p>
-<h3 id="问题一览"><a href="#问题一览" class="headerlink" title="问题一览"></a>问题一览</h3><p>webpack与grunt、gulp的不同？<br>与webpack类似的工具还有哪些？谈谈你为什么最终选择（或放弃）使用webpack？<br>有哪些常见的Loader？他们是解决什么问题的？<br>有哪些常见的Plugin？他们是解决什么问题的？<br>Loader和Plugin的不同？<br>webpack的构建流程是什么?从读取配置到输出文件这个过程尽量说全<br>是否写过Loader和Plugin？描述一下编写loader或plugin的思路？<br>webpack的热更新是如何做到的？说明其原理？<br>如何利用webpack来优化前端性能？（提高性能和体验）<br>如何提高webpack的构建速度？<br>怎么配置单页应用？怎么配置多页应用？<br>npm打包时需要注意哪些？如何利用webpack来更好的构建？<br>如何在vue项目中实现按需加载？</p>
-<h2 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h2><h3 id="1-webpack与grunt、gulp的不同？"><a href="#1-webpack与grunt、gulp的不同？" class="headerlink" title="1. webpack与grunt、gulp的不同？"></a>1. webpack与grunt、gulp的不同？</h3><p>轻量化的任务会用gulp来处理，比如单独打包CSS文件</p>
-<p><strong>grunt和gulp是基于任务和流（Task、Stream）的</strong><br>类似jQuery，找到一个（或一类）文件，对其做一系列链式操作，更新流上的数据， 整条链式操作构成了一个任务，多个任务就构成了整个web的构建流程。</p>
-<p><strong>webpack是基于入口</strong><br>webpack会解析入口所需要加载的所有资源文件，用不同的Loader处理文件，用Plugin来扩展功能</p>
-<p>总结：<br>从构建思路来说<br>gulp和grunt将构建过程拆分成多个<code>Task</code>，并合理控制所有<code>Task</code>的调用关系<br>webpack需要入口，需要清楚对于不同的资源应该使用什么Loader做解析</p>
-<p>gulp更像后端开发者的思路，需要对于整个流程了如指掌<br>webpack更倾向于前端开发者的思路</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/13/webpack/webpack-interview/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hendry5479.github.io/2021/04/13/webpack/webpack-guan-wang-xue-xi/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/heng.png">
-      <meta itemprop="name" content="Hendry Chen">
-      <meta itemprop="description" content="Front-end artist">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hendry5479">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/13/webpack/webpack-guan-wang-xue-xi/" class="post-title-link" itemprop="url">basic</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-04-13 07:58:14 / Modified: 07:58:54" itemprop="dateCreated datePublished" datetime="2021-04-13T07:58:14+08:00">2021-04-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/webpack/" itemprop="url" rel="index"><span itemprop="name">webpack</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
-<li>webpack是js的静态模块打包工具</li>
-<li>处理js程序时会构建dependency graph，对应映射到项目的每个模块，生成多个bundle</li>
-<li>webpack4不再引入配置文件来打包项目</li>
-</ul>
-<h3 id="入口entry"><a href="#入口entry" class="headerlink" title="入口entry"></a>入口entry</h3><ul>
-<li>entry指示构建denpendency graph的开始</li>
-<li>进入entry后，webpack会找出与entry依赖的模块和库</li>
-<li>默认值是 ./src/index.js</li>
-<li>在<strong>webpack.config.js</strong>自定义entry<pre><code class="JavaScript">module.exports = {
+入口entry
+entry指示构建denpendency graph的开始
+进入entry后，webpack会找出与entry依赖的模块和库
+默认值是 ./src/index.js
+在webpack.config.js自定义entrymodule.exports = {
 entry: 'xxx'
 };
-</code></pre>
-</li>
-</ul>
-<h3 id="输出output"><a href="#输出output" class="headerlink" title="输出output"></a>输出output</h3><ul>
-<li>定义输出bundle的位置和名称</li>
-<li>默认值是 ./dist/main.js，其他文件在./dist</li>
-<li>在<strong>webpack.config.js</strong>自定义output<pre><code class="JavaScript">const path = require('path');
-module.exports = {
-entry: 'xxx',
-output: {
-  path: path.resolve(__dirname, 'dist'),
-  filename: 'xxx'
+
+
+
+输出output
+定义输出bundle的位置和名称
+默认值是 ./dist/main.js，其他文件在./dist
+在webpack.config.js自定义outputconst path = require(..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/04/13/webpack/webpack-guan-wang-xue-xi/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><style>.search-widget .search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--second-text-color);
 }
-};
-</code></pre>
-</li>
-</ul>
-<h3 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h3><p>webpack只能理解js和json，loader让webpack处理其他类型文件并转为模块，添加到dependency graph</p>
-<p>load的两个属性</p>
-<ul>
-<li>test：识别文件</li>
-<li>use：定义转换所用的loader</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/13/webpack/webpack-guan-wang-xue-xi/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
+.search-widget .search-content {
+    position: absolute;
+    left: 0;
+    top: calc(100% - 3px);
+    z-index: 2;
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+    width: 100%;
+    height: 0;
+    max-height: 550px;
 
+    overflow: auto;
+    box-sizing: border-box;
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+    background: var(--top-bar-bg-color);
+    backdrop-filter: blur(var(--backdropFilter));
+    -webkit-backdrop-filter: blur(var(--backdropFilter));
 
+    border-bottom-left-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.08);
+}
+</style><main class="aside-card-container search-widget is-relative"><label for="searchInput"><div class="is-flex px-4" id="searchButton"><i class="iconfont icon--search1 mr-1"></i><input class="search-input is-flex-grow-1" id="searchInput" placeholder="Search everything.."></div></label><section class="search-content content" id="searchContent"></section></main><script>var searchDatabase = []
+var searchInputEl = document.getElementById('searchInput')
+var searchButtonEl = document.getElementById('searchButton')
+var searchResultEl = document.getElementById('searchContent')
 
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
+searchInputEl.oninput = function (evt) {
+    var searchValue = evt.srcElement.value
+    var haveSearchValue = Boolean(searchValue.trim())
+    if (!haveSearchValue) {
+        searchResultEl.style.height = 0
+        searchResultEl.innerHTML = null
+        return
     }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
+
+    var searchResults = searching(searchValue)
+
+    if (searchResults.length > 0) {
+        renderSearchResults(searchResults)
     }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
+}
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
+function renderSearchResults(results) {
+    searchResultEl.innerHTML = null
+    var fragment = document.createDocumentFragment()
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
+    results.forEach(function (item) {
+        var link = document.createElement('a')
+        var title = document.createElement('h5')
+        var content = document.createElement('p')
 
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
+        title.className = 'mb-1'
+        title.innerText = item.title
+        content.innerText = item.content
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
+        link.href = item.link
+        link.appendChild(title)
+        link.appendChild(content)
+        link.className = 'p-4 is-block'
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Hendry Chen"
-      src="/images/heng.png">
-  <p class="site-author-name" itemprop="name">Hendry Chen</p>
-  <div class="site-description" itemprop="description">Front-end artist</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">54</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">10</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
+        fragment.appendChild(link)
+    })
 
+    searchResultEl.appendChild(fragment)
+    searchResultEl.style.height = 'auto'
+}
 
+function searching(inputText) {
+    var inputTexts = inputText.split(' ')
+    var searchResults = []
+    inputTexts.forEach(function (searchKey) {
+        var haveSearchValue = Boolean(searchKey.trim())
+        if (!haveSearchValue) return
 
-      </div>
+        var key = searchKey.toLowerCase()
 
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
+        for (var entry of searchDatabase) {
+            var title = entry.getElementsByTagName('title')[0].textContent
+            var link = entry.getElementsByTagName('link')[0].getAttribute('href')
+            var contentWithTags = entry.getElementsByTagName('content')[0].textContent
+            var rawContent = contentWithTags.trim().replace(/<[^>]+>/g, '').toLowerCase()
 
+            var LENGTH = 80
+            var finalContent = ''
+            var contentLength = rawContent.length
+            var searchResultIdx = rawContent.indexOf(key)
 
-      </div>
-    </main>
+            var startIdx = searchResultIdx - 20,
+                endIdx = startIdx + LENGTH
 
-    <footer class="footer">
-      <div class="footer-inner">
-        
+            if (startIdx < 0) {
+                startIdx = 0
+                endIdx = 100
+            }
 
-        
+            endIdx > contentLength && (endIdx = contentLength)
 
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Hendry Chen</span>
-</div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
-  </div>
+            finalContent = rawContent.substring(startIdx, endIdx)
 
-        
+            if (title.indexOf(key) > -1 || searchResultIdx > -1) {
+                searchResults.push({
+                    link: link,
+                    title: title,
+                    content: finalContent
+                })
+            }
+        }
+    })
+    return searchResults
+}
 
+searchButtonEl.onclick = function () {
+    if (searchDatabase.length > 0) return;
 
+    fetch(window.location.href + '/search.xml').then(res => res.text()).then(res => {
+        var domparser = new DOMParser
+        var doc = domparser.parseFromString(res, 'application/xml')
+        searchDatabase = doc.getElementsByTagName('search')[0].children
+    })
+}</script><main class="aside-card-container profile-widget"><!-- todo: 使用取色工具动态阴影--><section class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"><section class="is-flex is-justify-content-center avatar is-clipped skeleton"><!-- debug images "https://api.ixiaowai.cn/gqapi/gqapi.php"--><img class="js-img-fadeIn" src="/images/avatar.jpg" alt="user avatar"></section><h3 class="user-name">Hendry5479</h3><blockquote class="has-text-centered is-relative"><span style="margin-bottom: 5px;">May the Force be with you</span></blockquote><address class="has-text-centered has-text-grey"><i class="iconfont icon-location" style="margin-right: 5px;"></i><span class="has-text-grey">In the dust</span></address></section><section class="sns-container is-flex is-justify-content-center is-align-items-center"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Hendry5479"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section></main><main class="aside-card-container recent-widget"><h3>Recent</h3><ul><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="https://ui-avatars.com/api/?background=f5f5f5&amp;name=My" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2021/04/24/angular/my-angular/">My angular learning road</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2021-04-24T13:18:05.152Z">2021-04-24</time></section></li><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="https://ui-avatars.com/api/?background=f5f5f5&amp;name=Ti" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2021/04/19/js/regexp/">Title</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2021-04-19T11:44:26.490Z">2021-04-19</time></section></li><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="https://cdn.jsdelivr.net/gh/Hendry5479/learn-react/img/20210123214500.png" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2021/04/19/js/jquery/">jQuery</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2021-04-19T11:42:40.304Z">2021-04-19</time></section></li><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="https://ui-avatars.com/api/?background=f5f5f5&amp;name=Ti" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2021/04/18/js/iife/">Title</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2021-04-18T12:02:59.261Z">2021-04-18</time></section></li><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="https://ui-avatars.com/api/?background=f5f5f5&amp;name=js" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2021/04/18/js/module-usage/">js_module_usage</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2021-04-18T12:00:19.981Z">2021-04-18</time></section></li><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="https://ui-avatars.com/api/?background=f5f5f5&amp;name=st" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2021/04/18/js/java-script/">string, math, array</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2021-04-18T05:40:41.968Z">2021-04-18</time></section></li></ul></main><main class="aside-card-container categories-widget category-page"><h3>Categories</h3><section><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/basic/">basic</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/front/">front</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/visual/">visual</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a><span class="category-list-count">3</span></li></ul></section></main><main class="aside-card-container archives-widget"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">20</span></li></ul></section></main><main class="aside-card-container tag-widget"><h3>Tags</h3><section><a href="/tags/%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93"><span class="tag post-item-tag" style="margin-bottom: 5px;">面试之道</span></a><a href="/tags/algorithm"><span class="tag post-item-tag" style="margin-bottom: 5px;">algorithm</span></a><a href="/tags/angular"><span class="tag post-item-tag" style="margin-bottom: 5px;">angular</span></a><a href="/tags/visual"><span class="tag post-item-tag" style="margin-bottom: 5px;">visual</span></a><a href="/tags/css"><span class="tag post-item-tag" style="margin-bottom: 5px;">css</span></a><a href="/tags/html"><span class="tag post-item-tag" style="margin-bottom: 5px;">html</span></a><a href="/tags/node"><span class="tag post-item-tag" style="margin-bottom: 5px;">node</span></a><a href="/tags/vue"><span class="tag post-item-tag" style="margin-bottom: 5px;">vue</span></a><a href="/tags/webpack"><span class="tag post-item-tag" style="margin-bottom: 5px;">webpack</span></a><a href="/tags/js"><span class="tag post-item-tag" style="margin-bottom: 5px;">js</span></a></section></main></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
 
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Hendry5479"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Hendry5479 2021</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
 
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-</body>
-</html>
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></body></html>
