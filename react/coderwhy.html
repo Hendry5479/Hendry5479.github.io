@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>懒加载以及Suspense | 英俊的大亨亨</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="heng.png">
+    <meta name="description" content="记录下有趣岁月的点点滴滴">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.b51e4ccd.js" as="script"><link rel="preload" href="/assets/js/2.7229199a.js" as="script"><link rel="preload" href="/assets/js/38.088f3091.js" as="script"><link rel="prefetch" href="/assets/js/10.00f8a9d8.js"><link rel="prefetch" href="/assets/js/100.78dfd44a.js"><link rel="prefetch" href="/assets/js/101.cdae98a0.js"><link rel="prefetch" href="/assets/js/102.6a3dd9e0.js"><link rel="prefetch" href="/assets/js/103.cfed07a2.js"><link rel="prefetch" href="/assets/js/104.a16a4843.js"><link rel="prefetch" href="/assets/js/105.9cd1add0.js"><link rel="prefetch" href="/assets/js/106.546c1ad8.js"><link rel="prefetch" href="/assets/js/107.04b38bf9.js"><link rel="prefetch" href="/assets/js/108.31a22b61.js"><link rel="prefetch" href="/assets/js/109.1f2a1840.js"><link rel="prefetch" href="/assets/js/11.e2689dc6.js"><link rel="prefetch" href="/assets/js/110.9dc2f13b.js"><link rel="prefetch" href="/assets/js/111.35cf70f8.js"><link rel="prefetch" href="/assets/js/112.39a6579b.js"><link rel="prefetch" href="/assets/js/113.cbfc279d.js"><link rel="prefetch" href="/assets/js/114.878470a2.js"><link rel="prefetch" href="/assets/js/115.86dc4d8e.js"><link rel="prefetch" href="/assets/js/116.d2e05b2c.js"><link rel="prefetch" href="/assets/js/117.7525671d.js"><link rel="prefetch" href="/assets/js/118.a5c04c6d.js"><link rel="prefetch" href="/assets/js/119.613a81e1.js"><link rel="prefetch" href="/assets/js/12.0b7aaea4.js"><link rel="prefetch" href="/assets/js/120.ec6d3159.js"><link rel="prefetch" href="/assets/js/121.6705f783.js"><link rel="prefetch" href="/assets/js/122.7b3fe034.js"><link rel="prefetch" href="/assets/js/123.9336f454.js"><link rel="prefetch" href="/assets/js/124.dca9fc87.js"><link rel="prefetch" href="/assets/js/125.338aa4d8.js"><link rel="prefetch" href="/assets/js/126.a731a9eb.js"><link rel="prefetch" href="/assets/js/127.da74dd90.js"><link rel="prefetch" href="/assets/js/128.3d5e86f2.js"><link rel="prefetch" href="/assets/js/129.ee43b65c.js"><link rel="prefetch" href="/assets/js/13.31064a46.js"><link rel="prefetch" href="/assets/js/130.8a273d75.js"><link rel="prefetch" href="/assets/js/131.a89df4ac.js"><link rel="prefetch" href="/assets/js/132.0daac28c.js"><link rel="prefetch" href="/assets/js/133.b1f23c92.js"><link rel="prefetch" href="/assets/js/134.78621a9c.js"><link rel="prefetch" href="/assets/js/135.f0884a8b.js"><link rel="prefetch" href="/assets/js/136.45114430.js"><link rel="prefetch" href="/assets/js/137.eb295fce.js"><link rel="prefetch" href="/assets/js/138.cc7dc8d3.js"><link rel="prefetch" href="/assets/js/139.c9b1aad6.js"><link rel="prefetch" href="/assets/js/14.0be4ee49.js"><link rel="prefetch" href="/assets/js/15.685fab30.js"><link rel="prefetch" href="/assets/js/16.97f8b16a.js"><link rel="prefetch" href="/assets/js/17.9c7bebeb.js"><link rel="prefetch" href="/assets/js/18.965d9e47.js"><link rel="prefetch" href="/assets/js/19.3d59a8e1.js"><link rel="prefetch" href="/assets/js/20.1573d510.js"><link rel="prefetch" href="/assets/js/21.f46234dd.js"><link rel="prefetch" href="/assets/js/22.6c16fd38.js"><link rel="prefetch" href="/assets/js/23.50a2a38a.js"><link rel="prefetch" href="/assets/js/24.8aff8273.js"><link rel="prefetch" href="/assets/js/25.35a7c496.js"><link rel="prefetch" href="/assets/js/26.af233874.js"><link rel="prefetch" href="/assets/js/27.a3a96a5a.js"><link rel="prefetch" href="/assets/js/28.a1d49602.js"><link rel="prefetch" href="/assets/js/29.174b7d7d.js"><link rel="prefetch" href="/assets/js/3.6038f64c.js"><link rel="prefetch" href="/assets/js/30.a4115d32.js"><link rel="prefetch" href="/assets/js/31.1522875a.js"><link rel="prefetch" href="/assets/js/32.35da527d.js"><link rel="prefetch" href="/assets/js/33.814d63e8.js"><link rel="prefetch" href="/assets/js/34.615b49c1.js"><link rel="prefetch" href="/assets/js/35.856ab789.js"><link rel="prefetch" href="/assets/js/36.2987bc62.js"><link rel="prefetch" href="/assets/js/37.084d12aa.js"><link rel="prefetch" href="/assets/js/39.4ea066d5.js"><link rel="prefetch" href="/assets/js/4.c610d016.js"><link rel="prefetch" href="/assets/js/40.97850ba9.js"><link rel="prefetch" href="/assets/js/41.8b8ae086.js"><link rel="prefetch" href="/assets/js/42.8ae2cac3.js"><link rel="prefetch" href="/assets/js/43.f8a28187.js"><link rel="prefetch" href="/assets/js/44.5160f68a.js"><link rel="prefetch" href="/assets/js/45.6d4b7130.js"><link rel="prefetch" href="/assets/js/46.44693348.js"><link rel="prefetch" href="/assets/js/47.eb0ac18a.js"><link rel="prefetch" href="/assets/js/48.ce1c6335.js"><link rel="prefetch" href="/assets/js/49.7ec1b16a.js"><link rel="prefetch" href="/assets/js/5.216dfe20.js"><link rel="prefetch" href="/assets/js/50.1f503aa4.js"><link rel="prefetch" href="/assets/js/51.47971163.js"><link rel="prefetch" href="/assets/js/52.e5f681d7.js"><link rel="prefetch" href="/assets/js/53.df89fbb7.js"><link rel="prefetch" href="/assets/js/54.a140a8dd.js"><link rel="prefetch" href="/assets/js/55.5809711e.js"><link rel="prefetch" href="/assets/js/56.3a62759d.js"><link rel="prefetch" href="/assets/js/57.c9bd4339.js"><link rel="prefetch" href="/assets/js/58.acb475d1.js"><link rel="prefetch" href="/assets/js/59.61cf3322.js"><link rel="prefetch" href="/assets/js/6.73a8f323.js"><link rel="prefetch" href="/assets/js/60.aa39146e.js"><link rel="prefetch" href="/assets/js/61.f62972b8.js"><link rel="prefetch" href="/assets/js/62.79fc1ddc.js"><link rel="prefetch" href="/assets/js/63.808c750c.js"><link rel="prefetch" href="/assets/js/64.4e99e2e1.js"><link rel="prefetch" href="/assets/js/65.f112caec.js"><link rel="prefetch" href="/assets/js/66.422cc6c9.js"><link rel="prefetch" href="/assets/js/67.f504a803.js"><link rel="prefetch" href="/assets/js/68.f8e84a65.js"><link rel="prefetch" href="/assets/js/69.af07ae00.js"><link rel="prefetch" href="/assets/js/7.a6e60d89.js"><link rel="prefetch" href="/assets/js/70.9b212396.js"><link rel="prefetch" href="/assets/js/71.049b7d3e.js"><link rel="prefetch" href="/assets/js/72.b508f834.js"><link rel="prefetch" href="/assets/js/73.52a25a21.js"><link rel="prefetch" href="/assets/js/74.68de4c01.js"><link rel="prefetch" href="/assets/js/75.c0d8e99a.js"><link rel="prefetch" href="/assets/js/76.672b246e.js"><link rel="prefetch" href="/assets/js/77.36d886e3.js"><link rel="prefetch" href="/assets/js/78.079ebfd8.js"><link rel="prefetch" href="/assets/js/79.d3d3e8ea.js"><link rel="prefetch" href="/assets/js/8.a72c567f.js"><link rel="prefetch" href="/assets/js/80.c690c3d9.js"><link rel="prefetch" href="/assets/js/81.c012b7d5.js"><link rel="prefetch" href="/assets/js/82.47ffa460.js"><link rel="prefetch" href="/assets/js/83.2ba84114.js"><link rel="prefetch" href="/assets/js/84.dc0bf5a8.js"><link rel="prefetch" href="/assets/js/85.d968ae8b.js"><link rel="prefetch" href="/assets/js/86.91000a3b.js"><link rel="prefetch" href="/assets/js/87.6e885c71.js"><link rel="prefetch" href="/assets/js/88.99dd2b79.js"><link rel="prefetch" href="/assets/js/89.601c57ea.js"><link rel="prefetch" href="/assets/js/9.c59ba06b.js"><link rel="prefetch" href="/assets/js/90.89ee0da5.js"><link rel="prefetch" href="/assets/js/91.854de449.js"><link rel="prefetch" href="/assets/js/92.7a25d006.js"><link rel="prefetch" href="/assets/js/93.17f89281.js"><link rel="prefetch" href="/assets/js/94.0f6749b9.js"><link rel="prefetch" href="/assets/js/95.41ef6f4a.js"><link rel="prefetch" href="/assets/js/96.12427920.js"><link rel="prefetch" href="/assets/js/97.53036963.js"><link rel="prefetch" href="/assets/js/98.43d8f870.js"><link rel="prefetch" href="/assets/js/99.4ab32fce.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/heng.png" alt="英俊的大亨亨" class="logo"> <span class="site-name can-hide">英俊的大亨亨</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/js-基础.html" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-数组.html" class="nav-link">
+  数组
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-异步.html" class="nav-link">
+  异步
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-es6.html" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-v8引擎.html" class="nav-link">
+  v8
+</a></li><li class="dropdown-item"><!----> <a href="/手写代码/1.js基础.html" class="nav-link">
+  手写
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/process.html" class="nav-link">
+  
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/node.html" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  小程序
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="leetcode" class="dropdown-title"><span class="title">leetcode</span> <span class="arrow down"></span></button> <button type="button" aria-label="leetcode" class="mobile-dropdown-title"><span class="title">leetcode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/代码随想录/1.数组.html" class="nav-link">
+  1.数组
+</a></li><li class="dropdown-item"><!----> <a href="/代码随想录/10.动态规划/1.基础.html" class="nav-link">
+  10.动态规划
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">react源码</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">react源码</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react源码/理念.html" class="nav-link">
+  1.理念
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/3.render.html" class="nav-link">
+  3.render
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/4.commit.html" class="nav-link">
+  4.commit
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/5.状态更新.html" class="nav-link">
+  5.状态更新
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/6.diff.html" class="nav-link">
+  6.diff
+</a></li><li class="dropdown-item"><!----> <a href="/react/7.实现hooks.html" class="nav-link">
+  7.实现hooks
+</a></li><li class="dropdown-item"><!----> <a href="/react/8.concurrentMode.html" class="nav-link">
+  8.concurrentMode
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">webpack</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">webpack</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/1.配置.html" class="nav-link">
+  1.配置
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/2.loader.html" class="nav-link">
+  2.loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/3.plugin.html" class="nav-link">
+  3.plugin
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/4.模块化原理.html" class="nav-link">
+  4.模块化原理
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/5.babel.html" class="nav-link">
+  5.babel
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/6.HMR.html" class="nav-link">
+  6.HMR
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/7.环境分离.html" class="nav-link">
+  7.环境分离
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/8.tree_shaking.html" class="nav-link">
+  8.tree_shaking
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/9,源码.html" class="nav-link">
+  9.源码
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/11.自定义loader.html" class="nav-link">
+  11.自定义loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/12.自定义plugin.html" class="nav-link">
+  12.自定义plugin
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/设计模式/创建型.html" class="nav-link">
+  创建型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  结构型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/行为型.html" class="nav-link">
+  行为型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">angular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">angular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">健身</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">健身</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><a href="/me.html" class="nav-link">
+  关于我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/js-基础.html" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-数组.html" class="nav-link">
+  数组
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-异步.html" class="nav-link">
+  异步
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-es6.html" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-v8引擎.html" class="nav-link">
+  v8
+</a></li><li class="dropdown-item"><!----> <a href="/手写代码/1.js基础.html" class="nav-link">
+  手写
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/process.html" class="nav-link">
+  
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/node.html" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  小程序
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="leetcode" class="dropdown-title"><span class="title">leetcode</span> <span class="arrow down"></span></button> <button type="button" aria-label="leetcode" class="mobile-dropdown-title"><span class="title">leetcode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/代码随想录/1.数组.html" class="nav-link">
+  1.数组
+</a></li><li class="dropdown-item"><!----> <a href="/代码随想录/10.动态规划/1.基础.html" class="nav-link">
+  10.动态规划
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">react源码</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">react源码</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react源码/理念.html" class="nav-link">
+  1.理念
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/3.render.html" class="nav-link">
+  3.render
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/4.commit.html" class="nav-link">
+  4.commit
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/5.状态更新.html" class="nav-link">
+  5.状态更新
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/6.diff.html" class="nav-link">
+  6.diff
+</a></li><li class="dropdown-item"><!----> <a href="/react/7.实现hooks.html" class="nav-link">
+  7.实现hooks
+</a></li><li class="dropdown-item"><!----> <a href="/react/8.concurrentMode.html" class="nav-link">
+  8.concurrentMode
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">webpack</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">webpack</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/1.配置.html" class="nav-link">
+  1.配置
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/2.loader.html" class="nav-link">
+  2.loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/3.plugin.html" class="nav-link">
+  3.plugin
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/4.模块化原理.html" class="nav-link">
+  4.模块化原理
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/5.babel.html" class="nav-link">
+  5.babel
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/6.HMR.html" class="nav-link">
+  6.HMR
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/7.环境分离.html" class="nav-link">
+  7.环境分离
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/8.tree_shaking.html" class="nav-link">
+  8.tree_shaking
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/9,源码.html" class="nav-link">
+  9.源码
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/11.自定义loader.html" class="nav-link">
+  11.自定义loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/12.自定义plugin.html" class="nav-link">
+  12.自定义plugin
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/设计模式/创建型.html" class="nav-link">
+  创建型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  结构型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/行为型.html" class="nav-link">
+  行为型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">angular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">angular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">健身</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">健身</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><a href="/me.html" class="nav-link">
+  关于我
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>React</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/react/coderwhy.html" aria-current="page" class="active sidebar-link">懒加载以及Suspense</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/react/coderwhy.html#hooks" class="sidebar-link">hooks</a></li><li class="sidebar-sub-header"><a href="/react/coderwhy.html#实战经历" class="sidebar-link">实战经历</a></li></ul></li><li><a href="/react/hooks.html" class="sidebar-link">useSelector</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/react/react-query.html" class="sidebar-link">/react/react-query.html</a></li><li><a href="/react/react进阶复习提纲.html" class="sidebar-link">基础篇</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/react/react进阶复习提纲.html#jsx" class="sidebar-link">jsx</a></li><li class="sidebar-sub-header"><a href="/react/react进阶复习提纲.html#component" class="sidebar-link">Component</a></li><li class="sidebar-sub-header"><a href="/react/react进阶复习提纲.html#state" class="sidebar-link">state</a></li><li class="sidebar-sub-header"><a href="/react/react进阶复习提纲.html#props" class="sidebar-link">props</a></li><li class="sidebar-sub-header"><a href="/react/react进阶复习提纲.html#lifecycle" class="sidebar-link">lifeCycle</a></li><li class="sidebar-sub-header"><a href="/react/react进阶复习提纲.html#ref" class="sidebar-link">Ref</a></li><li class="sidebar-sub-header"><a href="/react/react进阶复习提纲.html#context" class="sidebar-link">Context</a></li><li class="sidebar-sub-header"><a href="/react/react进阶复习提纲.html#高阶组件" class="sidebar-link">高阶组件</a></li><li class="sidebar-sub-header"><a href="/react/react进阶复习提纲.html#渲染控制" class="sidebar-link">渲染控制</a></li><li class="sidebar-sub-header"><a href="/react/react进阶复习提纲.html#渲染调优" class="sidebar-link">渲染调优</a></li><li class="sidebar-sub-header"><a href="/react/react进阶复习提纲.html#海量数据" class="sidebar-link">海量数据</a></li><li class="sidebar-sub-header"><a href="/react/react进阶复习提纲.html#细节处理" class="sidebar-link">细节处理</a></li></ul></li><li><a href="/react/笔记.html" class="sidebar-link">setState</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/react/笔记.html#setstate的异步和同步更新问题" class="sidebar-link">setState的异步和同步更新问题</a></li><li class="sidebar-sub-header"><a href="/react/笔记.html#setstate的数据合并" class="sidebar-link">setState的数据合并</a></li><li class="sidebar-sub-header"><a href="/react/笔记.html#react机制" class="sidebar-link">React机制</a></li><li class="sidebar-sub-header"><a href="/react/笔记.html#shouldcomponentupdate" class="sidebar-link">shouldComponentUpdate</a></li><li class="sidebar-sub-header"><a href="/react/笔记.html#拆分redux" class="sidebar-link">拆分redux</a></li><li class="sidebar-sub-header"><a href="/react/笔记.html#redux流程" class="sidebar-link">redux流程</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="懒加载以及suspense"><a href="#懒加载以及suspense" class="header-anchor">#</a> 懒加载以及Suspense</h3> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> SubComponent <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">lazy</span><span class="token punctuation">(</span><span class="token parameter">_</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">MyComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Suspense fallback<span class="token operator">=</span><span class="token punctuation">{</span><span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>page loading<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>SubComponent通过懒加载方式加载进页面，在页面渲染的时候可能会延迟，使用Suspense后可以优化交互</p> <p>class components优点</p> <p>有state，可以保存内部状态
+有生命周期，方便完成逻辑
+在状态改变时可以只执行render()和componentDidUpdate()</p> <p>class component的缺点</p> <p>业务复杂时代码可读性差
+this处理麻烦
+难以复用状态：需要通过高阶组件或render props</p> <h2 id="hooks"><a href="#hooks" class="header-anchor">#</a> hooks</h2> <p>实现了在不编写class的情况下使用state以及其他React特性</p> <h4 id="使用场景"><a href="#使用场景" class="header-anchor">#</a> 使用场景：</h4> <p>Hook只能在函数组件中使用，不能在类组件，或者函数组件之外的地方使用</p> <p>Hook 就是函数，帮助你钩入（hook into） React State以及生命周期等特性</p> <h4 id="使用hook的规则"><a href="#使用hook的规则" class="header-anchor">#</a> 使用Hook的规则</h4> <p>只在函数最外层调用 Hook，不要在循环、条件判断或者子函数中调用
+只能在函数组件中调用 Hook</p> <h3 id="state-hook"><a href="#state-hook" class="header-anchor">#</a> State Hook</h3> <p><strong>useState</strong>定义一个 state变量，它与 class 里面的 this.state 提供的功能完全相同
+<strong>useState</strong>接受唯一一个参数(初始化值)，如果没有传递参数，初始化值为undefined
+<strong>useState</strong>是一个数组，我们可以通过数组的解构来完成赋值</p> <h4 id="为什么叫-usestate-而不叫-createstate"><a href="#为什么叫-usestate-而不叫-createstate" class="header-anchor">#</a> 为什么叫 useState 而不叫 createState?</h4> <p>因为 state 只在组件首次渲染的时候被创建，在下一次重新渲染时，useState 返回给我们当前的 state。如果每次都创建的变量，它就不是 “state”了
+这也是 Hook 的名字总是以 use 开头的一个原因</p> <h3 id="effect-hook"><a href="#effect-hook" class="header-anchor">#</a> Effect Hook</h3> <p>Effect Hook 可以完成类似于生命周期的功能
+类似于网络请求、手动更新DOM、事件监听，都是React更新DOM的副作用（Side Effects）
+<strong>effect英文翻译是影响，个人理解是用于定义当生命周期改变时应该产生effect的内容</strong> <strong>清除effect</strong>
+在class组件的编写过程中，某些副作用的代码需要在componentWillUnmount中清除
+useEffect传入的回调函数A本身可以有返回值，这个返回值是另外一个回调函数B
+这是 effect 可选的清除函数，将添加和清除的逻辑放在一起</p> <p><strong>多个effect</strong>
+使用Hook还可以解决生命周期经常将很多逻辑放在一起的问题：
+比如网络请求、事件监听、手动修改DOM，这些往往都会放在componentDidMount中；
+使用Effect Hook，我们可以将它们分离到不同的useEffect中</p> <p><strong>Effect性能优化</strong>
+默认情况下，useEffect的回调函数会在每次渲染时执行。</p> <p>但是某些代码只希望执行一次
+useEffect有参数dependency表示在哪些state发生变化时才重新执行</p> <h3 id="context-hook"><a href="#context-hook" class="header-anchor">#</a> Context Hook</h3> <p><strong>class组件使用context</strong>：
+获取context：classname.context = MyContext
+共享context：Context通过MyContext.Consumer共享</p> <p><strong>Context Hook获取Context</strong></p> <p>const value = useContext(MyContext);</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token comment">// 在App.js中使用Context</span>
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> createContext <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ContextHook <span class="token keyword">from</span> <span class="token string">'xx'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> UserContext <span class="token operator">=</span> <span class="token function">createContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> ThemeContext <span class="token operator">=</span> <span class="token function">createContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>UserContext<span class="token punctuation">.</span>Provider value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>name<span class="token operator">:</span> <span class="token string">&quot;why&quot;</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>ThemeContext<span class="token punctuation">.</span>Provider value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>color<span class="token operator">:</span> <span class="token string">&quot;red&quot;</span><span class="token punctuation">,</span> fontSize<span class="token operator">:</span> <span class="token string">&quot;20px&quot;</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>ContextHook<span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>ThemeContext<span class="token punctuation">.</span>Provider<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>UserContext<span class="token punctuation">.</span>Provider<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 在对应的函数式组件中使用Context Hook：</span>
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useContext <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> UserContext<span class="token punctuation">,</span> ThemeContext <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../App'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">ContextHook</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token function">useContext</span><span class="token punctuation">(</span>UserContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> theme <span class="token operator">=</span> <span class="token function">useContext</span><span class="token punctuation">(</span>ThemeContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>theme<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>ContextHook<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>当组件上层最近的 &lt;Context.Provider&gt; 更新时
+该 Hook 会触发重新渲染，并使用最新值传递给 MyContext provider 的 context value 值</p> <h3 id="usereducer"><a href="#usereducer" class="header-anchor">#</a> useReducer</h3> <h4 id="usereducer仅是usestate的替代方案"><a href="#usereducer仅是usestate的替代方案" class="header-anchor">#</a> useReducer仅是useState的替代方案</h4> <p>如果state的逻辑复杂，可以通过useReducer拆分
+或者这次修改的state需要依赖之前的state时，也可以使用</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">counterReducer</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">&quot;increment&quot;</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token operator">...</span>state<span class="token punctuation">,</span> counter<span class="token operator">:</span> state<span class="token punctuation">.</span>counter <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">}</span>
+    <span class="token keyword">case</span> <span class="token string">&quot;decrement&quot;</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token operator">...</span>state<span class="token punctuation">,</span> counter<span class="token operator">:</span> state<span class="token punctuation">.</span>counter <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">}</span>
+    <span class="token keyword">default</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// home.js</span>
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useReducer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> counterReducer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../reducer/counter'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Home</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>state<span class="token punctuation">,</span> dispatch<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useReducer</span><span class="token punctuation">(</span>counterReducer<span class="token punctuation">,</span> <span class="token punctuation">{</span>counter<span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>当前计数<span class="token operator">:</span> <span class="token punctuation">{</span>state<span class="token punctuation">.</span>counter<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>type<span class="token operator">:</span> <span class="token string">&quot;increment&quot;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>type<span class="token operator">:</span> <span class="token string">&quot;decrement&quot;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="usecallback"><a href="#usecallback" class="header-anchor">#</a> useCallback</h3> <p>useCallback会返回一个函数的memoized值，依赖不变的情况下多次定义返回的值相同
+useCallback应该是和memo结合起来，决定子组件是否需要重新渲染</p> <h2 id="实战经历"><a href="#实战经历" class="header-anchor">#</a> 实战经历</h2> <p>npm包</p> <ul><li>normalize.css</li> <li>@craco/craco: 添加额外的配置，如路径的别名</li></ul> <p>craco：
+craco.config.js</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">resolve</span> <span class="token operator">=</span> <span class="token parameter">dir</span> <span class="token operator">=&gt;</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> dir<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  webpack<span class="token operator">:</span> <span class="token punctuation">{</span>
+    alias<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'@'</span><span class="token operator">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&quot;src&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token string">'components'</span><span class="token operator">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&quot;src/components&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/21/2022, 9:01:05 PM</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/react/hooks.html">
+        useSelector
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b51e4ccd.js" defer></script><script src="/assets/js/2.7229199a.js" defer></script><script src="/assets/js/38.088f3091.js" defer></script>
+  </body>
+</html>

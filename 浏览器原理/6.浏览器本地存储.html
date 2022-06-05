@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1. 浏览器本地存储方式及使用场景 | 英俊的大亨亨</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="heng.png">
+    <meta name="description" content="记录下有趣岁月的点点滴滴">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.b51e4ccd.js" as="script"><link rel="preload" href="/assets/js/2.7229199a.js" as="script"><link rel="preload" href="/assets/js/127.da74dd90.js" as="script"><link rel="prefetch" href="/assets/js/10.00f8a9d8.js"><link rel="prefetch" href="/assets/js/100.78dfd44a.js"><link rel="prefetch" href="/assets/js/101.cdae98a0.js"><link rel="prefetch" href="/assets/js/102.6a3dd9e0.js"><link rel="prefetch" href="/assets/js/103.cfed07a2.js"><link rel="prefetch" href="/assets/js/104.a16a4843.js"><link rel="prefetch" href="/assets/js/105.9cd1add0.js"><link rel="prefetch" href="/assets/js/106.546c1ad8.js"><link rel="prefetch" href="/assets/js/107.04b38bf9.js"><link rel="prefetch" href="/assets/js/108.31a22b61.js"><link rel="prefetch" href="/assets/js/109.1f2a1840.js"><link rel="prefetch" href="/assets/js/11.e2689dc6.js"><link rel="prefetch" href="/assets/js/110.9dc2f13b.js"><link rel="prefetch" href="/assets/js/111.35cf70f8.js"><link rel="prefetch" href="/assets/js/112.39a6579b.js"><link rel="prefetch" href="/assets/js/113.cbfc279d.js"><link rel="prefetch" href="/assets/js/114.878470a2.js"><link rel="prefetch" href="/assets/js/115.86dc4d8e.js"><link rel="prefetch" href="/assets/js/116.d2e05b2c.js"><link rel="prefetch" href="/assets/js/117.7525671d.js"><link rel="prefetch" href="/assets/js/118.a5c04c6d.js"><link rel="prefetch" href="/assets/js/119.613a81e1.js"><link rel="prefetch" href="/assets/js/12.0b7aaea4.js"><link rel="prefetch" href="/assets/js/120.ec6d3159.js"><link rel="prefetch" href="/assets/js/121.6705f783.js"><link rel="prefetch" href="/assets/js/122.7b3fe034.js"><link rel="prefetch" href="/assets/js/123.9336f454.js"><link rel="prefetch" href="/assets/js/124.dca9fc87.js"><link rel="prefetch" href="/assets/js/125.338aa4d8.js"><link rel="prefetch" href="/assets/js/126.a731a9eb.js"><link rel="prefetch" href="/assets/js/128.3d5e86f2.js"><link rel="prefetch" href="/assets/js/129.ee43b65c.js"><link rel="prefetch" href="/assets/js/13.31064a46.js"><link rel="prefetch" href="/assets/js/130.8a273d75.js"><link rel="prefetch" href="/assets/js/131.a89df4ac.js"><link rel="prefetch" href="/assets/js/132.0daac28c.js"><link rel="prefetch" href="/assets/js/133.b1f23c92.js"><link rel="prefetch" href="/assets/js/134.78621a9c.js"><link rel="prefetch" href="/assets/js/135.f0884a8b.js"><link rel="prefetch" href="/assets/js/136.45114430.js"><link rel="prefetch" href="/assets/js/137.eb295fce.js"><link rel="prefetch" href="/assets/js/138.cc7dc8d3.js"><link rel="prefetch" href="/assets/js/139.c9b1aad6.js"><link rel="prefetch" href="/assets/js/14.0be4ee49.js"><link rel="prefetch" href="/assets/js/15.685fab30.js"><link rel="prefetch" href="/assets/js/16.97f8b16a.js"><link rel="prefetch" href="/assets/js/17.9c7bebeb.js"><link rel="prefetch" href="/assets/js/18.965d9e47.js"><link rel="prefetch" href="/assets/js/19.3d59a8e1.js"><link rel="prefetch" href="/assets/js/20.1573d510.js"><link rel="prefetch" href="/assets/js/21.f46234dd.js"><link rel="prefetch" href="/assets/js/22.6c16fd38.js"><link rel="prefetch" href="/assets/js/23.50a2a38a.js"><link rel="prefetch" href="/assets/js/24.8aff8273.js"><link rel="prefetch" href="/assets/js/25.35a7c496.js"><link rel="prefetch" href="/assets/js/26.af233874.js"><link rel="prefetch" href="/assets/js/27.a3a96a5a.js"><link rel="prefetch" href="/assets/js/28.a1d49602.js"><link rel="prefetch" href="/assets/js/29.174b7d7d.js"><link rel="prefetch" href="/assets/js/3.6038f64c.js"><link rel="prefetch" href="/assets/js/30.a4115d32.js"><link rel="prefetch" href="/assets/js/31.1522875a.js"><link rel="prefetch" href="/assets/js/32.35da527d.js"><link rel="prefetch" href="/assets/js/33.814d63e8.js"><link rel="prefetch" href="/assets/js/34.615b49c1.js"><link rel="prefetch" href="/assets/js/35.856ab789.js"><link rel="prefetch" href="/assets/js/36.2987bc62.js"><link rel="prefetch" href="/assets/js/37.084d12aa.js"><link rel="prefetch" href="/assets/js/38.088f3091.js"><link rel="prefetch" href="/assets/js/39.4ea066d5.js"><link rel="prefetch" href="/assets/js/4.c610d016.js"><link rel="prefetch" href="/assets/js/40.97850ba9.js"><link rel="prefetch" href="/assets/js/41.8b8ae086.js"><link rel="prefetch" href="/assets/js/42.8ae2cac3.js"><link rel="prefetch" href="/assets/js/43.f8a28187.js"><link rel="prefetch" href="/assets/js/44.5160f68a.js"><link rel="prefetch" href="/assets/js/45.6d4b7130.js"><link rel="prefetch" href="/assets/js/46.44693348.js"><link rel="prefetch" href="/assets/js/47.eb0ac18a.js"><link rel="prefetch" href="/assets/js/48.ce1c6335.js"><link rel="prefetch" href="/assets/js/49.7ec1b16a.js"><link rel="prefetch" href="/assets/js/5.216dfe20.js"><link rel="prefetch" href="/assets/js/50.1f503aa4.js"><link rel="prefetch" href="/assets/js/51.47971163.js"><link rel="prefetch" href="/assets/js/52.e5f681d7.js"><link rel="prefetch" href="/assets/js/53.df89fbb7.js"><link rel="prefetch" href="/assets/js/54.a140a8dd.js"><link rel="prefetch" href="/assets/js/55.5809711e.js"><link rel="prefetch" href="/assets/js/56.3a62759d.js"><link rel="prefetch" href="/assets/js/57.c9bd4339.js"><link rel="prefetch" href="/assets/js/58.acb475d1.js"><link rel="prefetch" href="/assets/js/59.61cf3322.js"><link rel="prefetch" href="/assets/js/6.73a8f323.js"><link rel="prefetch" href="/assets/js/60.aa39146e.js"><link rel="prefetch" href="/assets/js/61.f62972b8.js"><link rel="prefetch" href="/assets/js/62.79fc1ddc.js"><link rel="prefetch" href="/assets/js/63.808c750c.js"><link rel="prefetch" href="/assets/js/64.4e99e2e1.js"><link rel="prefetch" href="/assets/js/65.f112caec.js"><link rel="prefetch" href="/assets/js/66.422cc6c9.js"><link rel="prefetch" href="/assets/js/67.f504a803.js"><link rel="prefetch" href="/assets/js/68.f8e84a65.js"><link rel="prefetch" href="/assets/js/69.af07ae00.js"><link rel="prefetch" href="/assets/js/7.a6e60d89.js"><link rel="prefetch" href="/assets/js/70.9b212396.js"><link rel="prefetch" href="/assets/js/71.049b7d3e.js"><link rel="prefetch" href="/assets/js/72.b508f834.js"><link rel="prefetch" href="/assets/js/73.52a25a21.js"><link rel="prefetch" href="/assets/js/74.68de4c01.js"><link rel="prefetch" href="/assets/js/75.c0d8e99a.js"><link rel="prefetch" href="/assets/js/76.672b246e.js"><link rel="prefetch" href="/assets/js/77.36d886e3.js"><link rel="prefetch" href="/assets/js/78.079ebfd8.js"><link rel="prefetch" href="/assets/js/79.d3d3e8ea.js"><link rel="prefetch" href="/assets/js/8.a72c567f.js"><link rel="prefetch" href="/assets/js/80.c690c3d9.js"><link rel="prefetch" href="/assets/js/81.c012b7d5.js"><link rel="prefetch" href="/assets/js/82.47ffa460.js"><link rel="prefetch" href="/assets/js/83.2ba84114.js"><link rel="prefetch" href="/assets/js/84.dc0bf5a8.js"><link rel="prefetch" href="/assets/js/85.d968ae8b.js"><link rel="prefetch" href="/assets/js/86.91000a3b.js"><link rel="prefetch" href="/assets/js/87.6e885c71.js"><link rel="prefetch" href="/assets/js/88.99dd2b79.js"><link rel="prefetch" href="/assets/js/89.601c57ea.js"><link rel="prefetch" href="/assets/js/9.c59ba06b.js"><link rel="prefetch" href="/assets/js/90.89ee0da5.js"><link rel="prefetch" href="/assets/js/91.854de449.js"><link rel="prefetch" href="/assets/js/92.7a25d006.js"><link rel="prefetch" href="/assets/js/93.17f89281.js"><link rel="prefetch" href="/assets/js/94.0f6749b9.js"><link rel="prefetch" href="/assets/js/95.41ef6f4a.js"><link rel="prefetch" href="/assets/js/96.12427920.js"><link rel="prefetch" href="/assets/js/97.53036963.js"><link rel="prefetch" href="/assets/js/98.43d8f870.js"><link rel="prefetch" href="/assets/js/99.4ab32fce.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/heng.png" alt="英俊的大亨亨" class="logo"> <span class="site-name can-hide">英俊的大亨亨</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/js-基础.html" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-数组.html" class="nav-link">
+  数组
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-异步.html" class="nav-link">
+  异步
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-es6.html" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-v8引擎.html" class="nav-link">
+  v8
+</a></li><li class="dropdown-item"><!----> <a href="/手写代码/1.js基础.html" class="nav-link">
+  手写
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/process.html" class="nav-link">
+  
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/node.html" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  小程序
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="leetcode" class="dropdown-title"><span class="title">leetcode</span> <span class="arrow down"></span></button> <button type="button" aria-label="leetcode" class="mobile-dropdown-title"><span class="title">leetcode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/代码随想录/1.数组.html" class="nav-link">
+  1.数组
+</a></li><li class="dropdown-item"><!----> <a href="/代码随想录/10.动态规划/1.基础.html" class="nav-link">
+  10.动态规划
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">react源码</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">react源码</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react源码/理念.html" class="nav-link">
+  1.理念
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/3.render.html" class="nav-link">
+  3.render
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/4.commit.html" class="nav-link">
+  4.commit
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/5.状态更新.html" class="nav-link">
+  5.状态更新
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/6.diff.html" class="nav-link">
+  6.diff
+</a></li><li class="dropdown-item"><!----> <a href="/react/7.实现hooks.html" class="nav-link">
+  7.实现hooks
+</a></li><li class="dropdown-item"><!----> <a href="/react/8.concurrentMode.html" class="nav-link">
+  8.concurrentMode
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">webpack</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">webpack</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/1.配置.html" class="nav-link">
+  1.配置
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/2.loader.html" class="nav-link">
+  2.loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/3.plugin.html" class="nav-link">
+  3.plugin
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/4.模块化原理.html" class="nav-link">
+  4.模块化原理
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/5.babel.html" class="nav-link">
+  5.babel
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/6.HMR.html" class="nav-link">
+  6.HMR
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/7.环境分离.html" class="nav-link">
+  7.环境分离
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/8.tree_shaking.html" class="nav-link">
+  8.tree_shaking
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/9,源码.html" class="nav-link">
+  9.源码
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/11.自定义loader.html" class="nav-link">
+  11.自定义loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/12.自定义plugin.html" class="nav-link">
+  12.自定义plugin
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/设计模式/创建型.html" class="nav-link">
+  创建型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  结构型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/行为型.html" class="nav-link">
+  行为型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">angular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">angular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">健身</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">健身</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><a href="/me.html" class="nav-link">
+  关于我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/js-基础.html" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-数组.html" class="nav-link">
+  数组
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-异步.html" class="nav-link">
+  异步
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-es6.html" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-v8引擎.html" class="nav-link">
+  v8
+</a></li><li class="dropdown-item"><!----> <a href="/手写代码/1.js基础.html" class="nav-link">
+  手写
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/process.html" class="nav-link">
+  
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/node.html" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  小程序
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="leetcode" class="dropdown-title"><span class="title">leetcode</span> <span class="arrow down"></span></button> <button type="button" aria-label="leetcode" class="mobile-dropdown-title"><span class="title">leetcode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/代码随想录/1.数组.html" class="nav-link">
+  1.数组
+</a></li><li class="dropdown-item"><!----> <a href="/代码随想录/10.动态规划/1.基础.html" class="nav-link">
+  10.动态规划
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">react源码</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">react源码</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react源码/理念.html" class="nav-link">
+  1.理念
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/3.render.html" class="nav-link">
+  3.render
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/4.commit.html" class="nav-link">
+  4.commit
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/5.状态更新.html" class="nav-link">
+  5.状态更新
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/6.diff.html" class="nav-link">
+  6.diff
+</a></li><li class="dropdown-item"><!----> <a href="/react/7.实现hooks.html" class="nav-link">
+  7.实现hooks
+</a></li><li class="dropdown-item"><!----> <a href="/react/8.concurrentMode.html" class="nav-link">
+  8.concurrentMode
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">webpack</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">webpack</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/1.配置.html" class="nav-link">
+  1.配置
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/2.loader.html" class="nav-link">
+  2.loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/3.plugin.html" class="nav-link">
+  3.plugin
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/4.模块化原理.html" class="nav-link">
+  4.模块化原理
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/5.babel.html" class="nav-link">
+  5.babel
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/6.HMR.html" class="nav-link">
+  6.HMR
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/7.环境分离.html" class="nav-link">
+  7.环境分离
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/8.tree_shaking.html" class="nav-link">
+  8.tree_shaking
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/9,源码.html" class="nav-link">
+  9.源码
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/11.自定义loader.html" class="nav-link">
+  11.自定义loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/12.自定义plugin.html" class="nav-link">
+  12.自定义plugin
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/设计模式/创建型.html" class="nav-link">
+  创建型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  结构型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/行为型.html" class="nav-link">
+  行为型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">angular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">angular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">健身</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">健身</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><a href="/me.html" class="nav-link">
+  关于我
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>浏览器原理</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/浏览器原理/1.浏览器安全.html" class="sidebar-link">1.  什么是 XSS 攻击？</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/10.内存泄漏.html" class="sidebar-link">内存泄漏</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/浏览器原理/10.内存泄漏.html#常见的内存泄漏" class="sidebar-link">## 常见的内存泄漏</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/10.内存泄漏.html#map、set" class="sidebar-link">Map、Set</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/10.内存泄漏.html#定位和修复" class="sidebar-link">定位和修复</a></li></ul></li><li><a href="/浏览器原理/2.进程和线程.html" class="sidebar-link">1. 进程与线程的概念</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/3.浏览器缓存.html" class="sidebar-link">1. 对浏览器的缓存机制的理解</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/4.浏览器组成.html" class="sidebar-link">2. 对浏览器内核的理解</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/5.浏览器渲染原理.html" class="sidebar-link">1. 浏览器的渲染过程</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/6.浏览器本地存储.html" class="active sidebar-link">1. 浏览器本地存储方式及使用场景</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/7.浏览器同源策略.html" class="sidebar-link">1. 什么是同源策略</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/8.浏览器事件机制.html" class="sidebar-link">1. 事件是什么？事件模型？</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/9.浏览器垃圾回收机制.html" class="sidebar-link">辣鸡回收</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/浏览器原理/9.浏览器垃圾回收机制.html#回收策略" class="sidebar-link">回收策略</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/9.浏览器垃圾回收机制.html#v8的gc优化" class="sidebar-link">V8的GC优化</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/9.浏览器垃圾回收机制.html#并行回收" class="sidebar-link">并行回收</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/9.浏览器垃圾回收机制.html#增量标记和懒清理" class="sidebar-link">增量标记和懒清理</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/9.浏览器垃圾回收机制.html#并发回收" class="sidebar-link">并发回收</a></li></ul></li><li><a href="/浏览器原理/事件模型.html" class="sidebar-link">详解浏览器事件捕获，冒泡</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/浏览器原理/事件模型.html#第三个参数" class="sidebar-link">第三个参数</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/事件模型.html#阻止事件传播" class="sidebar-link">阻止事件传播</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/事件模型.html#阻止默认行为" class="sidebar-link">阻止默认行为</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/事件模型.html#兼容性" class="sidebar-link">兼容性</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/事件模型.html#封装一个多浏览器兼容的绑定事件函数" class="sidebar-link">封装一个多浏览器兼容的绑定事件函数</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="_1-浏览器本地存储方式及使用场景"><a href="#_1-浏览器本地存储方式及使用场景" class="header-anchor">#</a> 1. 浏览器本地存储方式及使用场景</h3> <h4 id="_1-cookie"><a href="#_1-cookie" class="header-anchor">#</a> （1）Cookie</h4> <p>Cookie是最早被提出来的本地存储方式，在此之前，服务端是无法判断网络中的两个请求是否是同一用户发起的，为解决这个问题，Cookie就出现了。Cookie的大小只有4kb，它是一种纯文本文件，每次发起HTTP请求都会携带Cookie。</p> <p><strong>Cookie的特性：</strong></p> <ul><li>Cookie一旦创建成功，名称就无法修改</li> <li>Cookie是无法跨域名的，也就是说a域名和b域名下的cookie是无法共享的，这也是由Cookie的隐私安全性决定的，这样就能够阻止非法获取其他网站的Cookie</li> <li>每个域名下Cookie的数量不能超过20个，每个Cookie的大小不能超过4kb</li> <li>有安全问题，如果Cookie被拦截了，那就可获得session的所有信息，即使加密也于事无补，无需知道cookie的意义，只要转发cookie就能达到目的</li> <li>Cookie在请求一个新的页面的时候都会被发送过去</li></ul> <p>如果需要域名之间跨域共享Cookie，有两种方法：</p> <ol><li>使用Nginx反向代理</li> <li>在一个站点登陆之后，往其他网站写Cookie。服务端的Session存储到一个节点，Cookie存储sessionId</li></ol> <p><strong>Cookie的使用场景：</strong></p> <ul><li>最常见的使用场景就是Cookie和session结合使用，我们将sessionId存储到Cookie中，每次发请求都会携带这个sessionId，这样服务端就知道是谁发起的请求，从而响应相应的信息。</li> <li>可以用来统计页面的点击次数</li></ul> <h4 id="_2-localstorage"><a href="#_2-localstorage" class="header-anchor">#</a> （2）LocalStorage</h4> <p>LocalStorage是HTML5新引入的特性，由于有的时候我们存储的信息较大，Cookie就不能满足我们的需求，这时候LocalStorage就派上用场了。</p> <p><strong>LocalStorage的优点：</strong></p> <ul><li>在大小方面，LocalStorage的大小一般为5MB，可以储存更多的信息</li> <li>LocalStorage是持久储存，并不会随着页面的关闭而消失，除非主动清理，不然会永久存在</li> <li>仅储存在本地，不像Cookie那样每次HTTP请求都会被携带</li></ul> <p><strong>LocalStorage的缺点：</strong></p> <ul><li>存在浏览器兼容问题，IE8以下版本的浏览器不支持</li> <li>如果浏览器设置为隐私模式，那我们将无法读取到LocalStorage</li> <li>LocalStorage受到同源策略的限制，即端口、协议、主机地址有任何一个不相同，都不会访问</li></ul> <p><strong>LocalStorage的常用API：</strong></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 保存数据到 localStorage</span>
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 从 localStorage 获取数据</span>
+<span class="token keyword">let</span> data <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 从 localStorage 删除保存的数据</span>
+localStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 从 localStorage 删除所有保存的数据</span>
+localStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 获取某个索引的Key</span>
+localStorage<span class="token punctuation">.</span><span class="token function">key</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span>
+复制代码
+</code></pre></div><p><strong>LocalStorage的使用场景：</strong></p> <ul><li>有些网站有换肤的功能，这时候就可以将换肤的信息存储在本地的LocalStorage中，当需要换肤的时候，直接操作LocalStorage即可</li> <li>在网站中的用户浏览信息也会存储在LocalStorage中，还有网站的一些不常变动的个人信息等也可以存储在本地的LocalStorage中</li></ul> <h4 id="_3-sessionstorage"><a href="#_3-sessionstorage" class="header-anchor">#</a> （3）SessionStorage</h4> <p>SessionStorage和LocalStorage都是在HTML5才提出来的存储方案，SessionStorage 主要用于临时保存同一窗口(或标签页)的数据，刷新页面时不会删除，关闭窗口或标签页之后将会删除这些数据。</p> <p><strong>SessionStorage与LocalStorage对比：</strong></p> <ul><li>SessionStorage和LocalStorage都在<strong>本地进行数据存储</strong>；</li> <li>SessionStorage也有同源策略的限制，但是SessionStorage有一条更加严格的限制，SessionStorage<strong>只有在同一浏览器的同一窗口下才能够共享</strong>；</li> <li>LocalStorage和SessionStorage<strong>都不能被爬虫爬取</strong>；</li></ul> <p><strong>SessionStorage的常用API：</strong></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 保存数据到 sessionStorage</span>
+sessionStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 从 sessionStorage 获取数据</span>
+<span class="token keyword">let</span> data <span class="token operator">=</span> sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 从 sessionStorage 删除保存的数据</span>
+sessionStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 从 sessionStorage 删除所有保存的数据</span>
+sessionStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 获取某个索引的Key</span>
+sessionStorage<span class="token punctuation">.</span><span class="token function">key</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span>
+复制代码
+</code></pre></div><p><strong>SessionStorage的使用场景</strong></p> <ul><li>由于SessionStorage具有时效性，所以可以用来存储一些网站的游客登录的信息，还有临时的浏览记录的信息。当关闭网站之后，这些信息也就随之消除了。</li></ul> <h3 id="_2-cookie有哪些字段-作用分别是什么"><a href="#_2-cookie有哪些字段-作用分别是什么" class="header-anchor">#</a> 2. Cookie有哪些字段，作用分别是什么</h3> <p><strong>Cookie由以下字段组成：</strong></p> <ul><li><strong>Name</strong>：cookie的名称</li> <li><strong>Value</strong>：cookie的值，对于认证cookie，value值包括web服务器所提供的访问令牌；</li> <li><strong>Size</strong>： cookie的大小</li> <li><strong>Path</strong>：可以访问此cookie的页面路径。 比如domain是abc.com，path是<code>/test</code>，那么只有<code>/test</code>路径下的页面可以读取此cookie。</li> <li><strong>Secure</strong>： 指定是否使用HTTPS安全协议发送Cookie。使用HTTPS安全协议，可以保护Cookie在浏览器和Web服务器间的传输过程中不被窃取和篡改。该方法也可用于Web站点的身份鉴别，即在HTTPS的连接建立阶段，浏览器会检查Web网站的SSL证书的有效性。但是基于兼容性的原因（比如有些网站使用自签署的证书）在检测到SSL证书无效时，浏览器并不会立即终止用户的连接请求，而是显示安全风险信息，用户仍可以选择继续访问该站点。</li> <li><strong>Domain</strong>：可以访问该cookie的域名，Cookie 机制并未遵循严格的同源策略，允许一个子域可以设置或获取其父域的 Cookie。当需要实现单点登录方案时，Cookie 的上述特性非常有用，然而也增加了 Cookie受攻击的危险，比如攻击者可以借此发动会话定置攻击。因而，浏览器禁止在 Domain 属性中设置.org、.com 等通用顶级域名、以及在国家及地区顶级域下注册的二级域名，以减小攻击发生的范围。</li> <li><strong>HTTP</strong>： 该字段包含<code>HTTPOnly</code> 属性 ，该属性用来设置cookie能否通过脚本来访问，默认为空，即可以通过脚本访问。在客户端是不能通过js代码去设置一个httpOnly类型的cookie的，这种类型的cookie只能通过服务端来设置。该属性用于防止客户端脚本通过<code>document.cookie</code>属性访问Cookie，有助于保护Cookie不被跨站脚本攻击窃取或篡改。但是，HTTPOnly的应用仍存在局限性，一些浏览器可以阻止客户端脚本对Cookie的读操作，但允许写操作；此外大多数浏览器仍允许通过XMLHTTP对象读取HTTP响应中的Set-Cookie头。</li> <li><strong>Expires/Max-size</strong> ： 此cookie的超时时间。若设置其值为一个时间，那么当到达此时间后，此cookie失效。不设置的话默认值是Session，意思是cookie会和session一起失效。当浏览器关闭(不是浏览器标签页，而是整个浏览器) 后，此cookie失效。</li></ul> <p><strong>总结：</strong> 服务器端可以使用 Set-Cookie 的响应头部来配置 cookie 信息。一条cookie 包括了5个属性值 expires、domain、path、secure、HttpOnly。其中 expires 指定了 cookie 失效的时间，domain 是域名、path是路径，domain 和 path 一起限制了 cookie 能够被哪些 url 访问。secure 规定了 cookie 只能在确保安全的情况下传输，HttpOnly 规定了这个 cookie 只能被服务器访问，不能使用 js 脚本访问。</p> <h3 id="_3-cookie、localstorage、sessionstorage区别"><a href="#_3-cookie、localstorage、sessionstorage区别" class="header-anchor">#</a> 3. Cookie、LocalStorage、SessionStorage区别</h3> <p>浏览器端常用的存储技术是 cookie 、localStorage 和 sessionStorage。</p> <ul><li><strong>cookie：</strong> 其实最开始是服务器端用于记录用户状态的一种方式，由服务器设置，在客户端存储，然后每次发起同源请求时，发送给服务器端。cookie 最多能存储 4 k 数据，它的生存时间由 expires 属性指定，并且 cookie 只能被同源的页面访问共享。</li> <li><strong>sessionStorage：</strong> html5 提供的一种浏览器本地存储的方法，它借鉴了服务器端 session 的概念，代表的是一次会话中所保存的数据。它一般能够存储 5M 或者更大的数据，它在当前窗口关闭后就失效了，并且 sessionStorage 只能被同一个窗口的同源页面所访问共享。</li> <li><strong>localStorage：</strong> html5 提供的一种浏览器本地存储的方法，它一般也能够存储 5M 或者更大的数据。它和 sessionStorage 不同的是，除非手动删除它，否则它不会失效，并且 localStorage 也只能被同源页面所访问共享。</li></ul> <p>上面几种方式都是存储少量数据的时候的存储方式，当需要在本地存储大量数据的时候，我们可以使用浏览器的 indexDB 这是浏览器提供的一种本地的数据库存储机制。它不是关系型数据库，它内部采用对象仓库的形式存储数据，它更接近 NoSQL 数据库。</p> <h3 id="_4-前端储存的方式有哪些"><a href="#_4-前端储存的方式有哪些" class="header-anchor">#</a> 4. 前端储存的⽅式有哪些？</h3> <ul><li>cookies： 在HTML5标准前本地储存的主要⽅式，优点是兼容性好，请求头⾃带cookie⽅便，缺点是⼤⼩只有4k，⾃动请求头加⼊cookie浪费流量，每个domain限制20个cookie，使⽤起来麻烦，需要⾃⾏封装；</li> <li>localStorage：HTML5加⼊的以键值对(Key-Value)为标准的⽅式，优点是操作⽅便，永久性储存（除⾮⼿动删除），⼤⼩为5M，兼容IE8+ ；</li> <li>sessionStorage：与localStorage基本类似，区别是sessionStorage当⻚⾯关闭后会被清理，⽽且与cookie、localStorage不同，他不能在所有同源窗⼝中共享，是会话级别的储存⽅式；</li> <li>Web SQL：2010年被W3C废弃的本地数据库数据存储⽅案，但是主流浏览器（⽕狐除外）都已经有了相关的实现，web sql类似于SQLite，是真正意义上的关系型数据库，⽤sql进⾏操作，当我们⽤JavaScript时要进⾏转换，较为繁琐；</li> <li>IndexedDB： 是被正式纳⼊HTML5标准的数据库储存⽅案，它是NoSQL数据库，⽤键值对进⾏储存，可以进⾏快速读取操作，⾮常适合web场景，同时⽤JavaScript进⾏操作会⾮常便。</li></ul> <h3 id="_5-indexeddb有哪些特点"><a href="#_5-indexeddb有哪些特点" class="header-anchor">#</a> 5. IndexedDB有哪些特点？</h3> <p>IndexedDB 具有以下特点：</p> <ul><li><strong>键值对储存</strong>：IndexedDB 内部采用对象仓库（object store）存放数据。所有类型的数据都可以直接存入，包括 JavaScript 对象。对象仓库中，数据以&quot;键值对&quot;的形式保存，每一个数据记录都有对应的主键，主键是独一无二的，不能有重复，否则会抛出一个错误。</li> <li><strong>异步</strong>：IndexedDB 操作时不会锁死浏览器，用户依然可以进行其他操作，这与 LocalStorage 形成对比，后者的操作是同步的。异步设计是为了防止大量数据的读写，拖慢网页的表现。</li> <li><strong>支持事务</strong>：IndexedDB 支持事务（transaction），这意味着一系列操作步骤之中，只要有一步失败，整个事务就都取消，数据库回滚到事务发生之前的状态，不存在只改写一部分数据的情况。</li> <li><strong>同源限制：</strong> IndexedDB 受到同源限制，每一个数据库对应创建它的域名。网页只能访问自身域名下的数据库，而不能访问跨域的数据库。</li> <li><strong>储存空间大</strong>：IndexedDB 的储存空间比 LocalStorage 大得多，一般来说不少于 250MB，甚至没有上限。</li> <li><strong>支持二进制储存</strong>：IndexedDB 不仅可以储存字符串，还可以储存二进制数据（ArrayBuffer 对象和 Blob 对象）。</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/21/2022, 9:01:05 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/浏览器原理/5.浏览器渲染原理.html" class="prev">
+        1. 浏览器的渲染过程
+      </a></span> <span class="next"><a href="/浏览器原理/7.浏览器同源策略.html">
+        1. 什么是同源策略
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b51e4ccd.js" defer></script><script src="/assets/js/2.7229199a.js" defer></script><script src="/assets/js/127.da74dd90.js" defer></script>
+  </body>
+</html>

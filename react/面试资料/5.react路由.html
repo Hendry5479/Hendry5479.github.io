@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1. React-Router的实现原理是什么？ | 英俊的大亨亨</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="heng.png">
+    <meta name="description" content="记录下有趣岁月的点点滴滴">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.b51e4ccd.js" as="script"><link rel="preload" href="/assets/js/2.7229199a.js" as="script"><link rel="preload" href="/assets/js/67.f504a803.js" as="script"><link rel="prefetch" href="/assets/js/10.00f8a9d8.js"><link rel="prefetch" href="/assets/js/100.78dfd44a.js"><link rel="prefetch" href="/assets/js/101.cdae98a0.js"><link rel="prefetch" href="/assets/js/102.6a3dd9e0.js"><link rel="prefetch" href="/assets/js/103.cfed07a2.js"><link rel="prefetch" href="/assets/js/104.a16a4843.js"><link rel="prefetch" href="/assets/js/105.9cd1add0.js"><link rel="prefetch" href="/assets/js/106.546c1ad8.js"><link rel="prefetch" href="/assets/js/107.04b38bf9.js"><link rel="prefetch" href="/assets/js/108.31a22b61.js"><link rel="prefetch" href="/assets/js/109.1f2a1840.js"><link rel="prefetch" href="/assets/js/11.e2689dc6.js"><link rel="prefetch" href="/assets/js/110.9dc2f13b.js"><link rel="prefetch" href="/assets/js/111.35cf70f8.js"><link rel="prefetch" href="/assets/js/112.39a6579b.js"><link rel="prefetch" href="/assets/js/113.cbfc279d.js"><link rel="prefetch" href="/assets/js/114.878470a2.js"><link rel="prefetch" href="/assets/js/115.86dc4d8e.js"><link rel="prefetch" href="/assets/js/116.d2e05b2c.js"><link rel="prefetch" href="/assets/js/117.7525671d.js"><link rel="prefetch" href="/assets/js/118.a5c04c6d.js"><link rel="prefetch" href="/assets/js/119.613a81e1.js"><link rel="prefetch" href="/assets/js/12.0b7aaea4.js"><link rel="prefetch" href="/assets/js/120.ec6d3159.js"><link rel="prefetch" href="/assets/js/121.6705f783.js"><link rel="prefetch" href="/assets/js/122.7b3fe034.js"><link rel="prefetch" href="/assets/js/123.9336f454.js"><link rel="prefetch" href="/assets/js/124.dca9fc87.js"><link rel="prefetch" href="/assets/js/125.338aa4d8.js"><link rel="prefetch" href="/assets/js/126.a731a9eb.js"><link rel="prefetch" href="/assets/js/127.da74dd90.js"><link rel="prefetch" href="/assets/js/128.3d5e86f2.js"><link rel="prefetch" href="/assets/js/129.ee43b65c.js"><link rel="prefetch" href="/assets/js/13.31064a46.js"><link rel="prefetch" href="/assets/js/130.8a273d75.js"><link rel="prefetch" href="/assets/js/131.a89df4ac.js"><link rel="prefetch" href="/assets/js/132.0daac28c.js"><link rel="prefetch" href="/assets/js/133.b1f23c92.js"><link rel="prefetch" href="/assets/js/134.78621a9c.js"><link rel="prefetch" href="/assets/js/135.f0884a8b.js"><link rel="prefetch" href="/assets/js/136.45114430.js"><link rel="prefetch" href="/assets/js/137.eb295fce.js"><link rel="prefetch" href="/assets/js/138.cc7dc8d3.js"><link rel="prefetch" href="/assets/js/139.c9b1aad6.js"><link rel="prefetch" href="/assets/js/14.0be4ee49.js"><link rel="prefetch" href="/assets/js/15.685fab30.js"><link rel="prefetch" href="/assets/js/16.97f8b16a.js"><link rel="prefetch" href="/assets/js/17.9c7bebeb.js"><link rel="prefetch" href="/assets/js/18.965d9e47.js"><link rel="prefetch" href="/assets/js/19.3d59a8e1.js"><link rel="prefetch" href="/assets/js/20.1573d510.js"><link rel="prefetch" href="/assets/js/21.f46234dd.js"><link rel="prefetch" href="/assets/js/22.6c16fd38.js"><link rel="prefetch" href="/assets/js/23.50a2a38a.js"><link rel="prefetch" href="/assets/js/24.8aff8273.js"><link rel="prefetch" href="/assets/js/25.35a7c496.js"><link rel="prefetch" href="/assets/js/26.af233874.js"><link rel="prefetch" href="/assets/js/27.a3a96a5a.js"><link rel="prefetch" href="/assets/js/28.a1d49602.js"><link rel="prefetch" href="/assets/js/29.174b7d7d.js"><link rel="prefetch" href="/assets/js/3.6038f64c.js"><link rel="prefetch" href="/assets/js/30.a4115d32.js"><link rel="prefetch" href="/assets/js/31.1522875a.js"><link rel="prefetch" href="/assets/js/32.35da527d.js"><link rel="prefetch" href="/assets/js/33.814d63e8.js"><link rel="prefetch" href="/assets/js/34.615b49c1.js"><link rel="prefetch" href="/assets/js/35.856ab789.js"><link rel="prefetch" href="/assets/js/36.2987bc62.js"><link rel="prefetch" href="/assets/js/37.084d12aa.js"><link rel="prefetch" href="/assets/js/38.088f3091.js"><link rel="prefetch" href="/assets/js/39.4ea066d5.js"><link rel="prefetch" href="/assets/js/4.c610d016.js"><link rel="prefetch" href="/assets/js/40.97850ba9.js"><link rel="prefetch" href="/assets/js/41.8b8ae086.js"><link rel="prefetch" href="/assets/js/42.8ae2cac3.js"><link rel="prefetch" href="/assets/js/43.f8a28187.js"><link rel="prefetch" href="/assets/js/44.5160f68a.js"><link rel="prefetch" href="/assets/js/45.6d4b7130.js"><link rel="prefetch" href="/assets/js/46.44693348.js"><link rel="prefetch" href="/assets/js/47.eb0ac18a.js"><link rel="prefetch" href="/assets/js/48.ce1c6335.js"><link rel="prefetch" href="/assets/js/49.7ec1b16a.js"><link rel="prefetch" href="/assets/js/5.216dfe20.js"><link rel="prefetch" href="/assets/js/50.1f503aa4.js"><link rel="prefetch" href="/assets/js/51.47971163.js"><link rel="prefetch" href="/assets/js/52.e5f681d7.js"><link rel="prefetch" href="/assets/js/53.df89fbb7.js"><link rel="prefetch" href="/assets/js/54.a140a8dd.js"><link rel="prefetch" href="/assets/js/55.5809711e.js"><link rel="prefetch" href="/assets/js/56.3a62759d.js"><link rel="prefetch" href="/assets/js/57.c9bd4339.js"><link rel="prefetch" href="/assets/js/58.acb475d1.js"><link rel="prefetch" href="/assets/js/59.61cf3322.js"><link rel="prefetch" href="/assets/js/6.73a8f323.js"><link rel="prefetch" href="/assets/js/60.aa39146e.js"><link rel="prefetch" href="/assets/js/61.f62972b8.js"><link rel="prefetch" href="/assets/js/62.79fc1ddc.js"><link rel="prefetch" href="/assets/js/63.808c750c.js"><link rel="prefetch" href="/assets/js/64.4e99e2e1.js"><link rel="prefetch" href="/assets/js/65.f112caec.js"><link rel="prefetch" href="/assets/js/66.422cc6c9.js"><link rel="prefetch" href="/assets/js/68.f8e84a65.js"><link rel="prefetch" href="/assets/js/69.af07ae00.js"><link rel="prefetch" href="/assets/js/7.a6e60d89.js"><link rel="prefetch" href="/assets/js/70.9b212396.js"><link rel="prefetch" href="/assets/js/71.049b7d3e.js"><link rel="prefetch" href="/assets/js/72.b508f834.js"><link rel="prefetch" href="/assets/js/73.52a25a21.js"><link rel="prefetch" href="/assets/js/74.68de4c01.js"><link rel="prefetch" href="/assets/js/75.c0d8e99a.js"><link rel="prefetch" href="/assets/js/76.672b246e.js"><link rel="prefetch" href="/assets/js/77.36d886e3.js"><link rel="prefetch" href="/assets/js/78.079ebfd8.js"><link rel="prefetch" href="/assets/js/79.d3d3e8ea.js"><link rel="prefetch" href="/assets/js/8.a72c567f.js"><link rel="prefetch" href="/assets/js/80.c690c3d9.js"><link rel="prefetch" href="/assets/js/81.c012b7d5.js"><link rel="prefetch" href="/assets/js/82.47ffa460.js"><link rel="prefetch" href="/assets/js/83.2ba84114.js"><link rel="prefetch" href="/assets/js/84.dc0bf5a8.js"><link rel="prefetch" href="/assets/js/85.d968ae8b.js"><link rel="prefetch" href="/assets/js/86.91000a3b.js"><link rel="prefetch" href="/assets/js/87.6e885c71.js"><link rel="prefetch" href="/assets/js/88.99dd2b79.js"><link rel="prefetch" href="/assets/js/89.601c57ea.js"><link rel="prefetch" href="/assets/js/9.c59ba06b.js"><link rel="prefetch" href="/assets/js/90.89ee0da5.js"><link rel="prefetch" href="/assets/js/91.854de449.js"><link rel="prefetch" href="/assets/js/92.7a25d006.js"><link rel="prefetch" href="/assets/js/93.17f89281.js"><link rel="prefetch" href="/assets/js/94.0f6749b9.js"><link rel="prefetch" href="/assets/js/95.41ef6f4a.js"><link rel="prefetch" href="/assets/js/96.12427920.js"><link rel="prefetch" href="/assets/js/97.53036963.js"><link rel="prefetch" href="/assets/js/98.43d8f870.js"><link rel="prefetch" href="/assets/js/99.4ab32fce.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/heng.png" alt="英俊的大亨亨" class="logo"> <span class="site-name can-hide">英俊的大亨亨</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/js-基础.html" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-数组.html" class="nav-link">
+  数组
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-异步.html" class="nav-link">
+  异步
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-es6.html" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-v8引擎.html" class="nav-link">
+  v8
+</a></li><li class="dropdown-item"><!----> <a href="/手写代码/1.js基础.html" class="nav-link">
+  手写
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/process.html" class="nav-link">
+  
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/node.html" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  小程序
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="leetcode" class="dropdown-title"><span class="title">leetcode</span> <span class="arrow down"></span></button> <button type="button" aria-label="leetcode" class="mobile-dropdown-title"><span class="title">leetcode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/代码随想录/1.数组.html" class="nav-link">
+  1.数组
+</a></li><li class="dropdown-item"><!----> <a href="/代码随想录/10.动态规划/1.基础.html" class="nav-link">
+  10.动态规划
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">react源码</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">react源码</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react源码/理念.html" class="nav-link">
+  1.理念
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/3.render.html" class="nav-link">
+  3.render
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/4.commit.html" class="nav-link">
+  4.commit
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/5.状态更新.html" class="nav-link">
+  5.状态更新
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/6.diff.html" class="nav-link">
+  6.diff
+</a></li><li class="dropdown-item"><!----> <a href="/react/7.实现hooks.html" class="nav-link">
+  7.实现hooks
+</a></li><li class="dropdown-item"><!----> <a href="/react/8.concurrentMode.html" class="nav-link">
+  8.concurrentMode
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">webpack</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">webpack</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/1.配置.html" class="nav-link">
+  1.配置
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/2.loader.html" class="nav-link">
+  2.loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/3.plugin.html" class="nav-link">
+  3.plugin
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/4.模块化原理.html" class="nav-link">
+  4.模块化原理
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/5.babel.html" class="nav-link">
+  5.babel
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/6.HMR.html" class="nav-link">
+  6.HMR
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/7.环境分离.html" class="nav-link">
+  7.环境分离
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/8.tree_shaking.html" class="nav-link">
+  8.tree_shaking
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/9,源码.html" class="nav-link">
+  9.源码
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/11.自定义loader.html" class="nav-link">
+  11.自定义loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/12.自定义plugin.html" class="nav-link">
+  12.自定义plugin
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/设计模式/创建型.html" class="nav-link">
+  创建型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  结构型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/行为型.html" class="nav-link">
+  行为型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">angular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">angular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">健身</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">健身</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><a href="/me.html" class="nav-link">
+  关于我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/js-基础.html" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-数组.html" class="nav-link">
+  数组
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-异步.html" class="nav-link">
+  异步
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-es6.html" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-v8引擎.html" class="nav-link">
+  v8
+</a></li><li class="dropdown-item"><!----> <a href="/手写代码/1.js基础.html" class="nav-link">
+  手写
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/process.html" class="nav-link">
+  
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/node.html" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  小程序
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="leetcode" class="dropdown-title"><span class="title">leetcode</span> <span class="arrow down"></span></button> <button type="button" aria-label="leetcode" class="mobile-dropdown-title"><span class="title">leetcode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/代码随想录/1.数组.html" class="nav-link">
+  1.数组
+</a></li><li class="dropdown-item"><!----> <a href="/代码随想录/10.动态规划/1.基础.html" class="nav-link">
+  10.动态规划
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">react源码</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">react源码</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react源码/理念.html" class="nav-link">
+  1.理念
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/3.render.html" class="nav-link">
+  3.render
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/4.commit.html" class="nav-link">
+  4.commit
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/5.状态更新.html" class="nav-link">
+  5.状态更新
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/6.diff.html" class="nav-link">
+  6.diff
+</a></li><li class="dropdown-item"><!----> <a href="/react/7.实现hooks.html" class="nav-link">
+  7.实现hooks
+</a></li><li class="dropdown-item"><!----> <a href="/react/8.concurrentMode.html" class="nav-link">
+  8.concurrentMode
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">webpack</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">webpack</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/1.配置.html" class="nav-link">
+  1.配置
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/2.loader.html" class="nav-link">
+  2.loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/3.plugin.html" class="nav-link">
+  3.plugin
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/4.模块化原理.html" class="nav-link">
+  4.模块化原理
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/5.babel.html" class="nav-link">
+  5.babel
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/6.HMR.html" class="nav-link">
+  6.HMR
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/7.环境分离.html" class="nav-link">
+  7.环境分离
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/8.tree_shaking.html" class="nav-link">
+  8.tree_shaking
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/9,源码.html" class="nav-link">
+  9.源码
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/11.自定义loader.html" class="nav-link">
+  11.自定义loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/12.自定义plugin.html" class="nav-link">
+  12.自定义plugin
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/设计模式/创建型.html" class="nav-link">
+  创建型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  结构型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/行为型.html" class="nav-link">
+  行为型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">angular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">angular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">健身</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">健身</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react/%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><a href="/me.html" class="nav-link">
+  关于我
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>面试资料</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/react/面试资料/1.组件基础.html" class="sidebar-link">1. React 事件机制</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/react/面试资料/2.数据管理.html" class="sidebar-link">1. React setState 调用的原理</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/react/面试资料/3.生命周期.html" class="sidebar-link">1. React的生命周期有哪些？</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/react/面试资料/4.组件通信.html" class="sidebar-link">/react/面试资料/4.组件通信.html</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/react/面试资料/5.react路由.html" class="active sidebar-link">1. React-Router的实现原理是什么？</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/react/面试资料/6.redux.html" class="sidebar-link">1. 对 Redux 的理解，主要解决什么问题</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/react/面试资料/7.hooks.html" class="sidebar-link">1. 对 React Hook 的理解，它的实现原理是什么</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/react/面试资料/8.fiber.html" class="sidebar-link">1. 对虚拟 DOM 的理解？虚拟 DOM 主要做了什么？虚拟 DOM 本身是什么？</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/react/面试资料/9.其他.html" class="sidebar-link">1. React组件命名推荐的方式是哪个？</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="_1-react-router的实现原理是什么"><a href="#_1-react-router的实现原理是什么" class="header-anchor">#</a> 1. React-Router的实现原理是什么？</h3> <p>客户端路由实现的思想：</p> <ul><li><p>基于 hash 的路由：通过监听</p> <div class="language- extra-class"><pre class="language-text"><code>hashchange
+</code></pre></div><p>事件，感知 hash 的变化</p> <ul><li>改变 hash 可以直接通过 location.hash=xxx</li></ul></li> <li><p>基于 H5 history 路由：</p> <ul><li>改变 url 可以通过 history.pushState 和 resplaceState 等，会将URL压入堆栈，同时能够应用 <code>history.go()</code> 等 API</li> <li>监听 url 的变化可以通过自定义事件触发实现</li></ul></li></ul> <p><strong>react-router 实现的思想：</strong></p> <ul><li>基于 <code>history</code> 库来实现上述不同的客户端路由实现思想，并且能够保存历史记录等，磨平浏览器差异，上层无感知</li> <li>通过维护的列表，在每次 URL 发生变化的回收，通过配置的 路由路径，匹配到对应的 Component，并且 render</li></ul> <h3 id="_2-如何配置-react-router-实现路由切换"><a href="#_2-如何配置-react-router-实现路由切换" class="header-anchor">#</a> 2. 如何配置 React-Router 实现路由切换</h3> <p><strong>（1）使用<code>&lt;Route&gt;</code> 组件</strong></p> <p>路由匹配是通过比较 <code>&lt;Route&gt;</code> 的 path 属性和当前地址的 pathname 来实现的。当一个 <code>&lt;Route&gt;</code> 匹配成功时，它将渲染其内容，当它不匹配时就会渲染 null。没有路径的 <code>&lt;Route&gt;</code> 将始终被匹配。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// when location = { pathname: '/about' }</span>
+<span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">'/about'</span> component<span class="token operator">=</span><span class="token punctuation">{</span>About<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span> <span class="token comment">// renders &lt;About/&gt;</span>
+<span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">'/contact'</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Contact<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span> <span class="token comment">// renders null</span>
+<span class="token operator">&lt;</span>Route component<span class="token operator">=</span><span class="token punctuation">{</span>Always<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span> <span class="token comment">// renders &lt;Always/&gt;</span>
+复制代码
+</code></pre></div><p><strong>（2）结合使用 <code>&lt;Switch&gt;</code> 组件和 <code>&lt;Route&gt;</code> 组件</strong></p> <p><code>&lt;Switch&gt;</code> 用于将 <code>&lt;Route&gt;</code> 分组。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">&lt;</span>Switch<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Route exact path<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Home<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/about&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>About<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/contact&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Contact<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>Switch<span class="token operator">&gt;</span>
+复制代码
+</code></pre></div><p><code>&lt;Switch&gt;</code> 不是分组 <code>&lt;Route&gt;</code> 所必须的，但他通常很有用。 一个 <code>&lt;Switch&gt;</code> 会遍历其所有的子 <code>&lt;Route&gt;</code>元素，并仅渲染与当前地址匹配的第一个元素。</p> <p><strong>（3）使用 <code>&lt;Link&gt;、 &lt;NavLink&gt;、&lt;Redirect&gt;</code> 组件</strong></p> <p><code>&lt;Link&gt;</code> 组件来在你的应用程序中创建链接。无论你在何处渲染一个<code>&lt;Link&gt;</code> ，都会在应用程序的 HTML 中渲染锚（<code>&lt;a&gt;</code>）。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">&quot;/&quot;</span><span class="token operator">&gt;</span>Home<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span>   
+<span class="token comment">// &lt;a href='/'&gt;Home&lt;/a&gt;</span>
+复制代码
+</code></pre></div><p>是一种特殊类型的  当它的 to属性与当前地址匹配时，可以将其定义为&quot;活跃的&quot;。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// location = { pathname: '/react' }</span>
+<span class="token operator">&lt;</span>NavLink to<span class="token operator">=</span><span class="token string">&quot;/react&quot;</span> activeClassName<span class="token operator">=</span><span class="token string">&quot;hurray&quot;</span><span class="token operator">&gt;</span>
+    React
+<span class="token operator">&lt;</span><span class="token operator">/</span>NavLink<span class="token operator">&gt;</span>
+<span class="token comment">// &lt;a href='/react' className='hurray'&gt;React&lt;/a&gt;</span>
+复制代码
+</code></pre></div><p>当我们想强制导航时，可以渲染一个<code>&lt;Redirect&gt;</code>，当一个<code>&lt;Redirect&gt;</code>渲染时，它将使用它的to属性进行定向。</p> <h3 id="_3-react-router怎么设置重定向"><a href="#_3-react-router怎么设置重定向" class="header-anchor">#</a> 3. React-Router怎么设置重定向？</h3> <p>使用<code>&lt;Redirect&gt;</code>组件实现路由的重定向：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">&lt;</span>Switch<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>Redirect from<span class="token operator">=</span><span class="token string">'/users/:id'</span> to<span class="token operator">=</span><span class="token string">'/users/profile/:id'</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">'/users/profile/:id'</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Profile<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>Switch<span class="token operator">&gt;</span>
+复制代码
+</code></pre></div><p>当请求 <code>/users/:id</code> 被重定向去 <code>'/users/profile/:id'</code>：</p> <ul><li>属性 <code>from: string</code>：需要匹配的将要被重定向路径。</li> <li>属性 <code>to: string</code>：重定向的 URL 字符串</li> <li>属性 <code>to: object</code>：重定向的 location 对象</li> <li>属性 <code>push: bool</code>：若为真，重定向操作将会把新地址加入到访问历史记录里面，并且无法回退到前面的页面。</li></ul> <h3 id="_4-react-router-里的-link-标签和-a-标签的区别"><a href="#_4-react-router-里的-link-标签和-a-标签的区别" class="header-anchor">#</a> 4. react-router 里的 Link 标签和 a 标签的区别</h3> <p>从最终渲染的 DOM 来看，这两者都是链接，都是 标签，区别是∶ <code>&lt;Link&gt;</code>是react-router 里实现路由跳转的链接，一般配合<code>&lt;Route&gt;</code> 使用，react-router接管了其默认的链接跳转行为，区别于传统的页面跳转，<code>&lt;Link&gt;</code> 的“跳转”行为只会触发相匹配的<code>&lt;Route&gt;</code>对应的页面内容更新，而不会刷新整个页面。</p> <p><code>&lt;Link&gt;</code>做了3件事情:</p> <ul><li>有onclick那就执行onclick</li> <li>click的时候阻止a标签默认事件</li> <li>根据跳转href(即是to)，用history (web前端路由两种方式之一，history &amp; hash)跳转，此时只是链接变了，并没有刷新页面而<code>&lt;a&gt;</code>标签就是普通的超链接了，用于从当前页面跳转到href指向的另一 个页面(非锚点情况)。</li></ul> <p>a标签默认事件禁掉之后做了什么才实现了跳转?</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> domArr <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token operator">...</span>domArr<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    item<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        location<span class="token punctuation">.</span>href <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>href
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+复制代码
+</code></pre></div><h3 id="_5-react-router如何获取url的参数和历史对象"><a href="#_5-react-router如何获取url的参数和历史对象" class="header-anchor">#</a> 5. React-Router如何获取URL的参数和历史对象？</h3> <p><strong>（1）获取URL的参数</strong></p> <ul><li><strong>get传值</strong></li></ul> <p>路由配置还是普通的配置，如：<code>'admin'</code>，传参方式如：<code>'admin?id='1111''</code>。通过<code>this.props.location.search</code>获取url获取到一个字符串<code>'?id='1111'</code> 可以用url，qs，querystring，浏览器提供的api URLSearchParams对象或者自己封装的方法去解析出id的值。</p> <ul><li><strong>动态路由传值</strong></li></ul> <p>路由需要配置成动态路由：如<code>path='/admin/:id'</code>，传参方式，如<code>'admin/111'</code>。通过<code>this.props.match.params.id</code> 取得url中的动态路由id部分的值，除此之外还可以通过<code>useParams（Hooks）</code>来获取</p> <ul><li><strong>通过query或state传值</strong></li></ul> <p>传参方式如：在Link组件的to属性中可以传递对象<code>{pathname:'/admin',query:'111',state:'111'};</code>。通过<code>this.props.location.state</code>或<code>this.props.location.query</code>来获取即可，传递的参数可以是对象、数组等，但是存在缺点就是只要刷新页面，参数就会丢失。</p> <p><strong>（2）获取历史对象</strong></p> <ul><li>如果React &gt;= 16.8 时可以使用 React Router中提供的Hooks</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> useHistory <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;react-router-dom&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> history <span class="token operator">=</span> <span class="token function">useHistory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+复制代码
+</code></pre></div><p>2.使用this.props.history获取历史对象</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> history <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>history<span class="token punctuation">;</span>
+复制代码
+</code></pre></div><h3 id="_6-react-router-4怎样在路由变化时重新渲染同一个组件"><a href="#_6-react-router-4怎样在路由变化时重新渲染同一个组件" class="header-anchor">#</a> 6. React-Router 4怎样在路由变化时重新渲染同一个组件？</h3> <p>当路由变化时，即组件的props发生了变化，会调用componentWillReceiveProps等生命周期钩子。那需要做的只是： 当路由改变时，根据路由，也去请求数据：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">NewsList</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">componentDidMount</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>location<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token parameter">location</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> type <span class="token operator">=</span> location<span class="token punctuation">.</span>pathname<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">'top'</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">fetchListData</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">componentWillReceiveProps</span><span class="token punctuation">(</span><span class="token parameter">nextProps</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">if</span> <span class="token punctuation">(</span>nextProps<span class="token punctuation">.</span>location<span class="token punctuation">.</span>pathname <span class="token operator">!=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>location<span class="token punctuation">.</span>pathname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fetchData</span><span class="token punctuation">(</span>nextProps<span class="token punctuation">.</span>location<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span> 
+  <span class="token punctuation">}</span>
+  <span class="token function">render</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+复制代码
+</code></pre></div><p>利用生命周期componentWillReceiveProps，进行重新render的预处理操作。</p> <h3 id="_7-react-router的路由有几种模式"><a href="#_7-react-router的路由有几种模式" class="header-anchor">#</a> 7. React-Router的路由有几种模式？</h3> <p>React-Router 支持使用 hash（对应 HashRouter）和 browser（对应 BrowserRouter） 两种路由规则， react-router-dom 提供了 BrowserRouter 和 HashRouter 两个组件来实现应用的 UI 和 URL 同步：</p> <ul><li>BrowserRouter 创建的 URL 格式：<a href="https://link.juejin.cn?target=http%3A%2F%2Fxxx.com%2Fpath" target="_blank" rel="noopener noreferrer">xxx.com/path<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>HashRouter 创建的 URL 格式：<a href="https://link.juejin.cn?target=http%3A%2F%2Fxxx.com%2F%23%2Fpath" target="_blank" rel="noopener noreferrer">xxx.com/#/path<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p><strong>（1）BrowserRouter</strong></p> <p>它使用 HTML5 提供的 history API（pushState、replaceState 和 popstate 事件）来保持 UI 和 URL 的同步。由此可以看出，<strong>BrowserRouter 是使用 HTML 5 的 history API 来控制路由跳转的：</strong></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">&lt;</span>BrowserRouter
+    basename<span class="token operator">=</span><span class="token punctuation">{</span>string<span class="token punctuation">}</span>
+    forceRefresh<span class="token operator">=</span><span class="token punctuation">{</span>bool<span class="token punctuation">}</span>
+    getUserConfirmation<span class="token operator">=</span><span class="token punctuation">{</span>func<span class="token punctuation">}</span>
+    keyLength<span class="token operator">=</span><span class="token punctuation">{</span>number<span class="token punctuation">}</span>
+<span class="token operator">/</span><span class="token operator">&gt;</span>
+复制代码
+</code></pre></div><p><strong>其中的属性如下：</strong></p> <ul><li>basename 所有路由的基准 URL。basename 的正确格式是前面有一个前导斜杠，但不能有尾部斜杠；</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">&lt;</span>BrowserRouter basename<span class="token operator">=</span><span class="token string">&quot;/calendar&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">&quot;/today&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>BrowserRouter<span class="token operator">&gt;</span>
+复制代码
+</code></pre></div><p>等同于</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">&quot;/calendar/today&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+复制代码
+</code></pre></div><ul><li>forceRefresh 如果为 true，在导航的过程中整个页面将会刷新。一般情况下，只有在不支持 HTML5 history API 的浏览器中使用此功能；</li> <li>getUserConfirmation 用于确认导航的函数，默认使用 window.confirm。例如，当从 /a 导航至 /b 时，会使用默认的 confirm 函数弹出一个提示，用户点击确定后才进行导航，否则不做任何处理；</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 这是默认的确认函数</span>
+<span class="token keyword">const</span> <span class="token function-variable function">getConfirmation</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">message<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> allowTransition <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">confirm</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">callback</span><span class="token punctuation">(</span>allowTransition<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>BrowserRouter getUserConfirmation<span class="token operator">=</span><span class="token punctuation">{</span>getConfirmation<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+复制代码
+</code></pre></div><blockquote><p>需要配合<code>&lt;Prompt&gt;</code> 一起使用。</p></blockquote> <ul><li>KeyLength 用来设置 Location.Key 的长度。</li></ul> <p><strong>（2）HashRouter</strong></p> <p>使用 URL 的 hash 部分（即 window.location.hash）来保持 UI 和 URL 的同步。由此可以看出，<strong>HashRouter 是通过 URL 的 hash 属性来控制路由跳转的：</strong></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">&lt;</span>HashRouter
+    basename<span class="token operator">=</span><span class="token punctuation">{</span>string<span class="token punctuation">}</span>
+    getUserConfirmation<span class="token operator">=</span><span class="token punctuation">{</span>func<span class="token punctuation">}</span>
+    hashType<span class="token operator">=</span><span class="token punctuation">{</span>string<span class="token punctuation">}</span>  
+<span class="token operator">/</span><span class="token operator">&gt;</span>
+复制代码
+</code></pre></div><p><strong>其参数如下</strong>：</p> <ul><li>basename, getUserConfirmation 和 <code>BrowserRouter</code> 功能一样；</li> <li>hashType window.location.hash 使用的 hash 类型，有如下几种：
+<ul><li>slash - 后面跟一个斜杠，例如 #/ 和 #/sunshine/lollipops；</li> <li>noslash - 后面没有斜杠，例如 # 和 #sunshine/lollipops；</li> <li>hashbang - Google 风格的 ajax crawlable，例如 #!/ 和 #!/sunshine/lollipops。</li></ul></li></ul> <h3 id="_8-react-router-4的switch有什么用"><a href="#_8-react-router-4的switch有什么用" class="header-anchor">#</a> 8. React-Router 4的Switch有什么用？</h3> <p>Switch 通常被用来包裹 Route，用于渲染与路径匹配的第一个子 <code>&lt;Route&gt;</code> 或 <code>&lt;Redirect&gt;</code>，它里面不能放其他元素。</p> <p>假如不加 <code>&lt;Switch&gt;</code> ：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Route <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-router-dom'</span>
+
+<span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Home<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Route<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/login&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Login<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Route<span class="token operator">&gt;</span>
+复制代码
+</code></pre></div><p>Route 组件的 path 属性用于匹配路径，因为需要匹配 <code>/</code> 到 <code>Home</code>，匹配 <code>/login</code> 到 <code>Login</code>，所以需要两个 Route，但是不能这么写。这样写的话，当 URL 的 path 为 “/login” 时，<code>&lt;Route path=&quot;/&quot; /&gt;</code>和<code>&lt;Route path=&quot;/login&quot; /&gt;</code> 都会被匹配，因此页面会展示 Home 和 Login 两个组件。这时就需要借助 <code>&lt;Switch&gt;</code> 来做到只显示一个匹配组件：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Switch<span class="token punctuation">,</span> Route<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-router-dom'</span>
+    
+<span class="token operator">&lt;</span>Switch<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Home<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Route<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/login&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Login<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Route<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>Switch<span class="token operator">&gt;</span>
+复制代码
+</code></pre></div><p>此时，再访问 “/login” 路径时，却只显示了 Home 组件。这是就用到了exact属性，它的作用就是精确匹配路径，经常与<code>&lt;Switch&gt;</code> 联合使用。只有当 URL 和该 <code>&lt;Route&gt;</code> 的 path 属性完全一致的情况下才能匹配上：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Switch<span class="token punctuation">,</span> Route<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-router-dom'</span>
+   
+<span class="token operator">&lt;</span>Switch<span class="token operator">&gt;</span>
+   <span class="token operator">&lt;</span>Route exact path<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Home<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Route<span class="token operator">&gt;</span>
+   <span class="token operator">&lt;</span>Route exact path<span class="token operator">=</span><span class="token string">&quot;/login&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Login<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Route<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>Switch<span class="token operator">&gt;</span>
+复制代码
+</code></pre></div><p><strong>注：</strong> 由于文章字数限制，剩余内容请见下篇。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/react/面试资料/4.组件通信.html" class="prev">
+        /react/面试资料/4.组件通信.html
+      </a></span> <span class="next"><a href="/react/面试资料/6.redux.html">
+        1. 对 Redux 的理解，主要解决什么问题
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b51e4ccd.js" defer></script><script src="/assets/js/2.7229199a.js" defer></script><script src="/assets/js/67.f504a803.js" defer></script>
+  </body>
+</html>

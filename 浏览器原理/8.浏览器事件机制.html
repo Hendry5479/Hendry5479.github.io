@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1. 事件是什么？事件模型？ | 英俊的大亨亨</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="heng.png">
+    <meta name="description" content="记录下有趣岁月的点点滴滴">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.b51e4ccd.js" as="script"><link rel="preload" href="/assets/js/2.7229199a.js" as="script"><link rel="preload" href="/assets/js/129.ee43b65c.js" as="script"><link rel="prefetch" href="/assets/js/10.00f8a9d8.js"><link rel="prefetch" href="/assets/js/100.78dfd44a.js"><link rel="prefetch" href="/assets/js/101.cdae98a0.js"><link rel="prefetch" href="/assets/js/102.6a3dd9e0.js"><link rel="prefetch" href="/assets/js/103.cfed07a2.js"><link rel="prefetch" href="/assets/js/104.a16a4843.js"><link rel="prefetch" href="/assets/js/105.9cd1add0.js"><link rel="prefetch" href="/assets/js/106.546c1ad8.js"><link rel="prefetch" href="/assets/js/107.04b38bf9.js"><link rel="prefetch" href="/assets/js/108.31a22b61.js"><link rel="prefetch" href="/assets/js/109.1f2a1840.js"><link rel="prefetch" href="/assets/js/11.e2689dc6.js"><link rel="prefetch" href="/assets/js/110.9dc2f13b.js"><link rel="prefetch" href="/assets/js/111.35cf70f8.js"><link rel="prefetch" href="/assets/js/112.39a6579b.js"><link rel="prefetch" href="/assets/js/113.cbfc279d.js"><link rel="prefetch" href="/assets/js/114.878470a2.js"><link rel="prefetch" href="/assets/js/115.86dc4d8e.js"><link rel="prefetch" href="/assets/js/116.d2e05b2c.js"><link rel="prefetch" href="/assets/js/117.7525671d.js"><link rel="prefetch" href="/assets/js/118.a5c04c6d.js"><link rel="prefetch" href="/assets/js/119.613a81e1.js"><link rel="prefetch" href="/assets/js/12.0b7aaea4.js"><link rel="prefetch" href="/assets/js/120.ec6d3159.js"><link rel="prefetch" href="/assets/js/121.6705f783.js"><link rel="prefetch" href="/assets/js/122.7b3fe034.js"><link rel="prefetch" href="/assets/js/123.9336f454.js"><link rel="prefetch" href="/assets/js/124.dca9fc87.js"><link rel="prefetch" href="/assets/js/125.338aa4d8.js"><link rel="prefetch" href="/assets/js/126.a731a9eb.js"><link rel="prefetch" href="/assets/js/127.da74dd90.js"><link rel="prefetch" href="/assets/js/128.3d5e86f2.js"><link rel="prefetch" href="/assets/js/13.31064a46.js"><link rel="prefetch" href="/assets/js/130.8a273d75.js"><link rel="prefetch" href="/assets/js/131.a89df4ac.js"><link rel="prefetch" href="/assets/js/132.0daac28c.js"><link rel="prefetch" href="/assets/js/133.b1f23c92.js"><link rel="prefetch" href="/assets/js/134.78621a9c.js"><link rel="prefetch" href="/assets/js/135.f0884a8b.js"><link rel="prefetch" href="/assets/js/136.45114430.js"><link rel="prefetch" href="/assets/js/137.eb295fce.js"><link rel="prefetch" href="/assets/js/138.cc7dc8d3.js"><link rel="prefetch" href="/assets/js/139.c9b1aad6.js"><link rel="prefetch" href="/assets/js/14.0be4ee49.js"><link rel="prefetch" href="/assets/js/15.685fab30.js"><link rel="prefetch" href="/assets/js/16.97f8b16a.js"><link rel="prefetch" href="/assets/js/17.9c7bebeb.js"><link rel="prefetch" href="/assets/js/18.965d9e47.js"><link rel="prefetch" href="/assets/js/19.3d59a8e1.js"><link rel="prefetch" href="/assets/js/20.1573d510.js"><link rel="prefetch" href="/assets/js/21.f46234dd.js"><link rel="prefetch" href="/assets/js/22.6c16fd38.js"><link rel="prefetch" href="/assets/js/23.50a2a38a.js"><link rel="prefetch" href="/assets/js/24.8aff8273.js"><link rel="prefetch" href="/assets/js/25.35a7c496.js"><link rel="prefetch" href="/assets/js/26.af233874.js"><link rel="prefetch" href="/assets/js/27.a3a96a5a.js"><link rel="prefetch" href="/assets/js/28.a1d49602.js"><link rel="prefetch" href="/assets/js/29.174b7d7d.js"><link rel="prefetch" href="/assets/js/3.6038f64c.js"><link rel="prefetch" href="/assets/js/30.a4115d32.js"><link rel="prefetch" href="/assets/js/31.1522875a.js"><link rel="prefetch" href="/assets/js/32.35da527d.js"><link rel="prefetch" href="/assets/js/33.814d63e8.js"><link rel="prefetch" href="/assets/js/34.615b49c1.js"><link rel="prefetch" href="/assets/js/35.856ab789.js"><link rel="prefetch" href="/assets/js/36.2987bc62.js"><link rel="prefetch" href="/assets/js/37.084d12aa.js"><link rel="prefetch" href="/assets/js/38.088f3091.js"><link rel="prefetch" href="/assets/js/39.4ea066d5.js"><link rel="prefetch" href="/assets/js/4.c610d016.js"><link rel="prefetch" href="/assets/js/40.97850ba9.js"><link rel="prefetch" href="/assets/js/41.8b8ae086.js"><link rel="prefetch" href="/assets/js/42.8ae2cac3.js"><link rel="prefetch" href="/assets/js/43.f8a28187.js"><link rel="prefetch" href="/assets/js/44.5160f68a.js"><link rel="prefetch" href="/assets/js/45.6d4b7130.js"><link rel="prefetch" href="/assets/js/46.44693348.js"><link rel="prefetch" href="/assets/js/47.eb0ac18a.js"><link rel="prefetch" href="/assets/js/48.ce1c6335.js"><link rel="prefetch" href="/assets/js/49.7ec1b16a.js"><link rel="prefetch" href="/assets/js/5.216dfe20.js"><link rel="prefetch" href="/assets/js/50.1f503aa4.js"><link rel="prefetch" href="/assets/js/51.47971163.js"><link rel="prefetch" href="/assets/js/52.e5f681d7.js"><link rel="prefetch" href="/assets/js/53.df89fbb7.js"><link rel="prefetch" href="/assets/js/54.a140a8dd.js"><link rel="prefetch" href="/assets/js/55.5809711e.js"><link rel="prefetch" href="/assets/js/56.3a62759d.js"><link rel="prefetch" href="/assets/js/57.c9bd4339.js"><link rel="prefetch" href="/assets/js/58.acb475d1.js"><link rel="prefetch" href="/assets/js/59.61cf3322.js"><link rel="prefetch" href="/assets/js/6.73a8f323.js"><link rel="prefetch" href="/assets/js/60.aa39146e.js"><link rel="prefetch" href="/assets/js/61.f62972b8.js"><link rel="prefetch" href="/assets/js/62.79fc1ddc.js"><link rel="prefetch" href="/assets/js/63.808c750c.js"><link rel="prefetch" href="/assets/js/64.4e99e2e1.js"><link rel="prefetch" href="/assets/js/65.f112caec.js"><link rel="prefetch" href="/assets/js/66.422cc6c9.js"><link rel="prefetch" href="/assets/js/67.f504a803.js"><link rel="prefetch" href="/assets/js/68.f8e84a65.js"><link rel="prefetch" href="/assets/js/69.af07ae00.js"><link rel="prefetch" href="/assets/js/7.a6e60d89.js"><link rel="prefetch" href="/assets/js/70.9b212396.js"><link rel="prefetch" href="/assets/js/71.049b7d3e.js"><link rel="prefetch" href="/assets/js/72.b508f834.js"><link rel="prefetch" href="/assets/js/73.52a25a21.js"><link rel="prefetch" href="/assets/js/74.68de4c01.js"><link rel="prefetch" href="/assets/js/75.c0d8e99a.js"><link rel="prefetch" href="/assets/js/76.672b246e.js"><link rel="prefetch" href="/assets/js/77.36d886e3.js"><link rel="prefetch" href="/assets/js/78.079ebfd8.js"><link rel="prefetch" href="/assets/js/79.d3d3e8ea.js"><link rel="prefetch" href="/assets/js/8.a72c567f.js"><link rel="prefetch" href="/assets/js/80.c690c3d9.js"><link rel="prefetch" href="/assets/js/81.c012b7d5.js"><link rel="prefetch" href="/assets/js/82.47ffa460.js"><link rel="prefetch" href="/assets/js/83.2ba84114.js"><link rel="prefetch" href="/assets/js/84.dc0bf5a8.js"><link rel="prefetch" href="/assets/js/85.d968ae8b.js"><link rel="prefetch" href="/assets/js/86.91000a3b.js"><link rel="prefetch" href="/assets/js/87.6e885c71.js"><link rel="prefetch" href="/assets/js/88.99dd2b79.js"><link rel="prefetch" href="/assets/js/89.601c57ea.js"><link rel="prefetch" href="/assets/js/9.c59ba06b.js"><link rel="prefetch" href="/assets/js/90.89ee0da5.js"><link rel="prefetch" href="/assets/js/91.854de449.js"><link rel="prefetch" href="/assets/js/92.7a25d006.js"><link rel="prefetch" href="/assets/js/93.17f89281.js"><link rel="prefetch" href="/assets/js/94.0f6749b9.js"><link rel="prefetch" href="/assets/js/95.41ef6f4a.js"><link rel="prefetch" href="/assets/js/96.12427920.js"><link rel="prefetch" href="/assets/js/97.53036963.js"><link rel="prefetch" href="/assets/js/98.43d8f870.js"><link rel="prefetch" href="/assets/js/99.4ab32fce.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/heng.png" alt="英俊的大亨亨" class="logo"> <span class="site-name can-hide">英俊的大亨亨</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/js-基础.html" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-数组.html" class="nav-link">
+  数组
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-异步.html" class="nav-link">
+  异步
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-es6.html" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-v8引擎.html" class="nav-link">
+  v8
+</a></li><li class="dropdown-item"><!----> <a href="/手写代码/1.js基础.html" class="nav-link">
+  手写
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/process.html" class="nav-link">
+  
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/node.html" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  小程序
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="leetcode" class="dropdown-title"><span class="title">leetcode</span> <span class="arrow down"></span></button> <button type="button" aria-label="leetcode" class="mobile-dropdown-title"><span class="title">leetcode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/代码随想录/1.数组.html" class="nav-link">
+  1.数组
+</a></li><li class="dropdown-item"><!----> <a href="/代码随想录/10.动态规划/1.基础.html" class="nav-link">
+  10.动态规划
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">react源码</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">react源码</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react源码/理念.html" class="nav-link">
+  1.理念
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/3.render.html" class="nav-link">
+  3.render
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/4.commit.html" class="nav-link">
+  4.commit
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/5.状态更新.html" class="nav-link">
+  5.状态更新
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/6.diff.html" class="nav-link">
+  6.diff
+</a></li><li class="dropdown-item"><!----> <a href="/react/7.实现hooks.html" class="nav-link">
+  7.实现hooks
+</a></li><li class="dropdown-item"><!----> <a href="/react/8.concurrentMode.html" class="nav-link">
+  8.concurrentMode
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">webpack</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">webpack</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/1.配置.html" class="nav-link">
+  1.配置
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/2.loader.html" class="nav-link">
+  2.loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/3.plugin.html" class="nav-link">
+  3.plugin
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/4.模块化原理.html" class="nav-link">
+  4.模块化原理
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/5.babel.html" class="nav-link">
+  5.babel
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/6.HMR.html" class="nav-link">
+  6.HMR
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/7.环境分离.html" class="nav-link">
+  7.环境分离
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/8.tree_shaking.html" class="nav-link">
+  8.tree_shaking
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/9,源码.html" class="nav-link">
+  9.源码
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/11.自定义loader.html" class="nav-link">
+  11.自定义loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/12.自定义plugin.html" class="nav-link">
+  12.自定义plugin
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/设计模式/创建型.html" class="nav-link">
+  创建型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  结构型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/行为型.html" class="nav-link">
+  行为型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">angular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">angular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">健身</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">健身</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><a href="/me.html" class="nav-link">
+  关于我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/js-基础.html" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-数组.html" class="nav-link">
+  数组
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-异步.html" class="nav-link">
+  异步
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-es6.html" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-v8引擎.html" class="nav-link">
+  v8
+</a></li><li class="dropdown-item"><!----> <a href="/手写代码/1.js基础.html" class="nav-link">
+  手写
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/process.html" class="nav-link">
+  
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/node.html" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  小程序
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="leetcode" class="dropdown-title"><span class="title">leetcode</span> <span class="arrow down"></span></button> <button type="button" aria-label="leetcode" class="mobile-dropdown-title"><span class="title">leetcode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/代码随想录/1.数组.html" class="nav-link">
+  1.数组
+</a></li><li class="dropdown-item"><!----> <a href="/代码随想录/10.动态规划/1.基础.html" class="nav-link">
+  10.动态规划
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">react源码</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">react源码</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react源码/理念.html" class="nav-link">
+  1.理念
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/3.render.html" class="nav-link">
+  3.render
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/4.commit.html" class="nav-link">
+  4.commit
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/5.状态更新.html" class="nav-link">
+  5.状态更新
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/6.diff.html" class="nav-link">
+  6.diff
+</a></li><li class="dropdown-item"><!----> <a href="/react/7.实现hooks.html" class="nav-link">
+  7.实现hooks
+</a></li><li class="dropdown-item"><!----> <a href="/react/8.concurrentMode.html" class="nav-link">
+  8.concurrentMode
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">webpack</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">webpack</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/1.配置.html" class="nav-link">
+  1.配置
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/2.loader.html" class="nav-link">
+  2.loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/3.plugin.html" class="nav-link">
+  3.plugin
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/4.模块化原理.html" class="nav-link">
+  4.模块化原理
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/5.babel.html" class="nav-link">
+  5.babel
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/6.HMR.html" class="nav-link">
+  6.HMR
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/7.环境分离.html" class="nav-link">
+  7.环境分离
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/8.tree_shaking.html" class="nav-link">
+  8.tree_shaking
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/9,源码.html" class="nav-link">
+  9.源码
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/11.自定义loader.html" class="nav-link">
+  11.自定义loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/12.自定义plugin.html" class="nav-link">
+  12.自定义plugin
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/设计模式/创建型.html" class="nav-link">
+  创建型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  结构型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/行为型.html" class="nav-link">
+  行为型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">angular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">angular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">健身</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">健身</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8E%9F%E7%90%86/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><a href="/me.html" class="nav-link">
+  关于我
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>浏览器原理</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/浏览器原理/1.浏览器安全.html" class="sidebar-link">1.  什么是 XSS 攻击？</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/10.内存泄漏.html" class="sidebar-link">内存泄漏</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/浏览器原理/10.内存泄漏.html#常见的内存泄漏" class="sidebar-link">## 常见的内存泄漏</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/10.内存泄漏.html#map、set" class="sidebar-link">Map、Set</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/10.内存泄漏.html#定位和修复" class="sidebar-link">定位和修复</a></li></ul></li><li><a href="/浏览器原理/2.进程和线程.html" class="sidebar-link">1. 进程与线程的概念</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/3.浏览器缓存.html" class="sidebar-link">1. 对浏览器的缓存机制的理解</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/4.浏览器组成.html" class="sidebar-link">2. 对浏览器内核的理解</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/5.浏览器渲染原理.html" class="sidebar-link">1. 浏览器的渲染过程</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/6.浏览器本地存储.html" class="sidebar-link">1. 浏览器本地存储方式及使用场景</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/7.浏览器同源策略.html" class="sidebar-link">1. 什么是同源策略</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/8.浏览器事件机制.html" class="active sidebar-link">1. 事件是什么？事件模型？</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/浏览器原理/9.浏览器垃圾回收机制.html" class="sidebar-link">辣鸡回收</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/浏览器原理/9.浏览器垃圾回收机制.html#回收策略" class="sidebar-link">回收策略</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/9.浏览器垃圾回收机制.html#v8的gc优化" class="sidebar-link">V8的GC优化</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/9.浏览器垃圾回收机制.html#并行回收" class="sidebar-link">并行回收</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/9.浏览器垃圾回收机制.html#增量标记和懒清理" class="sidebar-link">增量标记和懒清理</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/9.浏览器垃圾回收机制.html#并发回收" class="sidebar-link">并发回收</a></li></ul></li><li><a href="/浏览器原理/事件模型.html" class="sidebar-link">详解浏览器事件捕获，冒泡</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/浏览器原理/事件模型.html#第三个参数" class="sidebar-link">第三个参数</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/事件模型.html#阻止事件传播" class="sidebar-link">阻止事件传播</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/事件模型.html#阻止默认行为" class="sidebar-link">阻止默认行为</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/事件模型.html#兼容性" class="sidebar-link">兼容性</a></li><li class="sidebar-sub-header"><a href="/浏览器原理/事件模型.html#封装一个多浏览器兼容的绑定事件函数" class="sidebar-link">封装一个多浏览器兼容的绑定事件函数</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="_1-事件是什么-事件模型"><a href="#_1-事件是什么-事件模型" class="header-anchor">#</a> 1. 事件是什么？事件模型？</h3> <p>事件是用户操作网页时发生的交互动作，比如 click/move， 事件除了用户触发的动作外，还可以是文档加载，窗口滚动和大小调整。事件被封装成一个 event 对象，包含了该事件发生时的所有相关信息（ event 的属性）以及可以对事件进行的操作（ event 的方法）。</p> <p>事件是用户操作网页时发生的交互动作或者网页本身的一些操作，现代浏览器一共有三种事件模型：</p> <ul><li><strong>DOM0 级事件模型</strong>，这种模型不会传播，所以没有事件流的概念，但是现在有的浏览器支持以冒泡的方式实现，它可以在网页中直接定义监听函数，也可以通过 js 属性来指定监听函数。所有浏览器都兼容这种方式。直接在dom对象上注册事件名称，就是DOM0写法。</li> <li><strong>IE 事件模型</strong>，在该事件模型中，一次事件共有两个过程，事件处理阶段和事件冒泡阶段。事件处理阶段会首先执行目标元素绑定的监听事件。然后是事件冒泡阶段，冒泡指的是事件从目标元素冒泡到 document，依次检查经过的节点是否绑定了事件监听函数，如果有则执行。这种模型通过attachEvent 来添加监听函数，可以添加多个监听函数，会按顺序依次执行。</li> <li><strong>DOM2 级事件模型</strong>，在该事件模型中，一次事件共有三个过程，第一个过程是事件捕获阶段。捕获指的是事件从 document 一直向下传播到目标元素，依次检查经过的节点是否绑定了事件监听函数，如果有则执行。后面两个阶段和 IE 事件模型的两个阶段相同。这种事件模型，事件绑定的函数是addEventListener，其中第三个参数可以指定事件是否在捕获阶段执行。</li></ul> <h3 id="_2-如何阻止事件冒泡"><a href="#_2-如何阻止事件冒泡" class="header-anchor">#</a> 2. 如何阻止事件冒泡</h3> <ul><li>普通浏览器使用：event.stopPropagation()</li> <li>IE浏览器使用：event.cancelBubble = true;</li></ul> <h3 id="_3-对事件委托的理解"><a href="#_3-对事件委托的理解" class="header-anchor">#</a> 3. 对事件委托的理解</h3> <h4 id="_1-事件委托的概念"><a href="#_1-事件委托的概念" class="header-anchor">#</a> （1）事件委托的概念</h4> <p>事件委托本质上是利用了<strong>浏览器事件冒泡</strong>的机制。因为事件在冒泡过程中会上传到父节点，父节点可以通过事件对象获取到目标节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件，这种方式称为事件委托（事件代理）。</p> <p>使用事件委托可以不必要为每一个子元素都绑定一个监听事件，这样减少了内存上的消耗。并且使用事件代理还可以实现事件的动态绑定，比如说新增了一个子节点，并不需要单独地为它添加一个监听事件，它绑定的事件会交给父元素中的监听函数来处理。</p> <h4 id="_2-事件委托的特点"><a href="#_2-事件委托的特点" class="header-anchor">#</a> （2）事件委托的特点</h4> <ul><li><strong>减少内存消耗</strong></li></ul> <p>如果有一个列表，列表之中有大量的列表项，需要在点击列表项的时候响应一个事件：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  ......
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>item n<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+复制代码
+</code></pre></div><p>如果给每个列表项一一都绑定一个函数，那对于内存消耗是非常大的，效率上需要消耗很多性能。因此，比较好的方法就是把这个点击事件绑定到他的父层，也就是 ul 上，然后在执行事件时再去匹配判断目标元素，所以事件委托可以减少大量的内存消耗，节约效率。</p> <ul><li><strong>动态绑定事件</strong></li></ul> <p>给上述的例子中每个列表项都绑定事件，在很多时候，需要通过 AJAX 或者用户操作动态的增加或者去除列表项元素，那么在每一次改变的时候都需要重新给新增的元素绑定事件，给即将删去的元素解绑事件；如果用了事件委托就没有这种麻烦了，因为事件是绑定在父层的，和目标元素的增减是没有关系的，执行到目标元素是在真正响应执行事件函数的过程中去匹配的，所以使用事件在动态绑定事件的情况下是可以减少很多重复工作的。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 来实现把 #list 下的 li 元素的事件代理委托到它的父层元素也就是 #list 上：</span>
+<span class="token comment">// 给父层元素绑定事件</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'list'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 兼容性处理</span>
+  <span class="token keyword">var</span> event <span class="token operator">=</span> e <span class="token operator">||</span> window<span class="token punctuation">.</span>event<span class="token punctuation">;</span>
+  <span class="token keyword">var</span> target <span class="token operator">=</span> event<span class="token punctuation">.</span>target <span class="token operator">||</span> event<span class="token punctuation">.</span>srcElement<span class="token punctuation">;</span>
+  <span class="token comment">// 判断是否匹配目标元素</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>target<span class="token punctuation">.</span>nodeName<span class="token punctuation">.</span>toLocaleLowerCase <span class="token operator">===</span> <span class="token string">'li'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'the content is: '</span><span class="token punctuation">,</span> target<span class="token punctuation">.</span>innerHTML<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+复制代码
+</code></pre></div><p>在上述代码中， target 元素则是在 #list 元素之下具体被点击的元素，然后通过判断 target 的一些属性（比如：nodeName，id 等等）可以更精确地匹配到某一类 #list li 元素之上；</p> <h4 id="_3-局限性"><a href="#_3-局限性" class="header-anchor">#</a> （3）局限性</h4> <p>当然，事件委托也是有局限的。比如 focus、blur 之类的事件没有事件冒泡机制，所以无法实现事件委托；mousemove、mouseout 这样的事件，虽然有事件冒泡，但是只能不断通过位置去计算定位，对性能消耗高，因此也是不适合于事件委托的。</p> <p>当然事件委托不是只有优点，它也是有<strong>缺点</strong>的，事件委托会影响页面性能，主要影响因素有：</p> <ul><li>元素中，绑定事件委托的次数；</li> <li>点击的最底层元素，到绑定事件元素之间的<code>DOM</code>层数；</li></ul> <p>在必须使用事件委托的地方，可以进行如下的处理：</p> <ul><li>只在必须的地方，使用事件委托，比如：<code>ajax</code>的局部刷新区域</li> <li>尽量的减少绑定的层级，不在<code>body</code>元素上，进行绑定</li> <li>减少绑定的次数，如果可以，那么把多个事件的绑定，合并到一次事件委托中去，由这个事件委托的回调，来进行分发。</li></ul> <h3 id="_4-事件委托的使用场景"><a href="#_4-事件委托的使用场景" class="header-anchor">#</a> 4. 事件委托的使用场景</h3> <p>场景：给页面的所有的a标签添加click事件，代码如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;click&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>nodeName <span class="token operator">==</span> <span class="token string">&quot;A&quot;</span><span class="token punctuation">)</span>
+		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+复制代码
+</code></pre></div><p>但是这些a标签可能包含一些像span、img等元素，如果点击到了这些a标签中的元素，就不会触发click事件，因为事件绑定上在a标签元素上，而触发这些内部的元素时，e.target指向的是触发click事件的元素（span、img等其他元素）。</p> <p>这种情况下就可以使用事件委托来处理，将事件绑定在a标签的内部元素上，当点击它的时候，就会逐级向上查找，知道找到a标签为止，代码如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;click&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> node <span class="token operator">=</span> e<span class="token punctuation">.</span>target<span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span>nodeName <span class="token operator">!=</span> <span class="token string">&quot;BODY&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>nodeName <span class="token operator">==</span> <span class="token string">&quot;A&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">break</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		node <span class="token operator">=</span> node<span class="token punctuation">.</span>parentNode<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+复制代码
+</code></pre></div><h3 id="_5-同步和异步的区别"><a href="#_5-同步和异步的区别" class="header-anchor">#</a> 5. 同步和异步的区别</h3> <ul><li><strong>同步</strong>指的是当一个进程在执行某个请求时，如果这个请求需要等待一段时间才能返回，那么这个进程会一直等待下去，直到消息返回为止再继续向下执行。</li> <li><strong>异步</strong>指的是当一个进程在执行某个请求时，如果这个请求需要等待一段时间才能返回，这个时候进程会继续往下执行，不会阻塞等待消息的返回，当消息返回时系统再通知进程进行处理。</li></ul> <h3 id="_6-对事件循环的理解"><a href="#_6-对事件循环的理解" class="header-anchor">#</a> 6. 对事件循环的理解</h3> <p>因为 js 是单线程运行的，在代码执行时，通过将不同函数的执行上下文压入执行栈中来保证代码的有序执行。在执行同步代码时，如果遇到异步事件，js 引擎并不会一直等待其返回结果，而是会将这个事件挂起，继续执行执行栈中的其他任务。当异步事件执行完毕后，再将异步事件对应的回调加入到一个任务队列中等待执行。任务队列可以分为宏任务队列和微任务队列，当当前执行栈中的事件执行完毕后，js 引擎首先会判断微任务队列中是否有任务可以执行，如果有就将微任务队首的事件压入栈中执行。当微任务队列中的任务都执行完成后再去执行宏任务队列中的任务。</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/426a3bf11f404821abb636690119621b~tplv-k3u1fbpfcp-watermark.awebp" alt="img"></p> <p>Event Loop 执行顺序如下所示：</p> <ul><li>首先执行同步代码，这属于宏任务</li> <li>当执行完所有同步代码后，执行栈为空，查询是否有异步代码需要执行</li> <li>执行所有微任务</li> <li>当执行完所有微任务后，如有必要会渲染页面</li> <li>然后开始下一轮 Event Loop，执行宏任务中的异步代码</li></ul> <h3 id="_7-宏任务和微任务分别有哪些"><a href="#_7-宏任务和微任务分别有哪些" class="header-anchor">#</a> 7. 宏任务和微任务分别有哪些</h3> <ul><li>微任务包括： promise 的回调、node 中的 process.nextTick 、对 Dom 变化监听的 MutationObserver。</li> <li>宏任务包括： script 脚本的执行、setTimeout ，setInterval ，setImmediate 一类的定时事件，还有如 I/O 操作、UI 渲染等。</li></ul> <h3 id="_8-什么是执行栈"><a href="#_8-什么是执行栈" class="header-anchor">#</a> 8. 什么是执行栈</h3> <p>可以把执行栈认为是一个存储函数调用的<strong>栈结构</strong>，遵循先进后出的原则。 <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/391e7d7e880f42d59809dbc16af5d7bf~tplv-k3u1fbpfcp-watermark.awebp" alt="img"> 当开始执行 JS 代码时，根据先进后出的原则，后执行的函数会先弹出栈，可以看到，<code>foo</code> 函数后执行，当执行完毕后就从栈中弹出了。</p> <p>平时在开发中，可以在报错中找到执行栈的痕迹：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+复制代码
+</code></pre></div><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ab3646b742d946659e4bce34d5af6751~tplv-k3u1fbpfcp-watermark.awebp" alt="img"> 可以看到报错在 <code>foo</code> 函数，<code>foo</code> 函数又是在 <code>bar</code> 函数中调用的。当使用递归时，因为栈可存放的函数是有<strong>限制</strong>的，一旦存放了过多的函数且没有得到释放的话，就会出现爆栈的问题</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+复制代码
+</code></pre></div><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cac7e59102dc4c3a9efa53aecd64bf9d~tplv-k3u1fbpfcp-watermark.awebp" alt="img"></p> <h3 id="_9-node-中的-event-loop-和浏览器中的有什么区别-process-nexttick-执行顺序"><a href="#_9-node-中的-event-loop-和浏览器中的有什么区别-process-nexttick-执行顺序" class="header-anchor">#</a> 9. Node 中的 Event Loop 和浏览器中的有什么区别？process.nextTick 执行顺序？</h3> <p>Node 中的 Event Loop 和浏览器中的是完全不相同的东西。</p> <p>Node 的 Event Loop 分为 6 个阶段，它们会按照<strong>顺序</strong>反复运行。每当进入某一个阶段的时候，都会从对应的回调队列中取出函数去执行。当队列为空或者执行的回调函数数量到达系统设定的阈值，就会进入下一阶段。 <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ed6d249f54e242fe9dc267f03fa156d3~tplv-k3u1fbpfcp-watermark.awebp" alt="img"></p> <p>（1）<strong>Timers（计时器阶段）</strong>：初次进入事件循环，会从计时器阶段开始。此阶段会判断是否存在过期的计时器回调（包含 setTimeout 和 setInterval），如果存在则会执行所有过期的计时器回调，执行完毕后，如果回调中触发了相应的微任务，会接着执行所有微任务，执行完微任务后再进入 Pending callbacks 阶段。</p> <p>（2）<strong>Pending callbacks</strong>：执行推迟到下一个循环迭代的I / O回调（系统调用相关的回调）。</p> <p>（3）<strong>Idle/Prepare</strong>：仅供内部使用。</p> <p>（4）<strong>Poll（轮询阶段）</strong>：</p> <ul><li>当回调队列不为空时：会执行回调，若回调中触发了相应的微任务，这里的微任务执行时机和其他地方有所不同，不会等到所有回调执行完毕后才执行，而是针对每一个回调执行完毕后，就执行相应微任务。执行完所有的回调后，变为下面的情况。</li> <li>当回调队列为空时（没有回调或所有回调执行完毕）：但如果存在有计时器（setTimeout、setInterval和setImmediate）没有执行，会结束轮询阶段，进入 Check 阶段。否则会阻塞并等待任何正在执行的I/O操作完成，并马上执行相应的回调，直到所有回调执行完毕。</li></ul> <p>（5）<strong>Check（查询阶段）</strong>：会检查是否存在 setImmediate 相关的回调，如果存在则执行所有回调，执行完毕后，如果回调中触发了相应的微任务，会接着执行所有微任务，执行完微任务后再进入 Close callbacks 阶段。</p> <p>（6）<strong>Close callbacks</strong>：执行一些关闭回调，比如socket.on('close', ...)等。</p> <p>下面来看一个例子，首先在有些情况下，定时器的执行顺序其实是<strong>随机</strong>的</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'setTimeout'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token function">setImmediate</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'setImmediate'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+复制代码
+</code></pre></div><p>对于以上代码来说，<code>setTimeout</code> 可能执行在前，也可能执行在后</p> <ul><li>首先 <code>setTimeout(fn, 0) === setTimeout(fn, 1)</code>，这是由源码决定的</li> <li>进入事件循环也是需要成本的，如果在准备时候花费了大于 1ms 的时间，那么在 timer 阶段就会直接执行 <code>setTimeout</code> 回调</li> <li>那么如果准备时间花费小于 1ms，那么就是 <code>setImmediate</code> 回调先执行了</li></ul> <p>当然在某些情况下，他们的执行顺序一定是固定的，比如以下代码：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
+fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>__filename<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'timeout'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token function">setImmediate</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'immediate'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+复制代码
+</code></pre></div><p>在上述代码中，<code>setImmediate</code> 永远<strong>先执行</strong>。因为两个代码写在 IO 回调中，IO 回调是在 poll 阶段执行，当回调执行完毕后队列为空，发现存在 <code>setImmediate</code> 回调，所以就直接跳转到 check 阶段去执行回调了。</p> <p>上面都是 macrotask 的执行情况，对于 microtask 来说，它会在以上每个阶段完成前<strong>清空</strong> microtask 队列，下图中的 Tick 就代表了 microtask <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8ea27044a0124facaab3e4a8da89d709~tplv-k3u1fbpfcp-watermark.awebp" alt="img"></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'timer21'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'promise1'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+复制代码
+</code></pre></div><p>对于以上代码来说，其实和浏览器中的输出是一样的，microtask 永远执行在 macrotask 前面。</p> <p>最后来看 Node 中的 <code>process.nextTick</code>，这个函数其实是独立于 Event Loop 之外的，它有一个自己的队列，当每个阶段完成后，如果存在 nextTick 队列，就会<strong>清空队列中的所有回调函数</strong>，并且优先于其他 microtask 执行。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'timer1'</span><span class="token punctuation">)</span>
+ Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'promise1'</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+process<span class="token punctuation">.</span><span class="token function">nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'nextTick'</span><span class="token punctuation">)</span>
+ process<span class="token punctuation">.</span><span class="token function">nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'nextTick'</span><span class="token punctuation">)</span>
+   process<span class="token punctuation">.</span><span class="token function">nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'nextTick'</span><span class="token punctuation">)</span>
+     process<span class="token punctuation">.</span><span class="token function">nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'nextTick'</span><span class="token punctuation">)</span>
+     <span class="token punctuation">}</span><span class="token punctuation">)</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+复制代码
+</code></pre></div><p>对于以上代码，永远都是先把 nextTick 全部打印出来。</p> <h3 id="_10-事件触发的过程是怎样的"><a href="#_10-事件触发的过程是怎样的" class="header-anchor">#</a> 10. 事件触发的过程是怎样的</h3> <p>事件触发有三个阶段：</p> <ul><li><code>window</code> 往事件触发处传播，遇到注册的捕获事件会触发</li> <li>传播到事件触发处时触发注册的事件</li> <li>从事件触发处往 <code>window</code> 传播，遇到注册的冒泡事件会触发</li></ul> <p>事件触发一般来说会按照上面的顺序进行，但是也有特例，<strong>如果给一个 *<em><code>body</code>*</em> 中的子节点同时注册冒泡和捕获事件，事件触发会按照注册的顺序执行。</strong></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 以下会先打印冒泡然后是捕获</span>
+node<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>
+  <span class="token string">'click'</span><span class="token punctuation">,</span>
+  <span class="token parameter">event</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'冒泡'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token boolean">false</span>
+<span class="token punctuation">)</span>
+node<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>
+  <span class="token string">'click'</span><span class="token punctuation">,</span>
+  <span class="token parameter">event</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'捕获 '</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token boolean">true</span>
+<span class="token punctuation">)</span>
+复制代码
+</code></pre></div><p>通常使用 <code>addEventListener</code> 注册事件，该函数的第三个参数可以是布尔值，也可以是对象。对于布尔值 <code>useCapture</code> 参数来说，该参数默认值为 <code>false</code> ，<code>useCapture</code> 决定了注册的事件是捕获事件还是冒泡事件。对于对象参数来说，可以使用以下几个属性：</p> <ul><li><code>capture</code>：布尔值，和 <code>useCapture</code> 作用一样</li> <li><code>once</code>：布尔值，值为 <code>true</code> 表示该回调只会调用一次，调用后会移除监听</li> <li><code>passive</code>：布尔值，表示永远不会调用 <code>preventDefault</code></li></ul> <p>一般来说，如果只希望事件只触发在目标上，这时候可以使用 <code>stopPropagation</code> 来阻止事件的进一步传播。通常认为 <code>stopPropagation</code> 是用来阻止事件冒泡的，其实该函数也可以阻止捕获事件。</p> <p><code>stopImmediatePropagation</code> 同样也能实现阻止事件，但是还能阻止该事件目标执行别的注册事件。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>node<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>
+  <span class="token string">'click'</span><span class="token punctuation">,</span>
+  <span class="token parameter">event</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    event<span class="token punctuation">.</span><span class="token function">stopImmediatePropagation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'冒泡'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token boolean">false</span>
+<span class="token punctuation">)</span>
+<span class="token comment">// 点击 node 只会执行上面的函数，该函数不会执行</span>
+node<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>
+  <span class="token string">'click'</span><span class="token punctuation">,</span>
+  <span class="token parameter">event</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'捕获 '</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token boolean">true</span>
+<span class="token punctuation">)</span>
+复制代码
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/21/2022, 9:01:05 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/浏览器原理/7.浏览器同源策略.html" class="prev">
+        1. 什么是同源策略
+      </a></span> <span class="next"><a href="/浏览器原理/9.浏览器垃圾回收机制.html">
+        辣鸡回收
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b51e4ccd.js" defer></script><script src="/assets/js/2.7229199a.js" defer></script><script src="/assets/js/129.ee43b65c.js" defer></script>
+  </body>
+</html>

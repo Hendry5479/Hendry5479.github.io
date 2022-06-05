@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>五、执行上下文/作用域链/闭包 | 英俊的大亨亨</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="heng.png">
+    <meta name="description" content="记录下有趣岁月的点点滴滴">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.b51e4ccd.js" as="script"><link rel="preload" href="/assets/js/2.7229199a.js" as="script"><link rel="preload" href="/assets/js/11.e2689dc6.js" as="script"><link rel="prefetch" href="/assets/js/10.00f8a9d8.js"><link rel="prefetch" href="/assets/js/100.78dfd44a.js"><link rel="prefetch" href="/assets/js/101.cdae98a0.js"><link rel="prefetch" href="/assets/js/102.6a3dd9e0.js"><link rel="prefetch" href="/assets/js/103.cfed07a2.js"><link rel="prefetch" href="/assets/js/104.a16a4843.js"><link rel="prefetch" href="/assets/js/105.9cd1add0.js"><link rel="prefetch" href="/assets/js/106.546c1ad8.js"><link rel="prefetch" href="/assets/js/107.04b38bf9.js"><link rel="prefetch" href="/assets/js/108.31a22b61.js"><link rel="prefetch" href="/assets/js/109.1f2a1840.js"><link rel="prefetch" href="/assets/js/110.9dc2f13b.js"><link rel="prefetch" href="/assets/js/111.35cf70f8.js"><link rel="prefetch" href="/assets/js/112.39a6579b.js"><link rel="prefetch" href="/assets/js/113.cbfc279d.js"><link rel="prefetch" href="/assets/js/114.878470a2.js"><link rel="prefetch" href="/assets/js/115.86dc4d8e.js"><link rel="prefetch" href="/assets/js/116.d2e05b2c.js"><link rel="prefetch" href="/assets/js/117.7525671d.js"><link rel="prefetch" href="/assets/js/118.a5c04c6d.js"><link rel="prefetch" href="/assets/js/119.613a81e1.js"><link rel="prefetch" href="/assets/js/12.0b7aaea4.js"><link rel="prefetch" href="/assets/js/120.ec6d3159.js"><link rel="prefetch" href="/assets/js/121.6705f783.js"><link rel="prefetch" href="/assets/js/122.7b3fe034.js"><link rel="prefetch" href="/assets/js/123.9336f454.js"><link rel="prefetch" href="/assets/js/124.dca9fc87.js"><link rel="prefetch" href="/assets/js/125.338aa4d8.js"><link rel="prefetch" href="/assets/js/126.a731a9eb.js"><link rel="prefetch" href="/assets/js/127.da74dd90.js"><link rel="prefetch" href="/assets/js/128.3d5e86f2.js"><link rel="prefetch" href="/assets/js/129.ee43b65c.js"><link rel="prefetch" href="/assets/js/13.31064a46.js"><link rel="prefetch" href="/assets/js/130.8a273d75.js"><link rel="prefetch" href="/assets/js/131.a89df4ac.js"><link rel="prefetch" href="/assets/js/132.0daac28c.js"><link rel="prefetch" href="/assets/js/133.b1f23c92.js"><link rel="prefetch" href="/assets/js/134.78621a9c.js"><link rel="prefetch" href="/assets/js/135.f0884a8b.js"><link rel="prefetch" href="/assets/js/136.45114430.js"><link rel="prefetch" href="/assets/js/137.eb295fce.js"><link rel="prefetch" href="/assets/js/138.cc7dc8d3.js"><link rel="prefetch" href="/assets/js/139.c9b1aad6.js"><link rel="prefetch" href="/assets/js/14.0be4ee49.js"><link rel="prefetch" href="/assets/js/15.685fab30.js"><link rel="prefetch" href="/assets/js/16.97f8b16a.js"><link rel="prefetch" href="/assets/js/17.9c7bebeb.js"><link rel="prefetch" href="/assets/js/18.965d9e47.js"><link rel="prefetch" href="/assets/js/19.3d59a8e1.js"><link rel="prefetch" href="/assets/js/20.1573d510.js"><link rel="prefetch" href="/assets/js/21.f46234dd.js"><link rel="prefetch" href="/assets/js/22.6c16fd38.js"><link rel="prefetch" href="/assets/js/23.50a2a38a.js"><link rel="prefetch" href="/assets/js/24.8aff8273.js"><link rel="prefetch" href="/assets/js/25.35a7c496.js"><link rel="prefetch" href="/assets/js/26.af233874.js"><link rel="prefetch" href="/assets/js/27.a3a96a5a.js"><link rel="prefetch" href="/assets/js/28.a1d49602.js"><link rel="prefetch" href="/assets/js/29.174b7d7d.js"><link rel="prefetch" href="/assets/js/3.6038f64c.js"><link rel="prefetch" href="/assets/js/30.a4115d32.js"><link rel="prefetch" href="/assets/js/31.1522875a.js"><link rel="prefetch" href="/assets/js/32.35da527d.js"><link rel="prefetch" href="/assets/js/33.814d63e8.js"><link rel="prefetch" href="/assets/js/34.615b49c1.js"><link rel="prefetch" href="/assets/js/35.856ab789.js"><link rel="prefetch" href="/assets/js/36.2987bc62.js"><link rel="prefetch" href="/assets/js/37.084d12aa.js"><link rel="prefetch" href="/assets/js/38.088f3091.js"><link rel="prefetch" href="/assets/js/39.4ea066d5.js"><link rel="prefetch" href="/assets/js/4.c610d016.js"><link rel="prefetch" href="/assets/js/40.97850ba9.js"><link rel="prefetch" href="/assets/js/41.8b8ae086.js"><link rel="prefetch" href="/assets/js/42.8ae2cac3.js"><link rel="prefetch" href="/assets/js/43.f8a28187.js"><link rel="prefetch" href="/assets/js/44.5160f68a.js"><link rel="prefetch" href="/assets/js/45.6d4b7130.js"><link rel="prefetch" href="/assets/js/46.44693348.js"><link rel="prefetch" href="/assets/js/47.eb0ac18a.js"><link rel="prefetch" href="/assets/js/48.ce1c6335.js"><link rel="prefetch" href="/assets/js/49.7ec1b16a.js"><link rel="prefetch" href="/assets/js/5.216dfe20.js"><link rel="prefetch" href="/assets/js/50.1f503aa4.js"><link rel="prefetch" href="/assets/js/51.47971163.js"><link rel="prefetch" href="/assets/js/52.e5f681d7.js"><link rel="prefetch" href="/assets/js/53.df89fbb7.js"><link rel="prefetch" href="/assets/js/54.a140a8dd.js"><link rel="prefetch" href="/assets/js/55.5809711e.js"><link rel="prefetch" href="/assets/js/56.3a62759d.js"><link rel="prefetch" href="/assets/js/57.c9bd4339.js"><link rel="prefetch" href="/assets/js/58.acb475d1.js"><link rel="prefetch" href="/assets/js/59.61cf3322.js"><link rel="prefetch" href="/assets/js/6.73a8f323.js"><link rel="prefetch" href="/assets/js/60.aa39146e.js"><link rel="prefetch" href="/assets/js/61.f62972b8.js"><link rel="prefetch" href="/assets/js/62.79fc1ddc.js"><link rel="prefetch" href="/assets/js/63.808c750c.js"><link rel="prefetch" href="/assets/js/64.4e99e2e1.js"><link rel="prefetch" href="/assets/js/65.f112caec.js"><link rel="prefetch" href="/assets/js/66.422cc6c9.js"><link rel="prefetch" href="/assets/js/67.f504a803.js"><link rel="prefetch" href="/assets/js/68.f8e84a65.js"><link rel="prefetch" href="/assets/js/69.af07ae00.js"><link rel="prefetch" href="/assets/js/7.a6e60d89.js"><link rel="prefetch" href="/assets/js/70.9b212396.js"><link rel="prefetch" href="/assets/js/71.049b7d3e.js"><link rel="prefetch" href="/assets/js/72.b508f834.js"><link rel="prefetch" href="/assets/js/73.52a25a21.js"><link rel="prefetch" href="/assets/js/74.68de4c01.js"><link rel="prefetch" href="/assets/js/75.c0d8e99a.js"><link rel="prefetch" href="/assets/js/76.672b246e.js"><link rel="prefetch" href="/assets/js/77.36d886e3.js"><link rel="prefetch" href="/assets/js/78.079ebfd8.js"><link rel="prefetch" href="/assets/js/79.d3d3e8ea.js"><link rel="prefetch" href="/assets/js/8.a72c567f.js"><link rel="prefetch" href="/assets/js/80.c690c3d9.js"><link rel="prefetch" href="/assets/js/81.c012b7d5.js"><link rel="prefetch" href="/assets/js/82.47ffa460.js"><link rel="prefetch" href="/assets/js/83.2ba84114.js"><link rel="prefetch" href="/assets/js/84.dc0bf5a8.js"><link rel="prefetch" href="/assets/js/85.d968ae8b.js"><link rel="prefetch" href="/assets/js/86.91000a3b.js"><link rel="prefetch" href="/assets/js/87.6e885c71.js"><link rel="prefetch" href="/assets/js/88.99dd2b79.js"><link rel="prefetch" href="/assets/js/89.601c57ea.js"><link rel="prefetch" href="/assets/js/9.c59ba06b.js"><link rel="prefetch" href="/assets/js/90.89ee0da5.js"><link rel="prefetch" href="/assets/js/91.854de449.js"><link rel="prefetch" href="/assets/js/92.7a25d006.js"><link rel="prefetch" href="/assets/js/93.17f89281.js"><link rel="prefetch" href="/assets/js/94.0f6749b9.js"><link rel="prefetch" href="/assets/js/95.41ef6f4a.js"><link rel="prefetch" href="/assets/js/96.12427920.js"><link rel="prefetch" href="/assets/js/97.53036963.js"><link rel="prefetch" href="/assets/js/98.43d8f870.js"><link rel="prefetch" href="/assets/js/99.4ab32fce.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/heng.png" alt="英俊的大亨亨" class="logo"> <span class="site-name can-hide">英俊的大亨亨</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/js-基础.html" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-数组.html" class="nav-link">
+  数组
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-异步.html" class="nav-link">
+  异步
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-es6.html" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-v8引擎.html" class="nav-link">
+  v8
+</a></li><li class="dropdown-item"><!----> <a href="/手写代码/1.js基础.html" class="nav-link">
+  手写
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/process.html" class="nav-link">
+  
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/node.html" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  小程序
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="leetcode" class="dropdown-title"><span class="title">leetcode</span> <span class="arrow down"></span></button> <button type="button" aria-label="leetcode" class="mobile-dropdown-title"><span class="title">leetcode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/代码随想录/1.数组.html" class="nav-link">
+  1.数组
+</a></li><li class="dropdown-item"><!----> <a href="/代码随想录/10.动态规划/1.基础.html" class="nav-link">
+  10.动态规划
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">react源码</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">react源码</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react源码/理念.html" class="nav-link">
+  1.理念
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/3.render.html" class="nav-link">
+  3.render
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/4.commit.html" class="nav-link">
+  4.commit
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/5.状态更新.html" class="nav-link">
+  5.状态更新
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/6.diff.html" class="nav-link">
+  6.diff
+</a></li><li class="dropdown-item"><!----> <a href="/react/7.实现hooks.html" class="nav-link">
+  7.实现hooks
+</a></li><li class="dropdown-item"><!----> <a href="/react/8.concurrentMode.html" class="nav-link">
+  8.concurrentMode
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">webpack</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">webpack</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/1.配置.html" class="nav-link">
+  1.配置
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/2.loader.html" class="nav-link">
+  2.loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/3.plugin.html" class="nav-link">
+  3.plugin
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/4.模块化原理.html" class="nav-link">
+  4.模块化原理
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/5.babel.html" class="nav-link">
+  5.babel
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/6.HMR.html" class="nav-link">
+  6.HMR
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/7.环境分离.html" class="nav-link">
+  7.环境分离
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/8.tree_shaking.html" class="nav-link">
+  8.tree_shaking
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/9,源码.html" class="nav-link">
+  9.源码
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/11.自定义loader.html" class="nav-link">
+  11.自定义loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/12.自定义plugin.html" class="nav-link">
+  12.自定义plugin
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/设计模式/创建型.html" class="nav-link">
+  创建型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  结构型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/行为型.html" class="nav-link">
+  行为型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">angular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">angular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">健身</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">健身</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><a href="/me.html" class="nav-link">
+  关于我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">js</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">js</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/js-基础.html" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-数组.html" class="nav-link">
+  数组
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-异步.html" class="nav-link">
+  异步
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-es6.html" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/js/js-v8引擎.html" class="nav-link">
+  v8
+</a></li><li class="dropdown-item"><!----> <a href="/手写代码/1.js基础.html" class="nav-link">
+  手写
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/process.html" class="nav-link">
+  
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/css.html" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/node.html" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/webpack.html" class="nav-link">
+  小程序
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="leetcode" class="dropdown-title"><span class="title">leetcode</span> <span class="arrow down"></span></button> <button type="button" aria-label="leetcode" class="mobile-dropdown-title"><span class="title">leetcode</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/代码随想录/1.数组.html" class="nav-link">
+  1.数组
+</a></li><li class="dropdown-item"><!----> <a href="/代码随想录/10.动态规划/1.基础.html" class="nav-link">
+  10.动态规划
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">react源码</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">react源码</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react源码/理念.html" class="nav-link">
+  1.理念
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/3.render.html" class="nav-link">
+  3.render
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/4.commit.html" class="nav-link">
+  4.commit
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/5.状态更新.html" class="nav-link">
+  5.状态更新
+</a></li><li class="dropdown-item"><!----> <a href="/react源码/6.diff.html" class="nav-link">
+  6.diff
+</a></li><li class="dropdown-item"><!----> <a href="/react/7.实现hooks.html" class="nav-link">
+  7.实现hooks
+</a></li><li class="dropdown-item"><!----> <a href="/react/8.concurrentMode.html" class="nav-link">
+  8.concurrentMode
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">webpack</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">webpack</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/1.配置.html" class="nav-link">
+  1.配置
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/2.loader.html" class="nav-link">
+  2.loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/3.plugin.html" class="nav-link">
+  3.plugin
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/4.模块化原理.html" class="nav-link">
+  4.模块化原理
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/5.babel.html" class="nav-link">
+  5.babel
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/6.HMR.html" class="nav-link">
+  6.HMR
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/7.环境分离.html" class="nav-link">
+  7.环境分离
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/8.tree_shaking.html" class="nav-link">
+  8.tree_shaking
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/9,源码.html" class="nav-link">
+  9.源码
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/11.自定义loader.html" class="nav-link">
+  11.自定义loader
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/12.自定义plugin.html" class="nav-link">
+  12.自定义plugin
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">前端设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">前端设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/设计模式/创建型.html" class="nav-link">
+  创建型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  结构型
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/行为型.html" class="nav-link">
+  行为型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">angular</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">angular</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">健身</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">健身</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/.html" class="nav-link">
+  angular性能调优
+</a></li><li class="dropdown-item"><!----> <a href="/设计模式/结构型.html" class="nav-link">
+  angular源码理解
+</a></li></ul></div></div><div class="nav-item"><a href="/me.html" class="nav-link">
+  关于我
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Java Script</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/JavaScript/1.数据类型.html" class="sidebar-link">1. JavaScript的8种类型</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/JavaScript/2.es6.html" class="sidebar-link">1. let、const、var的区别</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/JavaScript/3.基础.html" class="sidebar-link">1. new操作符的实现原理</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/JavaScript/4.原型链.html" class="sidebar-link">1. 对原型、原型链的理解</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/JavaScript/5.作用域.html" class="active sidebar-link">五、执行上下文/作用域链/闭包</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/JavaScript/5.作用域.html#五、执行上下文-作用域链-闭包" class="sidebar-link">五、执行上下文/作用域链/闭包</a></li></ul></li><li><a href="/JavaScript/6.thiscall.html" class="sidebar-link">1. 对this对象的理解</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/JavaScript/7.异步编程.html" class="sidebar-link">七、异步编程</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/JavaScript/7.异步编程.html#七、异步编程" class="sidebar-link">七、异步编程</a></li><li class="sidebar-sub-header"><a href="/JavaScript/7.异步编程.html#八、面向对象" class="sidebar-link">八、面向对象</a></li><li class="sidebar-sub-header"><a href="/JavaScript/7.异步编程.html#九、垃圾回收与内存泄漏" class="sidebar-link">九、垃圾回收与内存泄漏</a></li></ul></li><li><a href="/JavaScript/事件循环.html" class="sidebar-link">/JavaScript/事件循环.html</a></li><li><a href="/JavaScript/基础知识.html" class="sidebar-link">generator</a></li><li><a href="/JavaScript/模块化.html" class="sidebar-link">什么是模块</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/JavaScript/模块化.html#什么是模块" class="sidebar-link">什么是模块</a></li><li class="sidebar-sub-header"><a href="/JavaScript/模块化.html#commonjs" class="sidebar-link">CommonJS</a></li><li class="sidebar-sub-header"><a href="/JavaScript/模块化.html#amd" class="sidebar-link">AMD</a></li><li class="sidebar-sub-header"><a href="/JavaScript/模块化.html#cmd" class="sidebar-link">CMD</a></li><li class="sidebar-sub-header"><a href="/JavaScript/模块化.html#cmd与amd区别" class="sidebar-link">CMD与AMD区别</a></li><li class="sidebar-sub-header"><a href="/JavaScript/模块化.html#es6模块化" class="sidebar-link">ES6模块化</a></li><li class="sidebar-sub-header"><a href="/JavaScript/模块化.html#es6-模块与-commonjs-模块的差异" class="sidebar-link">ES6 模块与 CommonJS 模块的差异</a></li><li class="sidebar-sub-header"><a href="/JavaScript/模块化.html#总结" class="sidebar-link">总结</a></li></ul></li><li><a href="/JavaScript/深浅拷贝.html" class="sidebar-link">/JavaScript/深浅拷贝.html</a></li><li><a href="/JavaScript/面试-js.html" class="sidebar-link">1、原型和原型链</a></li><li><a href="/JavaScript/面试-react.html" class="sidebar-link">/JavaScript/面试-react.html</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/JavaScript/面试-服务器网络.html" class="sidebar-link">/JavaScript/面试-服务器网络.html</a></li><li><a href="/JavaScript/面试-浏览器.html" class="sidebar-link">/JavaScript/面试-浏览器.html</a></li><li><a href="/JavaScript/面试-锦怡.html" class="sidebar-link">/JavaScript/面试-锦怡.html</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="五、执行上下文-作用域链-闭包"><a href="#五、执行上下文-作用域链-闭包" class="header-anchor">#</a> 五、执行上下文/作用域链/闭包</h2> <h3 id="_1-对闭包的理解"><a href="#_1-对闭包的理解" class="header-anchor">#</a> 1. 对闭包的理解</h3> <p><strong>闭包是指有权访问另一个函数作用域中变量的函数</strong>，创建闭包的最常见的方式就是在一个函数内创建另一个函数</p> <p>闭包有两个常用的用途</p> <ul><li>在函数外部访问到函数内部的变量，使用这种方法来<strong>创建私有变量</strong></li> <li>使已经运行结束的函数上下文中的变量对象继续留在内存中，因为闭包函数保留了这个变量对象的引用，所以这个变量对象不会被回收</li></ul> <p>应用：</p> <h3 id="_2-对作用域、作用域链的理解"><a href="#_2-对作用域、作用域链的理解" class="header-anchor">#</a> 2. 对作用域、作用域链的理解</h3> <p><strong>作用域：有效范围</strong></p> <h5 id="_1-全局作用域和函数作用域"><a href="#_1-全局作用域和函数作用域" class="header-anchor">#</a> 1）全局作用域和函数作用域</h5> <p>（1）全局作用域</p> <p>定义：最外层定义的变量，未定义直接复制的变量，window对象的属性，拥有的作用域</p> <p>弊端：命名冲突</p> <p>（2）函数作用域</p> <ul><li>函数内部的变量</li> <li>分层，内层访问外层</li></ul> <h5 id="_2-块级作用域"><a href="#_2-块级作用域" class="header-anchor">#</a> 2）块级作用域</h5> <ul><li>let和const声明的是块级作用域，块级作用域可以在函数中创建，也可以在代码块中创建（由 <code>{ }</code>包裹的代码片段）</li> <li>let和const不会有变量提升，也不可以重复声明</li> <li>在循环中比较适合绑定块级作用域，把计数器变量限制在循环内部</li></ul> <p><strong>作用域链</strong></p> <p>如果在自己作用域找不到，就依次向上级作用域查找，直到window对象，就是作用域链</p> <p>作用：可以访问外层变量，保证有序访问</p> <p><strong>保证对执行环境有权访问的所有变量和函数的有序访问，通过作用域链，可以访问到外层环境的变量和函数。</strong></p> <p>原理：</p> <p>作用域链的本质是一个指向变量对象的指针列表</p> <p>变量对象是一个包含了执行环境中所有变量和函数的对象。</p> <p>作用域链的前端始终都是当前执行上下文的变量对象。</p> <p>全局执行上下文的变量对象（也就是全局对象）始终是作用域链的最后一个对象。</p> <p>当查找一个变量时，如果当前执行环境中没有找到，可以沿着作用域链向后查找</p> <h3 id="_3-对执行上下文的理解"><a href="#_3-对执行上下文的理解" class="header-anchor">#</a> 3. 对执行上下文的理解</h3> <h5 id="_1-执行上下文类型"><a href="#_1-执行上下文类型" class="header-anchor">#</a> 1. 执行上下文类型</h5> <p><strong>（1）全局执行上下文</strong></p> <p>任何不在函数内部的都是全局执行上下文，它首先会创建一个全局的window对象，并且设置this的值等于这个全局对象，一个程序中只有一个全局执行上下文。</p> <p><strong>（2）函数执行上下文</strong></p> <p>当一个函数被调用时，就会为该函数创建一个新的执行上下文，函数的上下文可以有任意多个。</p> <p><strong>（3）</strong><code>eval</code><strong>函数执行上下文</strong></p> <p>执行在eval函数中的代码会有属于他自己的执行上下文，不过eval函数不常使用，不做介绍。</p> <h5 id="_2-执行上下文栈"><a href="#_2-执行上下文栈" class="header-anchor">#</a> 2. 执行上下文栈</h5> <ul><li>JavaScript引擎使用执行上下文栈来管理执行上下文</li> <li>当JavaScript执行代码时，首先遇到全局代码，会创建一个全局执行上下文并且压入执行栈中，每当遇到一个函数调用，就会为该函数创建一个新的执行上下文并压入栈顶，引擎会执行位于执行上下文栈顶的函数，当函数执行完成之后，执行上下文从栈中弹出，继续执行下一个上下文。当所有的代码都执行完毕之后，从栈中弹出全局执行上下文。</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token string">'Hello World!'</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Inside first function'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">second</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Again inside first function'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">second</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Inside second function'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//执行顺序</span>
+<span class="token comment">//先执行second(),在执行first()</span>
+复制代码
+</code></pre></div><h5 id="_3-创建执行上下文"><a href="#_3-创建执行上下文" class="header-anchor">#</a> 3. 创建执行上下文</h5> <p>创建执行上下文有两个阶段：<strong>创建阶段</strong>和<strong>执行阶段</strong></p> <p><strong>1）创建阶段</strong></p> <p>（1）this绑定</p> <ul><li>在全局执行上下文中，this指向全局对象（window对象）</li> <li>在函数执行上下文中，this指向取决于函数如何调用。如果它被一个引用对象调用，那么 this 会被设置成那个对象，否则 this 的值被设置为全局对象或者 undefined</li></ul> <p>（2）创建词法环境组件</p> <ul><li>词法环境是一种有<strong>标识符——变量映射</strong>的数据结构，标识符是指变量/函数名，变量是对实际对象或原始数据的引用</li> <li>词法环境的内部有两个组件：<strong>加粗样式</strong>：环境记录器:用来储存变量个函数声明的实际位置<strong>外部环境的引用</strong>：可以访问父级作用域</li></ul> <p>（3）创建变量环境组件</p> <ul><li>变量环境也是一个词法环境，其环境记录器持有变量声明语句在执行上下文中创建的绑定关系。</li></ul> <p><strong>2）执行阶段</strong> 此阶段会完成对变量的分配，最后执行完代码。</p> <p><strong>简单来说执行上下文就是指：</strong></p> <p>在执行一点JS代码之前，需要先解析代码。解析的时候会先创建一个全局执行上下文环境，先把代码中即将执行的变量、函数声明都拿出来，变量先赋值为undefined，函数先声明好可使用。这一步执行完了，才开始正式的执行程序。</p> <p>在一个函数执行之前，也会创建一个函数执行上下文环境，跟全局执行上下文类似，不过函数执行上下文会多出this、arguments和函数的参数。</p> <ul><li>全局上下文：变量定义，函数声明</li> <li>函数上下文：变量定义，函数声明，<code>this</code>，<code>arguments</code></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/21/2022, 9:01:05 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/JavaScript/4.原型链.html" class="prev">
+        1. 对原型、原型链的理解
+      </a></span> <span class="next"><a href="/JavaScript/6.thiscall.html">
+        1. 对this对象的理解
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b51e4ccd.js" defer></script><script src="/assets/js/2.7229199a.js" defer></script><script src="/assets/js/11.e2689dc6.js" defer></script>
+  </body>
+</html>
